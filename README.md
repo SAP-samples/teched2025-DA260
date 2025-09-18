@@ -1,33 +1,64 @@
-# Session ID - Session Title
+# DA260 - Connect third-party systems in SAP Business Data Cloud and SAP Datasphere
 
 ## Description
 
-This repository contains the material for the SAP TechEd 2025 session called Session ID - Session Title.  
+The SAP Business Data Cloud solution enables smooth integration of SAP and third-party data. In this hands-on session, explore connectivity features in the SAP Datasphere and SAP Business Data Cloud solutions, including setup, data acquisition, integration, and transformation—ideal for data engineers and architects.
+
+This hands-on workshop will give you the opportunity to try out the different integration technologies that BDC has to offer. 
+
+SAP Businees Data Cloud inlcuded SAP Datasphere, a comprehensive data service acting as a business data fabric that enables every data professional to deliver seamless and scalable access to mission-critical business data. SAP Datasphere enables access to authoritative data by accelerating time-to-value by automatically reusing the semantical definitions and associations from SAP applications. SAP Datasphere enriches all data projects by harmonizing heterogeneous data into a business semantic model of your diverse data landscape. On top it helps to simplify the data landscape and accesses all your data across hybrid and cloud environments no matter where it resides.
 
 ## Overview
 
-This session introduces attendees to...
+MyCompany sales bikes to customers. In the source the list price is stored in the product master data. The sales order items only contain the net sales and quantity. The list price, that was valid at the time of sales, is not stored. The goal of the exercise is, to create a data model that stores the historic list price. For that a two stage data model is used. The data will come in by a Replication Flow and be staged by a Transformation Flow. 
+
+Question to answer: Was there a rebate in the net sales compared to the list price of the product master data?
+
+* Learning Goal: Learn how to load data in delta with a replication flow and stage them with transformation flow.* 
+* Time: 2-4 h
+* Finished Product: A view that shows the potential rebate per sales order line item. 
 
 ## Requirements
 
-The requirements to follow the exercises in this repository are...
+* Google Chrome
+* Access to this GitHub repository
+
+  **Important Note**: The Datasphere landscape being used during SAP TechEd will be available until **November 19th**. Until November 19th you can re-use your existing content in your user space and finalize the exercises in case you did not have sufficient time during the hands-on workshop at SAP TechEd. 
+  
+* [Session-1 on November 2nd] [Access to SAP Datasphere tenant](https://academy.eu10.hcs.cloud.sap/dwaas-ui/index.html#/home)
+  * User-Id: xxx + last 2 digits that have been provided to you onsite at TechEd
+  * Tenant access password: xxx
+
+* [Session-2 on November 3rd] [Access to SAP Datasphere tenant](https://academy.eu10.hcs.cloud.sap/dwaas-ui/index.html#/home)
+  * User-Id: xxx + last 2 digits that have been provided to you onsite at TechEd
+  * Tenant access password: xxx
+
+* Basic knowhow about the usage and integration of data from SAP S/4HANA
+* General understanding of Enterprise Data Management and ETL (Extraction, Transformation, Load)
+
+## Deep Dives
+
+- [Deep Dive 0 - Introduction to the Enterprise Procurement Model (EPM) in SAP S/4HANA](exercises/dd0/)
+- [Deep Dive 1 - ABAP CDS View based data extraction from SAP S/4HANA on-premise](exercises/dd1/)
+- [Deep Dive 2 - Introduction to Replication Flows in SAP Datasphere](exercises/dd2/)
 
 ## Exercises
 
-Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example.
+- Replication "Flow" 
+  - Inbound
+    - HANA
+    - Object Store (not possible in TechEd System)
+  - Outbound
+- Zero Copy
+  - Inbound SDA
+  - Outbound OpenSQL
+  - Data Products (in and out)
 
-- [Getting Started](exercises/ex0/)
-- [Exercise 1 - First Exercise Description](exercises/ex1/)
-    - [Exercise 1.1 - Exercise 1 Sub Exercise 1 Description](exercises/ex1#exercise-11-sub-exercise-1-description)
-    - [Exercise 1.2 - Exercise 1 Sub Exercise 2 Description](exercises/ex1#exercise-12-sub-exercise-2-description)
-- [Exercise 2 - Second Exercise Description](exercises/ex2/)
-    - [Exercise 2.1 - Exercise 2 Sub Exercise 1 Description](exercises/ex2#exercise-21-sub-exercise-1-description)
-    - [Exercise 2.2 - Exercise 2 Sub Exercise 2 Description](exercises/ex2#exercise-22-sub-exercise-2-description)
-
-  
-**OR** Link to the Tutorial Navigator for example...
-
-Start the exercises [here](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html).
+- [Exercise 1 - Install "Product" SAP Data Product ](exercises/ex1/)
+- [Exercise 2 - Replicate Custom CDS View from SAP S/4HANA via Replication Flows to SAP Datasphere](exercises/ex1/)
+- [Exercise 3 - Extend the SAP Data Product using Transformation Flows in SAP Datasphere](exercises/ex2/)
+- [Exercise 4 - Replicate the extended custom Data Product to an extenal Source](exercises/ex4/) 
+- [Exercise 5 - Create custom Data Product in HDLF Space](exercises/ex4/) 
 
 **IMPORTANT**
 
