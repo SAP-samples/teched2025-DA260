@@ -46,26 +46,27 @@ Question to answer: Was there a rebate in the net sales compared to the list pri
 
 ### Ingest
 
-| Product             | Replication | Federation |
-|---------------------|-------------|------------|
-| SAP Analytics Cloud | [Exercise 1](exercises/ex1/) | [Exercise 3](exercises/ex3/)|
-| SAP Datasphere      | [Exercise 2](exercises/ex2/)  | [Exercise 4](exercises/ex4/) |
+| Product             | Replication | Federation | Push |
+|---------------------|-------------|------------|------------ |
+| SAP Analytics Cloud | [Exercise 1](exercises/ex1/) | [Exercise 3](exercises/ex3/)| |  |
+| SAP Datasphere      | [Exercise 2](exercises/ex2/)  | [Exercise 4](exercises/ex4/) | [Exercise 5](exercises/ex5/) | |
 
 
 - [Exercise 1 - Replicate data into SAC ](exercises/ex1/)
 - [Exercise 2 - Replicate data into SAP Datasphere with Replication Flows](exercises/ex2/)
 - [Exercise 3 - Live connection in SAC](exercises/ex3/)
 - [Exercise 4 - Fedeeration in Datasphere with Remote Tables](exercises/ex4/) 
+- [Exercise 5 - Push data into Datasphere with OpenSQL](exercises/ex5/) 
 
 ### Egress
 
 | Product             | Pull | Push |
 |---------------------|-------------|------------|
-| SAP Analytics Cloud | [Exercise 5](exercises/ex8/) | not available|
-| SAP Datasphere      | [Exercise 6](exercises/ex2/)  | [Exercise 7](exercises/ex4/) |
+| SAP Analytics Cloud | [Exercise 6](exercises/ex6/) | not available|
+| SAP Datasphere      | [Exercise 8](exercises/ex8/)  | [Exercise 7](exercises/ex7/) |
 
-- [Exercise 5 - Outbound pull in SAC with oData](exercises/ex6/) 
-- [Exercise 6 - Outbound pull of data in Datasphere with JDBC or oData](exercises/ex6/) 
+- [Exercise 6 - Outbound pull in SAC with oData](exercises/ex6/) 
+- [Exercise 8 - Outbound pull of data in Datasphere with JDBC or oData](exercises/ex8/) 
 - [Exercise 7 - Outbound push in Datasphere with Replication FLows](exercises/ex7/) 
 
 **IMPORTANT**
