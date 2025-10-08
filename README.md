@@ -63,7 +63,7 @@ Question to answer: Was there a rebate in the net sales compared to the list pri
 | Product             | Pull | Push |
 |---------------------|-------------|------------|
 | SAP Analytics Cloud | [Exercise 6](exercises/ex6/) | [Exercise 7](exercises/ex7/) |
-| SAP Datasphere      | [Exercise 8](exercises/ex8/) | [Exercise 7](exercises/ex9/) |
+| SAP Datasphere      | [Exercise 8](exercises/ex8/) | [Exercise 9](exercises/ex9/) |
 
 - [Exercise 6 - Outbound pull in SAC with oData](exercises/ex6/) 
 - [Exercise 7 - Outbound push in SAC with oData](exercises/ex6/) 
