@@ -1,0 +1,396 @@
+{
+  "definitions": {
+    "SalesOrder": {
+      "kind": "entity",
+      "elements": {
+        "ItemGuid": {
+          "@EndUserText.label": "ItemGuid",
+          "type": "cds.String",
+          "key": true,
+          "notNull": true,
+          "length": 36
+        },
+        "SalesOrderGuid": {
+          "@EndUserText.label": "SalesOrderGuid",
+          "type": "cds.String",
+          "length": 36
+        },
+        "SalesOrderId": {
+          "@EndUserText.label": "SalesOrderId",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CreatedAt": {
+          "@EndUserText.label": "CreatedAt",
+          "type": "cds.Timestamp"
+        },
+        "ChangedAt": {
+          "@EndUserText.label": "ChangedAt",
+          "type": "cds.Timestamp"
+        },
+        "BuyerGuid": {
+          "@EndUserText.label": "BuyerGuid",
+          "type": "cds.String",
+          "length": 36
+        },
+        "CurrencyCode": {
+          "@EndUserText.label": "CurrencyCode",
+          "type": "cds.String",
+          "length": 5
+        },
+        "GrossAmount": {
+          "@EndUserText.label": "GrossAmount",
+          "type": "cds.DecimalFloat"
+        },
+        "NetAmount": {
+          "@EndUserText.label": "NetAmount",
+          "type": "cds.DecimalFloat"
+        },
+        "TaxAmount": {
+          "@EndUserText.label": "TaxAmount",
+          "type": "cds.DecimalFloat"
+        },
+        "ItemPosition": {
+          "@EndUserText.label": "ItemPosition",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ProductID": {
+          "@EndUserText.label": "ProductID",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ProductName": {
+          "@EndUserText.label": "ProductName",
+          "type": "cds.String",
+          "length": 255
+        },
+        "ProductCategory": {
+          "@EndUserText.label": "ProductCategory",
+          "type": "cds.String",
+          "length": 40
+        },
+        "ItemGrossAmount": {
+          "@EndUserText.label": "ItemGrossAmount",
+          "type": "cds.DecimalFloat"
+        },
+        "ItemNetAmount": {
+          "@EndUserText.label": "ItemNetAmount",
+          "type": "cds.DecimalFloat"
+        },
+        "ItemTaxAmount": {
+          "@EndUserText.label": "ItemTaxAmount",
+          "type": "cds.DecimalFloat"
+        },
+        "ProductGuid": {
+          "@EndUserText.label": "ProductGuid",
+          "type": "cds.String",
+          "length": 36
+        },
+        "TextGuid": {
+          "@EndUserText.label": "TextGuid",
+          "type": "cds.String",
+          "length": 36
+        }
+      },
+      "@EndUserText.label": "SalesOrder",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "ACTIVE"
+        },
+        "deltaFromEntities": [
+          "SalesOrder_Delta"
+        ]
+      },
+      "@DataWarehouse.consumption.external": false,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "SalesOrder_Delta"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "ItemGuid"
+              ]
+            },
+            {
+              "ref": [
+                "SalesOrderGuid"
+              ]
+            },
+            {
+              "ref": [
+                "SalesOrderId"
+              ]
+            },
+            {
+              "ref": [
+                "CreatedAt"
+              ]
+            },
+            {
+              "ref": [
+                "ChangedAt"
+              ]
+            },
+            {
+              "ref": [
+                "BuyerGuid"
+              ]
+            },
+            {
+              "ref": [
+                "CurrencyCode"
+              ]
+            },
+            {
+              "ref": [
+                "GrossAmount"
+              ]
+            },
+            {
+              "ref": [
+                "NetAmount"
+              ]
+            },
+            {
+              "ref": [
+                "TaxAmount"
+              ]
+            },
+            {
+              "ref": [
+                "ItemPosition"
+              ]
+            },
+            {
+              "ref": [
+                "ProductID"
+              ]
+            },
+            {
+              "ref": [
+                "ProductName"
+              ]
+            },
+            {
+              "ref": [
+                "ProductCategory"
+              ]
+            },
+            {
+              "ref": [
+                "ItemGrossAmount"
+              ]
+            },
+            {
+              "ref": [
+                "ItemNetAmount"
+              ]
+            },
+            {
+              "ref": [
+                "ItemTaxAmount"
+              ]
+            },
+            {
+              "ref": [
+                "ProductGuid"
+              ]
+            },
+            {
+              "ref": [
+                "TextGuid"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "Change_Type"
+              ]
+            },
+            "not",
+            "in",
+            {
+              "list": [
+                {
+                  "val": "D"
+                },
+                {
+                  "val": "M"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        },
+        {
+          "#": "SQL_DATA_SOURCE"
+        }
+      ],
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": null
+        }
+      }
+    },
+    "SalesOrder_Delta": {
+      "kind": "entity",
+      "elements": {
+        "ItemGuid": {
+          "@EndUserText.label": "ItemGuid",
+          "type": "cds.String",
+          "key": true,
+          "notNull": true,
+          "length": 36
+        },
+        "SalesOrderGuid": {
+          "@EndUserText.label": "SalesOrderGuid",
+          "type": "cds.String",
+          "length": 36
+        },
+        "SalesOrderId": {
+          "@EndUserText.label": "SalesOrderId",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CreatedAt": {
+          "@EndUserText.label": "CreatedAt",
+          "type": "cds.Timestamp"
+        },
+        "ChangedAt": {
+          "@EndUserText.label": "ChangedAt",
+          "type": "cds.Timestamp"
+        },
+        "BuyerGuid": {
+          "@EndUserText.label": "BuyerGuid",
+          "type": "cds.String",
+          "length": 36
+        },
+        "CurrencyCode": {
+          "@EndUserText.label": "CurrencyCode",
+          "type": "cds.String",
+          "length": 5
+        },
+        "GrossAmount": {
+          "@EndUserText.label": "GrossAmount",
+          "type": "cds.DecimalFloat"
+        },
+        "NetAmount": {
+          "@EndUserText.label": "NetAmount",
+          "type": "cds.DecimalFloat"
+        },
+        "TaxAmount": {
+          "@EndUserText.label": "TaxAmount",
+          "type": "cds.DecimalFloat"
+        },
+        "ItemPosition": {
+          "@EndUserText.label": "ItemPosition",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ProductID": {
+          "@EndUserText.label": "ProductID",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ProductName": {
+          "@EndUserText.label": "ProductName",
+          "type": "cds.String",
+          "length": 255
+        },
+        "ProductCategory": {
+          "@EndUserText.label": "ProductCategory",
+          "type": "cds.String",
+          "length": 40
+        },
+        "ItemGrossAmount": {
+          "@EndUserText.label": "ItemGrossAmount",
+          "type": "cds.DecimalFloat"
+        },
+        "ItemNetAmount": {
+          "@EndUserText.label": "ItemNetAmount",
+          "type": "cds.DecimalFloat"
+        },
+        "ItemTaxAmount": {
+          "@EndUserText.label": "ItemTaxAmount",
+          "type": "cds.DecimalFloat"
+        },
+        "ProductGuid": {
+          "@EndUserText.label": "ProductGuid",
+          "type": "cds.String",
+          "length": 36
+        },
+        "TextGuid": {
+          "@EndUserText.label": "TextGuid",
+          "type": "cds.String",
+          "length": 36
+        },
+        "Change_Type": {
+          "@EndUserText.label": "Change_Type",
+          "type": "cds.String",
+          "notNull": true,
+          "length": 1,
+          "default": {
+            "val": "I"
+          }
+        },
+        "Change_Date": {
+          "@EndUserText.label": "Change_Date",
+          "type": "cds.Timestamp",
+          "notNull": true,
+          "default": {
+            "func": "CURRENT_UTCTIMESTAMP"
+          }
+        }
+      },
+      "@EndUserText.label": "SalesOrder",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "UPSERT"
+        },
+        "dateTimeElement": {
+          "=": "Change_Date"
+        },
+        "modeElement": {
+          "=": "Change_Type"
+        }
+      },
+      "@DataWarehouse.enclosingObject": "SalesOrder",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        },
+        {
+          "#": "SQL_DATA_SOURCE"
+        }
+      ],
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": null
+        }
+      }
+    }
+  },
+  "version": {
+    "csn": "1.0"
+  },
+  "meta": {
+    "creator": "CDS Compiler v1.19.2"
+  },
+  "$version": "1.0"
+}

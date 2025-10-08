@@ -1,0 +1,472 @@
+{
+  "definitions": {
+    "Product": {
+      "kind": "entity",
+      "elements": {
+        "NodeKey": {
+          "@EndUserText.label": "NodeKey",
+          "type": "cds.String",
+          "key": true,
+          "notNull": true,
+          "length": 36
+        },
+        "ProductId": {
+          "@EndUserText.label": "ProductId",
+          "type": "cds.String",
+          "length": 10
+        },
+        "TypeCode": {
+          "@EndUserText.label": "TypeCode",
+          "type": "cds.String",
+          "length": 2
+        },
+        "Category": {
+          "@EndUserText.label": "Category",
+          "type": "cds.String",
+          "length": 40
+        },
+        "CreatedBy": {
+          "@EndUserText.label": "CreatedBy",
+          "type": "cds.String",
+          "length": 36
+        },
+        "CreatedAt": {
+          "@EndUserText.label": "CreatedAt",
+          "type": "cds.Timestamp"
+        },
+        "ChangedBy": {
+          "@EndUserText.label": "ChangedBy",
+          "type": "cds.String",
+          "length": 36
+        },
+        "ChangedAt": {
+          "@EndUserText.label": "ChangedAt",
+          "type": "cds.Timestamp"
+        },
+        "NameGuid": {
+          "@EndUserText.label": "NameGuid",
+          "type": "cds.String",
+          "length": 36
+        },
+        "DescGuid": {
+          "@EndUserText.label": "DescGuid",
+          "type": "cds.String",
+          "length": 36
+        },
+        "SupplierGuid": {
+          "@EndUserText.label": "SupplierGuid",
+          "type": "cds.String",
+          "length": 36
+        },
+        "TaxTarifCode": {
+          "@EndUserText.label": "TaxTarifCode",
+          "type": "cds.hana.TINYINT"
+        },
+        "MeasureUnit": {
+          "@EndUserText.label": "MeasureUnit",
+          "type": "cds.String",
+          "length": 3
+        },
+        "WeightMeasure": {
+          "@EndUserText.label": "WeightMeasure",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "WeightUnit": {
+          "@EndUserText.label": "WeightUnit",
+          "type": "cds.String",
+          "length": 3
+        },
+        "CurrencyCode": {
+          "@EndUserText.label": "CurrencyCode",
+          "type": "cds.String",
+          "length": 5
+        },
+        "Price": {
+          "@EndUserText.label": "Price",
+          "type": "cds.DecimalFloat"
+        },
+        "ProductPicUrl": {
+          "@EndUserText.label": "ProductPicUrl",
+          "type": "cds.String",
+          "length": 255
+        },
+        "Width": {
+          "@EndUserText.label": "Width",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "Depth": {
+          "@EndUserText.label": "Depth",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "Height": {
+          "@EndUserText.label": "Height",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "DimUnit": {
+          "@EndUserText.label": "DimUnit",
+          "type": "cds.String",
+          "length": 3
+        },
+        "DummyFieldPd": {
+          "@EndUserText.label": "DummyFieldPd",
+          "type": "cds.String",
+          "length": 1
+        }
+      },
+      "@EndUserText.label": "Product",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "ACTIVE"
+        },
+        "deltaFromEntities": [
+          "Product_Delta"
+        ]
+      },
+      "@DataWarehouse.consumption.external": false,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "Product_Delta"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "NodeKey"
+              ]
+            },
+            {
+              "ref": [
+                "ProductId"
+              ]
+            },
+            {
+              "ref": [
+                "TypeCode"
+              ]
+            },
+            {
+              "ref": [
+                "Category"
+              ]
+            },
+            {
+              "ref": [
+                "CreatedBy"
+              ]
+            },
+            {
+              "ref": [
+                "CreatedAt"
+              ]
+            },
+            {
+              "ref": [
+                "ChangedBy"
+              ]
+            },
+            {
+              "ref": [
+                "ChangedAt"
+              ]
+            },
+            {
+              "ref": [
+                "NameGuid"
+              ]
+            },
+            {
+              "ref": [
+                "DescGuid"
+              ]
+            },
+            {
+              "ref": [
+                "SupplierGuid"
+              ]
+            },
+            {
+              "ref": [
+                "TaxTarifCode"
+              ]
+            },
+            {
+              "ref": [
+                "MeasureUnit"
+              ]
+            },
+            {
+              "ref": [
+                "WeightMeasure"
+              ]
+            },
+            {
+              "ref": [
+                "WeightUnit"
+              ]
+            },
+            {
+              "ref": [
+                "CurrencyCode"
+              ]
+            },
+            {
+              "ref": [
+                "Price"
+              ]
+            },
+            {
+              "ref": [
+                "ProductPicUrl"
+              ]
+            },
+            {
+              "ref": [
+                "Width"
+              ]
+            },
+            {
+              "ref": [
+                "Depth"
+              ]
+            },
+            {
+              "ref": [
+                "Height"
+              ]
+            },
+            {
+              "ref": [
+                "DimUnit"
+              ]
+            },
+            {
+              "ref": [
+                "DummyFieldPd"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "Change_Type"
+              ]
+            },
+            "not",
+            "in",
+            {
+              "list": [
+                {
+                  "val": "D"
+                },
+                {
+                  "val": "M"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        },
+        {
+          "#": "SQL_DATA_SOURCE"
+        }
+      ],
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": null
+        }
+      }
+    },
+    "Product_Delta": {
+      "kind": "entity",
+      "elements": {
+        "NodeKey": {
+          "@EndUserText.label": "NodeKey",
+          "type": "cds.String",
+          "key": true,
+          "notNull": true,
+          "length": 36
+        },
+        "ProductId": {
+          "@EndUserText.label": "ProductId",
+          "type": "cds.String",
+          "length": 10
+        },
+        "TypeCode": {
+          "@EndUserText.label": "TypeCode",
+          "type": "cds.String",
+          "length": 2
+        },
+        "Category": {
+          "@EndUserText.label": "Category",
+          "type": "cds.String",
+          "length": 40
+        },
+        "CreatedBy": {
+          "@EndUserText.label": "CreatedBy",
+          "type": "cds.String",
+          "length": 36
+        },
+        "CreatedAt": {
+          "@EndUserText.label": "CreatedAt",
+          "type": "cds.Timestamp"
+        },
+        "ChangedBy": {
+          "@EndUserText.label": "ChangedBy",
+          "type": "cds.String",
+          "length": 36
+        },
+        "ChangedAt": {
+          "@EndUserText.label": "ChangedAt",
+          "type": "cds.Timestamp"
+        },
+        "NameGuid": {
+          "@EndUserText.label": "NameGuid",
+          "type": "cds.String",
+          "length": 36
+        },
+        "DescGuid": {
+          "@EndUserText.label": "DescGuid",
+          "type": "cds.String",
+          "length": 36
+        },
+        "SupplierGuid": {
+          "@EndUserText.label": "SupplierGuid",
+          "type": "cds.String",
+          "length": 36
+        },
+        "TaxTarifCode": {
+          "@EndUserText.label": "TaxTarifCode",
+          "type": "cds.hana.TINYINT"
+        },
+        "MeasureUnit": {
+          "@EndUserText.label": "MeasureUnit",
+          "type": "cds.String",
+          "length": 3
+        },
+        "WeightMeasure": {
+          "@EndUserText.label": "WeightMeasure",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "WeightUnit": {
+          "@EndUserText.label": "WeightUnit",
+          "type": "cds.String",
+          "length": 3
+        },
+        "CurrencyCode": {
+          "@EndUserText.label": "CurrencyCode",
+          "type": "cds.String",
+          "length": 5
+        },
+        "Price": {
+          "@EndUserText.label": "Price",
+          "type": "cds.DecimalFloat"
+        },
+        "ProductPicUrl": {
+          "@EndUserText.label": "ProductPicUrl",
+          "type": "cds.String",
+          "length": 255
+        },
+        "Width": {
+          "@EndUserText.label": "Width",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "Depth": {
+          "@EndUserText.label": "Depth",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "Height": {
+          "@EndUserText.label": "Height",
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "DimUnit": {
+          "@EndUserText.label": "DimUnit",
+          "type": "cds.String",
+          "length": 3
+        },
+        "DummyFieldPd": {
+          "@EndUserText.label": "DummyFieldPd",
+          "type": "cds.String",
+          "length": 1
+        },
+        "Change_Type": {
+          "@EndUserText.label": "Change_Type",
+          "type": "cds.String",
+          "notNull": true,
+          "length": 1,
+          "default": {
+            "val": "I"
+          }
+        },
+        "Change_Date": {
+          "@EndUserText.label": "Change_Date",
+          "type": "cds.Timestamp",
+          "notNull": true,
+          "default": {
+            "func": "CURRENT_UTCTIMESTAMP"
+          }
+        }
+      },
+      "@EndUserText.label": "Product",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "UPSERT"
+        },
+        "dateTimeElement": {
+          "=": "Change_Date"
+        },
+        "modeElement": {
+          "=": "Change_Type"
+        }
+      },
+      "@DataWarehouse.enclosingObject": "Product",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        },
+        {
+          "#": "SQL_DATA_SOURCE"
+        }
+      ],
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": null
+        }
+      }
+    }
+  },
+  "version": {
+    "csn": "1.0"
+  },
+  "meta": {
+    "creator": "CDS Compiler v1.19.2"
+  },
+  "$version": "1.0"
+}

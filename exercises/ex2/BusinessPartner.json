@@ -1,0 +1,303 @@
+{
+  "definitions": {
+    "BusinessPartner": {
+      "kind": "entity",
+      "elements": {
+        "NodeKey": {
+          "@EndUserText.label": "NodeKey",
+          "type": "cds.String",
+          "key": true,
+          "notNull": true,
+          "length": 36
+        },
+        "BpRole": {
+          "@EndUserText.label": "BpRole",
+          "type": "cds.String",
+          "length": 3
+        },
+        "EmailAddress": {
+          "@EndUserText.label": "EmailAddress",
+          "type": "cds.String",
+          "length": 255
+        },
+        "PhoneNumber": {
+          "@EndUserText.label": "PhoneNumber",
+          "type": "cds.String",
+          "length": 30
+        },
+        "FaxNumber": {
+          "@EndUserText.label": "FaxNumber",
+          "type": "cds.String",
+          "length": 30
+        },
+        "AddressGuid": {
+          "@EndUserText.label": "AddressGuid",
+          "type": "cds.String",
+          "length": 36
+        },
+        "BpId": {
+          "@EndUserText.label": "BpId",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CompanyName": {
+          "@EndUserText.label": "CompanyName",
+          "type": "cds.String",
+          "length": 80
+        },
+        "LegalForm": {
+          "@EndUserText.label": "LegalForm",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CreatedAt": {
+          "@EndUserText.label": "CreatedAt",
+          "type": "cds.Timestamp"
+        },
+        "ChangedAt": {
+          "@EndUserText.label": "ChangedAt",
+          "type": "cds.Timestamp"
+        },
+        "CurrencyCode": {
+          "@EndUserText.label": "CurrencyCode",
+          "type": "cds.String",
+          "length": 5
+        }
+      },
+      "@EndUserText.label": "BusinessPartner",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "ACTIVE"
+        },
+        "deltaFromEntities": [
+          "BusinessPartner_Delta"
+        ]
+      },
+      "@DataWarehouse.consumption.external": false,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "BusinessPartner_Delta"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "NodeKey"
+              ]
+            },
+            {
+              "ref": [
+                "BpRole"
+              ]
+            },
+            {
+              "ref": [
+                "EmailAddress"
+              ]
+            },
+            {
+              "ref": [
+                "PhoneNumber"
+              ]
+            },
+            {
+              "ref": [
+                "FaxNumber"
+              ]
+            },
+            {
+              "ref": [
+                "AddressGuid"
+              ]
+            },
+            {
+              "ref": [
+                "BpId"
+              ]
+            },
+            {
+              "ref": [
+                "CompanyName"
+              ]
+            },
+            {
+              "ref": [
+                "LegalForm"
+              ]
+            },
+            {
+              "ref": [
+                "CreatedAt"
+              ]
+            },
+            {
+              "ref": [
+                "ChangedAt"
+              ]
+            },
+            {
+              "ref": [
+                "CurrencyCode"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "Change_Type"
+              ]
+            },
+            "not",
+            "in",
+            {
+              "list": [
+                {
+                  "val": "D"
+                },
+                {
+                  "val": "M"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        },
+        {
+          "#": "SQL_DATA_SOURCE"
+        }
+      ],
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": null
+        }
+      }
+    },
+    "BusinessPartner_Delta": {
+      "kind": "entity",
+      "elements": {
+        "NodeKey": {
+          "@EndUserText.label": "NodeKey",
+          "type": "cds.String",
+          "key": true,
+          "notNull": true,
+          "length": 36
+        },
+        "BpRole": {
+          "@EndUserText.label": "BpRole",
+          "type": "cds.String",
+          "length": 3
+        },
+        "EmailAddress": {
+          "@EndUserText.label": "EmailAddress",
+          "type": "cds.String",
+          "length": 255
+        },
+        "PhoneNumber": {
+          "@EndUserText.label": "PhoneNumber",
+          "type": "cds.String",
+          "length": 30
+        },
+        "FaxNumber": {
+          "@EndUserText.label": "FaxNumber",
+          "type": "cds.String",
+          "length": 30
+        },
+        "AddressGuid": {
+          "@EndUserText.label": "AddressGuid",
+          "type": "cds.String",
+          "length": 36
+        },
+        "BpId": {
+          "@EndUserText.label": "BpId",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CompanyName": {
+          "@EndUserText.label": "CompanyName",
+          "type": "cds.String",
+          "length": 80
+        },
+        "LegalForm": {
+          "@EndUserText.label": "LegalForm",
+          "type": "cds.String",
+          "length": 10
+        },
+        "CreatedAt": {
+          "@EndUserText.label": "CreatedAt",
+          "type": "cds.Timestamp"
+        },
+        "ChangedAt": {
+          "@EndUserText.label": "ChangedAt",
+          "type": "cds.Timestamp"
+        },
+        "CurrencyCode": {
+          "@EndUserText.label": "CurrencyCode",
+          "type": "cds.String",
+          "length": 5
+        },
+        "Change_Type": {
+          "@EndUserText.label": "Change_Type",
+          "type": "cds.String",
+          "notNull": true,
+          "length": 1,
+          "default": {
+            "val": "I"
+          }
+        },
+        "Change_Date": {
+          "@EndUserText.label": "Change_Date",
+          "type": "cds.Timestamp",
+          "notNull": true,
+          "default": {
+            "func": "CURRENT_UTCTIMESTAMP"
+          }
+        }
+      },
+      "@EndUserText.label": "BusinessPartner",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "UPSERT"
+        },
+        "dateTimeElement": {
+          "=": "Change_Date"
+        },
+        "modeElement": {
+          "=": "Change_Type"
+        }
+      },
+      "@DataWarehouse.enclosingObject": "BusinessPartner",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        },
+        {
+          "#": "SQL_DATA_SOURCE"
+        }
+      ],
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": null
+        }
+      }
+    }
+  },
+  "version": {
+    "csn": "1.0"
+  },
+  "meta": {
+    "creator": "CDS Compiler v1.19.2"
+  },
+  "$version": "1.0"
+}

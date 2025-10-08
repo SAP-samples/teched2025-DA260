@@ -44,21 +44,29 @@ Question to answer: Was there a rebate in the net sales compared to the list pri
 
 ## Exercises
 
-- Replication "Flow" 
-  - Inbound
-    - HANA
-    - Object Store (not possible in TechEd System)
-  - Outbound
-- Zero Copy
-  - Inbound SDA
-  - Outbound OpenSQL
-  - Data Products (in and out)
+### Ingest
 
-- [Exercise 1 - Install "Product" SAP Data Product ](exercises/ex1/)
-- [Exercise 2 - Replicate Custom CDS View from SAP S/4HANA via Replication Flows to SAP Datasphere](exercises/ex1/)
-- [Exercise 3 - Extend the SAP Data Product using Transformation Flows in SAP Datasphere](exercises/ex2/)
-- [Exercise 4 - Replicate the extended custom Data Product to an extenal Source](exercises/ex4/) 
-- [Exercise 5 - Create custom Data Product in HDLF Space](exercises/ex4/) 
+| Product             | Replication | Federation |
+|---------------------|-------------|------------|
+| SAP Analytics Cloud | [Exercise 1](exercises/ex1/) | [Exercise 3](exercises/ex3/)|
+| SAP Datasphere      | [Exercise 2](exercises/ex2/)  | [Exercise 4](exercises/ex4/) |
+
+
+- [Exercise 1 - Replicate data into SAC ](exercises/ex1/)
+- [Exercise 2 - Replicate data into SAP Datasphere with Replication Flows](exercises/ex2/)
+- [Exercise 3 - Live connection in SAC](exercises/ex3/)
+- [Exercise 4 - Fedeeration in Datasphere with Remote Tables](exercises/ex4/) 
+
+### Egress
+
+| Product             | Pull | Push |
+|---------------------|-------------|------------|
+| SAP Analytics Cloud | [Exercise 5](exercises/ex8/) | not available|
+| SAP Datasphere      | [Exercise 6](exercises/ex2/)  | [Exercise 7](exercises/ex4/) |
+
+- [Exercise 5 - Outbound pull in SAC with oData](exercises/ex6/) 
+- [Exercise 6 - Outbound pull of data in Datasphere with JDBC or oData](exercises/ex6/) 
+- [Exercise 7 - Outbound push in Datasphere with Replication FLows](exercises/ex7/) 
 
 **IMPORTANT**
 
