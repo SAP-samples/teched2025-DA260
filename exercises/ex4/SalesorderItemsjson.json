@@ -1,0 +1,314 @@
+{
+  "definitions": {
+    "SalesOrderItems": {
+      "kind": "entity",
+      "elements": {
+        "NodeKey": {
+          "@EndUserText.label": "NodeKey",
+          "type": "cds.String",
+          "key": true,
+          "notNull": true,
+          "length": 36
+        },
+        "ParentKey": {
+          "@EndUserText.label": "ParentKey",
+          "type": "cds.String",
+          "length": 36
+        },
+        "SoItemPos": {
+          "@EndUserText.label": "SoItemPos",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ProductGuid": {
+          "@EndUserText.label": "ProductGuid",
+          "type": "cds.String",
+          "length": 36
+        },
+        "NoteGuid": {
+          "@EndUserText.label": "NoteGuid",
+          "type": "cds.String",
+          "length": 36
+        },
+        "CurrencyCode": {
+          "@EndUserText.label": "CurrencyCode",
+          "type": "cds.String",
+          "length": 5
+        },
+        "GrossAmount": {
+          "@EndUserText.label": "GrossAmount",
+          "type": "cds.DecimalFloat"
+        },
+        "NetAmount": {
+          "@EndUserText.label": "NetAmount",
+          "type": "cds.DecimalFloat"
+        },
+        "TaxAmount": {
+          "@EndUserText.label": "TaxAmount",
+          "type": "cds.DecimalFloat"
+        },
+        "ItemAtpStatus": {
+          "@EndUserText.label": "ItemAtpStatus",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OpItemPos": {
+          "@EndUserText.label": "OpItemPos",
+          "type": "cds.String",
+          "length": 10
+        },
+        "Dataaging": {
+          "@EndUserText.label": "Dataaging",
+          "type": "cds.Date"
+        },
+        "Dummy": {
+          "@EndUserText.label": "Dummy",
+          "type": "cds.String",
+          "length": 1
+        }
+      },
+      "@EndUserText.label": "SalesOrderItems",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "ACTIVE"
+        },
+        "deltaFromEntities": [
+          "SalesOrderItems_Delta"
+        ]
+      },
+      "@DataWarehouse.consumption.external": false,
+      "query": {
+        "SELECT": {
+          "from": {
+            "ref": [
+              "SalesOrderItems_Delta"
+            ]
+          },
+          "columns": [
+            {
+              "ref": [
+                "NodeKey"
+              ]
+            },
+            {
+              "ref": [
+                "ParentKey"
+              ]
+            },
+            {
+              "ref": [
+                "SoItemPos"
+              ]
+            },
+            {
+              "ref": [
+                "ProductGuid"
+              ]
+            },
+            {
+              "ref": [
+                "NoteGuid"
+              ]
+            },
+            {
+              "ref": [
+                "CurrencyCode"
+              ]
+            },
+            {
+              "ref": [
+                "GrossAmount"
+              ]
+            },
+            {
+              "ref": [
+                "NetAmount"
+              ]
+            },
+            {
+              "ref": [
+                "TaxAmount"
+              ]
+            },
+            {
+              "ref": [
+                "ItemAtpStatus"
+              ]
+            },
+            {
+              "ref": [
+                "OpItemPos"
+              ]
+            },
+            {
+              "ref": [
+                "Dataaging"
+              ]
+            },
+            {
+              "ref": [
+                "Dummy"
+              ]
+            }
+          ],
+          "where": [
+            {
+              "ref": [
+                "Change_Type"
+              ]
+            },
+            "not",
+            "in",
+            {
+              "list": [
+                {
+                  "val": "D"
+                },
+                {
+                  "val": "M"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        },
+        {
+          "#": "SQL_DATA_SOURCE"
+        }
+      ],
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": null
+        }
+      }
+    },
+    "SalesOrderItems_Delta": {
+      "kind": "entity",
+      "elements": {
+        "NodeKey": {
+          "@EndUserText.label": "NodeKey",
+          "type": "cds.String",
+          "key": true,
+          "notNull": true,
+          "length": 36
+        },
+        "ParentKey": {
+          "@EndUserText.label": "ParentKey",
+          "type": "cds.String",
+          "length": 36
+        },
+        "SoItemPos": {
+          "@EndUserText.label": "SoItemPos",
+          "type": "cds.String",
+          "length": 10
+        },
+        "ProductGuid": {
+          "@EndUserText.label": "ProductGuid",
+          "type": "cds.String",
+          "length": 36
+        },
+        "NoteGuid": {
+          "@EndUserText.label": "NoteGuid",
+          "type": "cds.String",
+          "length": 36
+        },
+        "CurrencyCode": {
+          "@EndUserText.label": "CurrencyCode",
+          "type": "cds.String",
+          "length": 5
+        },
+        "GrossAmount": {
+          "@EndUserText.label": "GrossAmount",
+          "type": "cds.DecimalFloat"
+        },
+        "NetAmount": {
+          "@EndUserText.label": "NetAmount",
+          "type": "cds.DecimalFloat"
+        },
+        "TaxAmount": {
+          "@EndUserText.label": "TaxAmount",
+          "type": "cds.DecimalFloat"
+        },
+        "ItemAtpStatus": {
+          "@EndUserText.label": "ItemAtpStatus",
+          "type": "cds.String",
+          "length": 1
+        },
+        "OpItemPos": {
+          "@EndUserText.label": "OpItemPos",
+          "type": "cds.String",
+          "length": 10
+        },
+        "Dataaging": {
+          "@EndUserText.label": "Dataaging",
+          "type": "cds.Date"
+        },
+        "Dummy": {
+          "@EndUserText.label": "Dummy",
+          "type": "cds.String",
+          "length": 1
+        },
+        "Change_Type": {
+          "@EndUserText.label": "Change_Type",
+          "type": "cds.String",
+          "notNull": true,
+          "length": 1,
+          "default": {
+            "val": "I"
+          }
+        },
+        "Change_Date": {
+          "@EndUserText.label": "Change_Date",
+          "type": "cds.Timestamp",
+          "notNull": true,
+          "default": {
+            "func": "CURRENT_UTCTIMESTAMP"
+          }
+        }
+      },
+      "@EndUserText.label": "SalesOrderItems",
+      "@DataWarehouse.delta": {
+        "type": {
+          "#": "UPSERT"
+        },
+        "dateTimeElement": {
+          "=": "Change_Date"
+        },
+        "modeElement": {
+          "=": "Change_Type"
+        }
+      },
+      "@DataWarehouse.enclosingObject": "SalesOrderItems",
+      "@ObjectModel.modelingPattern": {
+        "#": "DATA_STRUCTURE"
+      },
+      "@ObjectModel.supportedCapabilities": [
+        {
+          "#": "DATA_STRUCTURE"
+        },
+        {
+          "#": "SQL_DATA_SOURCE"
+        }
+      ],
+      "_meta": {
+        "dependencies": {
+          "folderAssignment": null
+        }
+      }
+    }
+  },
+  "version": {
+    "csn": "1.0"
+  },
+  "meta": {
+    "creator": "CDS Compiler v1.19.2"
+  },
+  "$version": "1.0"
+}
