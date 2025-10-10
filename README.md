@@ -25,11 +25,7 @@ Question to answer: Was there a rebate in the net sales compared to the list pri
 
   **Important Note**: The Datasphere landscape being used during SAP TechEd will be available until **November 19th**. Until November 19th you can re-use your existing content in your user space and finalize the exercises in case you did not have sufficient time during the hands-on workshop at SAP TechEd. 
   
-* [Session-1 on November 2nd] [Access to SAP Datasphere tenant](https://academy.eu10.hcs.cloud.sap/dwaas-ui/index.html#/home)
-  * User-Id: xxx + last 2 digits that have been provided to you onsite at TechEd
-  * Tenant access password: xxx
-
-* [Session-2 on November 3rd] [Access to SAP Datasphere tenant](https://academy.eu10.hcs.cloud.sap/dwaas-ui/index.html#/home)
+* [Access to SAP Datasphere tenant](https://trial-bdc-datasphere-3.eu10.hcs.cloud.sap/)
   * User-Id: xxx + last 2 digits that have been provided to you onsite at TechEd
   * Tenant access password: xxx
 
