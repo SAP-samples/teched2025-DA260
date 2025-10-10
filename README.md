@@ -18,6 +18,38 @@ Question to answer: Was there a rebate in the net sales compared to the list pri
 * Time: 2-4 h
 * Finished Product: A view that shows the potential rebate per sales order line item. 
 
+## ToDO:
+- [ ] Write Start page 1 -> all
+- [ ] Proof read Start page -> Leona
+- [ ] Write Exercise 1 -> David
+- [ ] Proof read Exercise 1 -> Leona
+- [ ] Test Exercise 1 -> Leona
+- [ ] Write Exercise 2 -> David
+- [ ] Proof read Exercise 2 -> Leona
+- [ ] Test Exercise 2 -> Leona
+- [ ] Write Exercise 3 -> Daniel
+- [ ] Proof read Exercise 3 -> Leona
+- [ ] Test Exercise 3 -> Leona
+- [x] Write Exercise 4 -> Hannes
+- [ ] Proof read Exercise 4 -> Leona 
+- [ ] Test Exercise 4 -> Leona
+- [x] Write Exercise 5 -> Hannes
+- [ ] Proof read Exercise 5 -> Leona
+- [ ] Test Exercise 5 -> Leona
+- [ ] Write Exercise 6 -> David
+- [ ] Proof read Exercise 6 -> Leona
+- [ ] Test Exercise 6 -> Leona
+- [ ] Write Exercise 7 -> David
+- [ ] Proof read Exercise 7 -> Leona
+- [ ] Test Exercise 7 -> Leona
+- [x] Write Exercise 8 -> Hannes
+- [ ] Proof read Exercise 8 -> Leona
+- [ ] Test Exercise 8 -> Leona
+- [ ] Write Exercise 9 -> Daniel
+- [ ] Proof read Exercise 9 -> Leona
+- [ ] Test Exercise 9 -> Leona
+
+
 ## Requirements
 
 * Google Chrome
@@ -44,8 +76,8 @@ Question to answer: Was there a rebate in the net sales compared to the list pri
 
 | Product             | Replication | Federation | Push |
 |---------------------|-------------|------------|------------ |
-| SAP Analytics Cloud | [Exercise 1](exercises/ex1/) | [Exercise 2](exercises/ex2/)| |  |
-| SAP Datasphere      | [Exercise 3](exercises/ex3/)  | [Exercise 4](exercises/ex4/) | [Exercise 5](exercises/ex5/) | |
+| SAP Analytics Cloud | [Exercise 1](exercises/ex1/) ToDo: David| [Exercise 2](exercises/ex2/) ToDo: David| |  |
+| SAP Datasphere      | [Exercise 3](exercises/ex3/) ToDo: Daniel | [Exercise 4](exercises/ex4/) To Validate: Leona | [Exercise 5](exercises/ex5/) | |
 
 
 - [Exercise 1 - Replicate data into SAC ](exercises/ex1/)
@@ -58,8 +90,8 @@ Question to answer: Was there a rebate in the net sales compared to the list pri
 
 | Product             | Pull | Push |
 |---------------------|-------------|------------|
-| SAP Analytics Cloud | [Exercise 6](exercises/ex6/) | [Exercise 7](exercises/ex7/) |
-| SAP Datasphere      | [Exercise 8](exercises/ex8/) | [Exercise 9](exercises/ex9/) |
+| SAP Analytics Cloud | [Exercise 6](exercises/ex6/) ToDo: David| [Exercise 7](exercises/ex7/) ToDo: David|
+| SAP Datasphere      | [Exercise 8](exercises/ex8/) To Validate: Leona| [Exercise 9](exercises/ex9/) ToDo: Daniel|
 
 - [Exercise 6 - Outbound pull in SAC with oData](exercises/ex6/) 
 - [Exercise 7 - Outbound push in SAC with oData](exercises/ex6/) 
