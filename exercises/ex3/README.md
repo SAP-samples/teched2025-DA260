@@ -1,4 +1,4 @@
-# Exercise 1 - Replicate CDS Views from SAP S/4HANA via Replication Flows to SAP Datasphere
+# Exercise 3 - Replicate Files from Google Cloud Storage (GCS) via Replication Flows to SAP Datasphere
 
 This exercise involves creating a Replication Flow that reads data from a SAP S/4 HANA CDS Views and replicates this data into SAP Datasphere local tables with delta capture as target. This process involves modelling of a replication flow and configuring it to consume a pre-existing S4 HANA connection and pick the required source objects to copy them into new target tables in SAP Datasphere.
 
@@ -17,48 +17,53 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
 
 1.	Open your SAP Datasphere using the provided credentials. Your user is associated with a default space that has the same name as your user where you can work and create your various data artifacts like the replication flow.
    
-    ![ex_01_01](images/ex_01_01.png)
+    ![ex_03_01](images/ex_03_01.png)
 
 2.	Click on the Data Builder to see the Data Builder homepage as shown below and scroll the horizontal scroll bar to the middle until you see *New Replication Flow* tile.
    
-    ![ex_01_02](images/ex_01_02.png)
+    ![ex_03_02](images/ex_03_02.png)
 
 3.	Click on *New Replication Flow* tile to launch the creation of new a replication flow.
    
-    ![ex_01_03](images/ex_01_03.png)
+    ![ex_03_03](images/ex_01_03.png)
 
 4.	Click on *Select Source Connection* button that launches a popup window to select the source connection.
 
-    ![ex_01_04](images/ex_01_04.png)
+    ![ex_03_04](images/ex_03_04.png)
 
-5.	Select *S4_HANA* which is using connection type *ABAP* from the list of available connections. It will update the connection and *Select Source Container* button is auto selected for next step on the bottom of the screen highlighted in blue.
+5.	Select GCS which is using connection type GCS from the list of the available connections. It will update the connection and Select Source Container button is auto selected for the next step on the bottom of the screen highlighted in blue.
 
-    ![ex_01_05](images/ex_01_05.png)
+    ![ex_03_05](images/ex_03_05.png)
 
-6.	Click on “Select Source Container” button and it launches the *Select Container* popup. Then click on the *CDS – CDS Views* Container.
+6.	Click on ‘Select Source Container’ button and it launches the Select Container popup. Then click on the DA260.
 
-    ![ex_01_06](images/ex_01_06.png)
+    ![ex_03_06](images/ex_03_06.png)
 
-7.	On selecting the *CDS – CDS Views*, you will see that the container is updated in Replication Flow upper left part of the Data Builder screen
+7.	On selecting DA260, you will see that the container is updated  in the Replication Flow upper left part of the Data Builder screen.
 
-    ![ex_01_07](images/ex_01_07.png)
+    ![ex_03_07](images/ex_03_07.png)
 
-8.	Now click on *Add Source Objects* button that launches *Select Source Objects* popup as shown below. Scroll down in the tree hierarchy on the left and select *TMP – Local Objects*. In a next step, please enter “Z_CDS” in search bar and click enter to filter for the CDS Views that are required for this exercise. Now, please select the following CDS Views as shown below:
+8.	Now click on Add Source Objects button that launches Select Source Objects as shown below. This will open a popup window which lists all the files that are in that object. Now, please select all the following csv files as shown below::
    <br>
-   - Z_CDS_EPM_BUPA <br>
-   - Z_CDS_EPM_PD  <br>
-   - Z_CDS_EPM_SO  <br>
-   - Z_CDS_EPM_SO_I  <br>
+-   Products <br>
+-	ProductTexts <br>
+-	Addresses <br>
+-	Employees <br>
+-	SalesOrders <br>
+-	BusinessPartners <br>
+-	ProductCategories <br>
+-	ProductCategoryText <br>
+
 
    <br>
 
-![ex_01_07](images/ex_01_08.png)
+![ex_03_08](images/ex_03_08.png)
     
-9.	Click on *Next* button to see the updated popup window
+9.	After selecting ‘Products’, a new window will be open, you need to select the file named ‘Products.csv’ . Click on Next button to see the updated popup window.
 
-    ![ex_01_09](images/ex_01_09.png)
+    ![ex_01_09](images/ex_03_09.png)
 
-10.	Click on *Add Selection* that starts the fetching of source objects details from the source
+10.	Click on Add Selection that starts the fetching of source objects details from the source.
 
     ![ex_01_10](images/ex_01_10.png)
 
