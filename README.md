@@ -21,7 +21,7 @@ Question to answer: Was there a rebate in the net sales compared to the list pri
 * Time: 2-4 h
 * Finished Product: A view that shows the potential rebate per sales order line item. 
 
-## ToDO:
+## ToDo:
 - [ ] Write Start page 1 -> all
 - [ ] Proof read Start page -> Leona
 - [ ] Write Exercise 1 -> David
@@ -30,15 +30,15 @@ Question to answer: Was there a rebate in the net sales compared to the list pri
 - [ ] Write Exercise 2 -> David
 - [ ] Proof read Exercise 2 -> Leona
 - [ ] Test Exercise 2 -> Leona
-- [ ] Write Exercise 3 -> Daniel
-- [ ] Proof read Exercise 3 -> Leona
-- [ ] Test Exercise 3 -> Leona
+- [x] Write Exercise 3 -> Leona
+- [ ] Proof read Exercise 3 -> Daniel
+- [ ] Test Exercise 3 -> Daniel
 - [x] Write Exercise 4 -> Hannes
-- [ ] Proof read Exercise 4 -> Leona 
-- [ ] Test Exercise 4 -> Leona
+- [x] Proof read Exercise 4 -> Leona 
+- [x] Test Exercise 4 -> Leona
 - [x] Write Exercise 5 -> Hannes
-- [ ] Proof read Exercise 5 -> Leona
-- [ ] Test Exercise 5 -> Leona
+- [x] Proof read Exercise 5 -> Leona
+- [x] Test Exercise 5 -> Leona
 - [ ] Write Exercise 6 -> David
 - [ ] Proof read Exercise 6 -> Leona
 - [ ] Test Exercise 6 -> Leona
@@ -48,9 +48,9 @@ Question to answer: Was there a rebate in the net sales compared to the list pri
 - [x] Write Exercise 8 -> Hannes
 - [ ] Proof read Exercise 8 -> Leona
 - [ ] Test Exercise 8 -> Leona
-- [ ] Write Exercise 9 -> Daniel
-- [ ] Proof read Exercise 9 -> Leona
-- [ ] Test Exercise 9 -> Leona
+- [x] Write Exercise 9 -> Leona
+- [ ] Proof read Exercise 9 -> Daniel
+- [ ] Test Exercise 9 -> Daniel
 
 
 ## Requirements

@@ -4,7 +4,8 @@ In this exercise we will build on the OpenSQL created in [Exercise 5](../ex5/).
 The idea is to allow to pull data through the same OpenSQL endpoint and in addition provide an oData endpoint. 
 
 
-Step by Step guide:
+**Step-by-step guide:**
+
 Refer to the provided solution below for a detailed, step-by-step guide to complete Exercise 8.
 
 1.	In order to provide data from SAP Datasphere space into an OpenSQL schema, we need to create a view that is flagged for consumption. This will grant the OpenSQL user we created in [Exercise 5](../ex5/) the right to read from the view. Go to the Data Builder of your space and create a graphical view based on a table that created before. Click on "New Graphical View", drag for example the businesspartner table (1) from the repository into the canvas (2), give the View a Name (e.g. Business Partner Export)(3), turn on the Expose for consumption (4) and save and deploy (5). 

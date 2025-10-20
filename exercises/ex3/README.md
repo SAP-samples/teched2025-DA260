@@ -1,25 +1,29 @@
 # Exercise 3 - Replicate Files from Google Cloud Storage (GCS) via Replication Flows to SAP Datasphere 
 
-This exercise involves creating a Replication Flow that reads data from a SAP S/4 HANA CDS Views and replicates this data into SAP Datasphere local tables with delta capture as target. This process involves modelling of a replication flow and configuring it to consume a pre-existing S4 HANA connection and pick the required source objects to copy them into new target tables in SAP Datasphere.
+This exercise involves creating a Replication Flow that reads data from Google Cloud Storage (GCS) CSV Files and replicates this data into SAP Datasphere local tables. This process involves modelling of a replication flow and configuring it to consume a pre-existing GCS connection and pick the required source objects to copy them into new target tables in SAP Datasphere.
 
-In this exercise we will make use of connections that are pre-delivered in your SAP Datasphere instance, e.g. the SAP S/4HANA on Premise source system. You can check the the S/4HANA connection in the “Connections” application inside your SAP Datasphere space.
+In this exercise we will make use of connections that are pre-delivered in your SAP Datasphere instance, e.g. the Google Cloud Storage (GCS). You can check the the GCS connection in the “Connections” application inside your SAP Datasphere space.
 
-The Task is to load the CDS Views for
-- Business Partner -  Z_CDS_EPM_BUPA
-- Product - Z_CDS_EPM_PD
-- Sales Order - Z_CDS_EPM_SO
-- Sales Order Items - Z_CDS_EPM_SO_I
+The Task is to load the CSV Views from Google Cloud Storage for:
+-   Products
+-	ProductTexts
+-	Addresses
+-	Employees
+-	SalesOrders
+-	BusinessPartners
+-	ProductCategories
+-	ProductCategoryText
 
-in delta mode into Datasphere. The delta mode is required to setup the historic price derivation in the transformation flow later
+into SAP Datasphere. 
 
-Step by Step guide:
-Refer to the provided solution below for a detailed, step-by-step guide to complete Exercise 1.
+Step-by-step guide:
+Refer to the provided solution below for a detailed, step-by-step guide to complete Exercise 3.
 
 1.	Open your SAP Datasphere using the provided credentials. Your user is associated with a default space that has the same name as your user where you can work and create your various data artifacts like the replication flow.
    
     ![ex_03_01](images/ex_03_01.png)
 
-2.	Click on the Data Builder to see the Data Builder homepage as shown below and you can see *New Replication Flow* tile.
+2.	Click on the *Data Builde*r to see the Data Builder homepage as shown below and you can see *New Replication Flow* tile.
    
     ![ex_03_02](images/ex_03_02.png)
 
@@ -31,7 +35,7 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
 
     ![ex_03_04](images/ex_03_04.png)
 
-5.	Select GCS (Google Cloud Storage) which is using connection type GCS from the list of the available connections. It will update the connection and *Select Source Container* button is auto selected for the next step on the bottom of the screen highlighted in blue.
+5.	Select *GCS (Google Cloud Storage)* which is using connection type GCS from the list of the available connections. It will update the connection and *Select Source Container* button is auto selected for the next step on the bottom of the screen highlighted in blue.
 
     ![ex_03_05](images/ex_03_05.png)
 
