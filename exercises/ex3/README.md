@@ -1,4 +1,4 @@
-# Exercise 3 - Replicate Files from Google Cloud Storage (GCS) via Replication Flows to SAP Datasphere
+# Exercise 3 - Replicate Files from Google Cloud Storage (GCS) via Replication Flows to SAP Datasphere 
 
 This exercise involves creating a Replication Flow that reads data from a SAP S/4 HANA CDS Views and replicates this data into SAP Datasphere local tables with delta capture as target. This process involves modelling of a replication flow and configuring it to consume a pre-existing S4 HANA connection and pick the required source objects to copy them into new target tables in SAP Datasphere.
 
