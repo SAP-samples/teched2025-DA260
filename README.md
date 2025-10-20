@@ -2,11 +2,14 @@
 
 ## Description
 
-The SAP Business Data Cloud solution enables smooth integration of SAP and third-party data. In this hands-on session, explore connectivity features in the SAP Datasphere and SAP Business Data Cloud solutions, including setup, data acquisition, integration, and transformation—ideal for data engineers and architects.
+The SAP Business Data Cloud solution enables smooth integration of SAP and third-party data. In this hands-on session, you will explore different connectivity features in SAP Business Data Cloud (incl. SAP Datasphere & SAP Analytics Cloud), including setup, data acquisition, integration, and transformation—ideal for data engineers and architects.
 
-This hands-on workshop will give you the opportunity to try out the different integration technologies that BDC has to offer. 
+This hands-on workshop will give you the opportunity to try out the different integration technologies that is part of the SAP Business Data Cloud offering. 
 
-SAP Businees Data Cloud inlcuded SAP Datasphere, a comprehensive data service acting as a business data fabric that enables every data professional to deliver seamless and scalable access to mission-critical business data. SAP Datasphere enables access to authoritative data by accelerating time-to-value by automatically reusing the semantical definitions and associations from SAP applications. SAP Datasphere enriches all data projects by harmonizing heterogeneous data into a business semantic model of your diverse data landscape. On top it helps to simplify the data landscape and accesses all your data across hybrid and cloud environments no matter where it resides.
+SAP Businees Data Cloud inlcudes SAP Datasphere, a comprehensive data service acting as a business data fabric that enables every data professional to deliver seamless and scalable access to mission-critical business data. SAP Datasphere enables access to authoritative data by accelerating time-to-value by automatically reusing the semantical definitions and associations from SAP applications. SAP Datasphere enriches all data projects by harmonizing heterogeneous data into a business semantic model of your diverse data landscape. On top it helps to simplify the data landscape and accesses all your data across hybrid and cloud environments no matter where it resides.
+
+Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud, which includes various options to perform data integration & acquistion with a focus on self-service for business users to easily acquire data from various different sources.
+
 
 ## Overview
 
@@ -61,18 +64,12 @@ Question to answer: Was there a rebate in the net sales compared to the list pri
   * User-Id: xxx + last 2 digits that have been provided to you onsite at TechEd
   * Tenant access password: xxx
 
-* Basic knowhow about the usage and integration of data from SAP S/4HANA
+* Basic knowhow about the usage and integration of data in SAP Business Data Cloud 
 * General understanding of Enterprise Data Management and ETL (Extraction, Transformation, Load)
-
-## Deep Dives
-
-- [Deep Dive 0 - Introduction to the Enterprise Procurement Model (EPM) in SAP S/4HANA](exercises/dd0/)
-- [Deep Dive 1 - ABAP CDS View based data extraction from SAP S/4HANA on-premise](exercises/dd1/)
-- [Deep Dive 2 - Introduction to Replication Flows in SAP Datasphere](exercises/dd2/)
 
 ## Exercises
 
-### Ingest
+### Inbound integration
 
 | Product             | Replication | Federation | Push |
 |---------------------|-------------|------------|------------ |
@@ -86,7 +83,7 @@ Question to answer: Was there a rebate in the net sales compared to the list pri
 - [Exercise 4 - Federation in Datasphere with Remote Tables](exercises/ex4/) 
 - [Exercise 5 - Push data into Datasphere with OpenSQL](exercises/ex5/) 
 
-### Egress
+### Outbound integration
 
 | Product             | Pull | Push |
 |---------------------|-------------|------------|
