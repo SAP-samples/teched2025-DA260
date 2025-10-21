@@ -2,15 +2,18 @@
 
 ## Description
 
-The SAP Business Data Cloud solution enables smooth integration of SAP and third-party data. In this hands-on session, explore connectivity features in the SAP Datasphere and SAP Business Data Cloud solutions, including setup, data acquisition, integration, and transformation—ideal for data engineers and architects.
+The SAP Business Data Cloud (BDC) solution enables smooth integration of SAP and third-party data. In this hands-on session, you will explore different connectivity features in SAP Business Data Cloud (incl. SAP Datasphere & SAP Analytics Cloud), including setup, data acquisition, integration, and transformation—ideal for data engineers and architects.
 
-This hands-on workshop will give you the opportunity to try out the different integration technologies that BDC has to offer. 
+This hands-on workshop will give you the opportunity to try out the different integration technologies that are part of the SAP Business Data Cloud offering. 
 
-SAP Businees Data Cloud inlcuded SAP Datasphere, a comprehensive data service acting as a business data fabric that enables every data professional to deliver seamless and scalable access to mission-critical business data. SAP Datasphere enables access to authoritative data by accelerating time-to-value by automatically reusing the semantical definitions and associations from SAP applications. SAP Datasphere enriches all data projects by harmonizing heterogeneous data into a business semantic model of your diverse data landscape. On top it helps to simplify the data landscape and accesses all your data across hybrid and cloud environments no matter where it resides.
+SAP Businees Data Cloud includes SAP Datasphere, a comprehensive data service acting as a business data fabric that enables every data professional to deliver seamless, and scalable access to mission-critical business data. SAP Datasphere enables access to authoritative data by accelerating time-to-value by automatically reusing the semantical definitions and associations from SAP applications. SAP Datasphere enriches all data projects by harmonizing heterogeneous data into a business semantic model of your diverse data landscape. On top, it helps to simplify the data landscape and accesses all your data across hybrid and cloud environments no matter where it resides.
+
+Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud, which includes various options to perform data integration & acquistion with a focus on self-service for business users to easily acquire data from various different sources.
+
 
 ## Overview
 
-MyCompany sales bikes to customers. In the source the list price is stored in the product master data. The sales order items only contain the net sales and quantity. The list price, that was valid at the time of sales, is not stored. The goal of the exercise is, to create a data model that stores the historic list price. For that a two stage data model is used. The data will come in by a Replication Flow and be staged by a Transformation Flow. 
+*MyCompany* sales bikes to customers. In the source the list price is stored in the product master data. The sales order items only contain the net sales and quantity. The list price, that was valid at the time of sales, is not stored. The goal of the exercise is, to create a data model that stores the historic list price. For that a two stage data model is used. The data will come in by a Replication Flow and be staged by a Transformation Flow. 
 
 Question to answer: Was there a rebate in the net sales compared to the list price of the product master data?
 
@@ -18,24 +21,24 @@ Question to answer: Was there a rebate in the net sales compared to the list pri
 * Time: 2-4 h
 * Finished Product: A view that shows the potential rebate per sales order line item. 
 
-## ToDO:
+## ToDo:
 - [ ] Write Start page 1 -> all
-- [ ] Proof read Start page -> Leona
+- [x] Proof read Start page -> Leona
 - [ ] Write Exercise 1 -> David
 - [ ] Proof read Exercise 1 -> Leona
 - [ ] Test Exercise 1 -> Leona
 - [ ] Write Exercise 2 -> David
 - [ ] Proof read Exercise 2 -> Leona
 - [ ] Test Exercise 2 -> Leona
-- [ ] Write Exercise 3 -> Daniel
-- [ ] Proof read Exercise 3 -> Leona
-- [ ] Test Exercise 3 -> Leona
+- [x] Write Exercise 3 -> Leona
+- [ ] Proof read Exercise 3 -> Daniel
+- [ ] Test Exercise 3 -> Daniel
 - [x] Write Exercise 4 -> Hannes
-- [ ] Proof read Exercise 4 -> Leona 
-- [ ] Test Exercise 4 -> Leona
+- [x] Proof read Exercise 4 -> Leona 
+- [x] Test Exercise 4 -> Leona
 - [x] Write Exercise 5 -> Hannes
-- [ ] Proof read Exercise 5 -> Leona
-- [ ] Test Exercise 5 -> Leona
+- [x] Proof read Exercise 5 -> Leona
+- [x] Test Exercise 5 -> Leona
 - [ ] Write Exercise 6 -> David
 - [ ] Proof read Exercise 6 -> Leona
 - [ ] Test Exercise 6 -> Leona
@@ -43,11 +46,11 @@ Question to answer: Was there a rebate in the net sales compared to the list pri
 - [ ] Proof read Exercise 7 -> Leona
 - [ ] Test Exercise 7 -> Leona
 - [x] Write Exercise 8 -> Hannes
-- [ ] Proof read Exercise 8 -> Leona
-- [ ] Test Exercise 8 -> Leona
-- [ ] Write Exercise 9 -> Daniel
-- [ ] Proof read Exercise 9 -> Leona
-- [ ] Test Exercise 9 -> Leona
+- [x] Proof read Exercise 8 -> Leona
+- [x] Test Exercise 8 -> Leona
+- [x] Write Exercise 9 -> Leona
+- [ ] Proof read Exercise 9 -> Daniel
+- [ ] Test Exercise 9 -> Daniel
 
 
 ## Requirements
@@ -55,24 +58,18 @@ Question to answer: Was there a rebate in the net sales compared to the list pri
 * Google Chrome
 * Access to this GitHub repository
 
-  **Important Note**: The Datasphere landscape being used during SAP TechEd will be available until **November 19th**. Until November 19th you can re-use your existing content in your user space and finalize the exercises in case you did not have sufficient time during the hands-on workshop at SAP TechEd. 
+  **Important Note**: The Datasphere landscape being used during SAP TechEd will be available until **November 19th**. Until November 19th, you can re-use your existing content in your user space and finalize the exercises in case you did not have sufficient time during the hands-on workshop at SAP TechEd. 
   
 * [Access to SAP Datasphere tenant](https://trial-bdc-datasphere-3.eu10.hcs.cloud.sap/)
   * User-Id: xxx + last 2 digits that have been provided to you onsite at TechEd
   * Tenant access password: xxx
 
-* Basic knowhow about the usage and integration of data from SAP S/4HANA
-* General understanding of Enterprise Data Management and ETL (Extraction, Transformation, Load)
-
-## Deep Dives
-
-- [Deep Dive 0 - Introduction to the Enterprise Procurement Model (EPM) in SAP S/4HANA](exercises/dd0/)
-- [Deep Dive 1 - ABAP CDS View based data extraction from SAP S/4HANA on-premise](exercises/dd1/)
-- [Deep Dive 2 - Introduction to Replication Flows in SAP Datasphere](exercises/dd2/)
+* Basic know-how about the usage and integration of data in SAP Business Data Cloud. 
+* General understanding of Enterprise Data Management and ETL (Extraction, Transformation, Load).
 
 ## Exercises
 
-### Ingest
+### Inbound integration
 
 | Product             | Replication | Federation | Push |
 |---------------------|-------------|------------|------------ |
@@ -86,7 +83,7 @@ Question to answer: Was there a rebate in the net sales compared to the list pri
 - [Exercise 4 - Federation in Datasphere with Remote Tables](exercises/ex4/) 
 - [Exercise 5 - Push data into Datasphere with OpenSQL](exercises/ex5/) 
 
-### Egress
+### Outbound integration
 
 | Product             | Pull | Push |
 |---------------------|-------------|------------|
@@ -109,7 +106,6 @@ Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) to understand the contribut
 Please read the [SAP Open Source Code of Conduct](https://github.com/SAP-samples/.github/blob/main/CODE_OF_CONDUCT.md).
 
 ## How to obtain support
-
 Support for the content in this repository is available during the actual time of the online session for which this content has been designed. Otherwise, you may request support via the [Issues](../../issues) tab.
 
 ## License
