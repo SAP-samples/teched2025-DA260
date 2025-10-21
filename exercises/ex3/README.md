@@ -80,6 +80,7 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
     ![ex_03_12](images/ex_03_12.png)
 
 12.	We see some red notifications that are being shown on the left of each of the Source Objects, you need to *Select Configure Schema*, then *Apply Changes* and select the check box for the *Primary Key* of the source object and click the *Save* button.
+Please note that each of the source objects should have an *ID* column, which you can define as primary key column.
 
     ![ex_03_13](images/ex_03_13.png)
     ![ex_03_14](images/ex_03_14.png)
@@ -143,7 +144,7 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
       You can now see the data that was replicated from Google Cloud Storage containing Business Partners information on the bottom of your screen
       
 
-**This concludes the Exercise 1 where the objective is to replicate data from Google Cloud Storage into SAP Datasphere.**
+**This concludes the Exercise 3 where the objective is to replicate data from Google Cloud Storage into SAP Datasphere.**
       
 
 Please click here to continue with [Exercise 4 - Federation in Datasphere with Remote Tables](../ex4/)
