@@ -1,8 +1,8 @@
 # Exercise 9 - Replicate Local Tables from SAP Datasphere to Google Big Query (GBQ) with Replication Flows
 
-This exercise involves creating a Replication Flow that reads data from SAP Datasphere and replicates this data into Google Big Query (GBQ) local tables. This process involves modelling of a replication flow and configuring it to consume a pre-existing GBQ connection and pick the required source objects to copy them into new target tables in SAP Datasphere.
+This exercise involves creating a Replication Flow that reads data from SAP Datasphere local tables and replicates this data into Google BigQuery (GBQ). This process involves modelling of a replication flow and configuring it to consume a pre-existing GBQ connection and pick the required source objects to replicate them into new target tables in Google BigQuery.
 
-The Task is to load the local table for:
+The Task is to load the SAP Datasphere local table for:
 - BusinessPartnersOpenSQL
 
 Step by Step guide:
@@ -24,7 +24,7 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
 
     ![ex_09_04](images/ex_09_04.png)
 
-    Select SAP Datasphere which is using connection type HANA from the list of the available connections. It will update the connection and after it you need to select Add Source Objects button which is auto selected for the next step on the bottom of the screen highlighted in blue. Please select ‘Add Source Object’.
+    Select SAP Datasphere as source connection, which is technically using connection type HANA from the list of the available connections. It will update the connection and after it you need to select Add Source Objects button which is auto selected for the next step on the bottom of the screen highlighted in blue. Please select ‘Add Source Object’.
 
     ![ex_09_05](images/ex_09_05.png)
 
@@ -32,7 +32,11 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
 
     ![ex_09_06](images/ex_09_06.png)
 
-6. You have the possibility to create projections for each of the csv files, but in this exercise no projections are required and hence you can skip the creation of projections. As a next step, click on the icon adjacent to *Select Target Connection*.
+Note: You can add additional objects into the Replication Flow, but in this exercise we will only replicate one local table from SAP Datasphere to illustrate the general approach.
+Additionally, in this particular case only "Initial Load" is supported when replicating data from the OpenSQL schema. Using delta capaiblities would require to use local tables with delta capture enabled. Also, a lot of other data sources do support native delta capabilities that can be used in a replication such as ABAP-based sources (SAP S74HANA, SPA BW, SAP ECC etc.), databases (e.g. Microsoft SQL, SAP HANA etc.) any additional data sources.
+
+
+6. You have the possibility to create projections for each of the listed objects, but in this exercise no projections are required and hence you can skip the creation of projections. As a next step, click on the icon adjacent to *Select Target Connection*.
 
     ![ex_09_07](images/ex_09_07.png)
 
@@ -48,7 +52,8 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
 
     ![ex_09_11](images/ex_09_11.png)
 
-8.	After this you can click om the three-dot icon to rename the target object. It will open a new popup window, you rename to User1_businessPartnersOpenSQL, and click the ‘Rename’ button. 
+8.	After this you can click om the three-dot icon to rename the target object. It will open a new popup window, you rename to UserX_businessPartnersOpenSQL, where 'X' represents your user id and click the ‘Rename’ button. 
+Example. if you are using user id '10', please use the following name for your target in GBQ: User*10*_businessPartnersOpenSQL
  
 
     ![ex_09_12](images/ex_09_12.png)
@@ -84,6 +89,6 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
 
 
 **This concludes the Exercise 9 where the objective is to replicate data from SAP Datasphere into Google Big Query (GBQ)**
-      
+**Congratulations, you have now completed all exercises of DA260 Hands-On Session. Thank you for your participation and we hope you enjoyed our exercises** 
 
 
