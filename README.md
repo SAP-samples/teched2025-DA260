@@ -24,7 +24,7 @@ Question to answer: Was there a rebate in the net sales compared to the list pri
 ## ToDo:
 - [ ] Write Start page 1 -> all
 - [x] Proof read Start page -> Leona
-- [ ] Write Exercise 1 -> David
+- [x] Write Exercise 1 -> David
 - [ ] Proof read Exercise 1 -> Leona
 - [ ] Test Exercise 1 -> Leona
 - [ ] Write Exercise 2 -> David
