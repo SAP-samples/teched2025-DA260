@@ -5,7 +5,6 @@ In contrast to Datasphere, where replication flows put data into tables that you
 
 Note!  Data acquisition and replication are synonyms.
 
-Teched2025-DA260_Ex1_Games2022
 
 ## Step 0
 
