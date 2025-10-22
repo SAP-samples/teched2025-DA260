@@ -8,23 +8,22 @@ This hands-on workshop will give you the opportunity to try out the different in
 
 SAP Businees Data Cloud includes SAP Datasphere, a comprehensive data service acting as a business data fabric that enables every data professional to deliver seamless, and scalable access to mission-critical business data. SAP Datasphere enables access to authoritative data by accelerating time-to-value by automatically reusing the semantical definitions and associations from SAP applications. SAP Datasphere enriches all data projects by harmonizing heterogeneous data into a business semantic model of your diverse data landscape. On top, it helps to simplify the data landscape and accesses all your data across hybrid and cloud environments no matter where it resides.
 
-Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud, which includes various options to perform data integration & acquistion with a focus on self-service for business users to easily acquire data from various different sources.
-
+Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud, which includes different options to perform data integration & acquistion with a focus on self-service for business users to easily acquire data from various different sources.
 
 ## Overview
 
-*MyCompany* sales bikes to customers. In the source the list price is stored in the product master data. The sales order items only contain the net sales and quantity. The list price, that was valid at the time of sales, is not stored. The goal of the exercise is, to create a data model that stores the historic list price. For that a two stage data model is used. The data will come in by a Replication Flow and be staged by a Transformation Flow. 
+* Learning Goal: Learn how to use various capabilities in SAP Business Data Cloud for integrating data from 3rd party data sources* 
+* Estimated Time: 2-4 h
 
-Question to answer: Was there a rebate in the net sales compared to the list price of the product master data?
+## Disclaimer
 
-* Learning Goal: Learn how to load data in delta with a replication flow and stage them with transformation flow.* 
-* Time: 2-4 h
-* Finished Product: A view that shows the potential rebate per sales order line item. 
+* Your screenshots may look different than those in the exercises, as new releases might include additional features or enhancements.  
+* Some user interface elements might differ from the screenshots used in the exercises. 
 
 ## ToDo:
 - [ ] Write Start page 1 -> all
 - [x] Proof read Start page -> Leona
-- [ ] Write Exercise 1 -> David
+- [x] Write Exercise 1 -> David
 - [ ] Proof read Exercise 1 -> Leona
 - [ ] Test Exercise 1 -> Leona
 - [ ] Write Exercise 2 -> David
@@ -93,7 +92,9 @@ Question to answer: Was there a rebate in the net sales compared to the list pri
 - [Exercise 6 - Outbound pull in SAC with oData](exercises/ex6/) 
 - [Exercise 7 - Outbound push in SAC with oData](exercises/ex6/) 
 - [Exercise 8 - Outbound pull of data in Datasphere with JDBC or oData](exercises/ex8/) 
-- [Exercise 9 - Outbound push in Datasphere with Replication FLows](exercises/ex7/) 
+- [Exercise 9 - Outbound push in Datasphere with Replication FLows](exercises/ex7/)
+
+Have fun :smiley:
 
 **IMPORTANT**
 
