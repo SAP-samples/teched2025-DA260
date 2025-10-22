@@ -18,7 +18,7 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
    
     ![ex_05_01](images/ex_05_01.png)
 
-2.	Navigate in the main menu to* Space Management* and open your space. 
+2.	Navigate in the main menu to *Space Management* and open your space. 
    
     ![ex_05_02](images/ex_05_02.png)
 
