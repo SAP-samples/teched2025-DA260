@@ -3,9 +3,16 @@
 In this exercise we are going to open an SQL end point that can used by external tools to push data into SAP Datasphere.  
 We will create credentials for the external tools to authenticate on SAP Datasphere. We will also learn how to add the pushed entities to the repository. 
 
+### Prerequisite
+You need an SAP Account for this exercise to login to the Database Explorer, in case you don't have one, you can create one with you E-Mail address via [SAP Account](https://www.sap.com/account.html)
 
-**Step-by-step guide:**
-Refer to the provided solution below for a detailed, step-by-step guide to complete Exercise 1.
+Click on "Create your account today" and follow the process. You need to confirm the email address in the mail send to your email account on your personal device. 
+ ![ex_05_00](images/ex_05_00.png)
+
+
+
+### Step-by Step-guide:
+Refer to the provided solution below for a detailed, step-by-step guide to complete Exercise 5.
 
 1.	Open your SAP Datasphere using the provided credentials. Your user is associated with a default space that has the same name as your user where you can work and create your various data artifacts.
    
@@ -27,22 +34,19 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
    
     ![ex_05_05](images/ex_05_05.png)    
 
-6.	(Read Only) The database is protected by a firewall. Any external tool trying to access the database needs to come from a whitelisted IP. In our trial system the user do not have sufficient privileges to modify the IP Whitelist. To modify the IP WHitelist, we need to navigate to System -> Configuration -> IP Allowlist -> Trusted IP. This will show you the list of all trusted IP's.
-   
-    ![ex_05_06](images/ex_05_06.png)    
 
-7. (Read Only) By clicking the *"Add"* button you can add entries to the whitelist. Here you can add single IP's or networks of IP's.
 
-    ![ex_05_06_2](images/ex_05_06_2.png)    
+6.  By selecting the user, we just created and clicking "Open Database Explorer" we use the JDBC connection. 
+    ![ex_05_07](images/ex_05_07.png)    
 
-8. Going back to the Space Management, by selecting the user, we just created and clicking "Open Database Explorer" we use the JDBC connection. Here the Database explorer is acting as the external tool. The DB Explorer is as SAP tool integrated into our landscape, so that the connection details get pre-populated for you, for other tools they need to manually transferred to create the connection. Enter the previously generated password, if you check the *"Save Password"* box the DB Explorer will store the password for future use. It can be helpful to change the display name to something more human readable, from the GUID that is hat by default. Click *"OK"* to create the connection. 
+7.  Use your SAP Account to login, if you don't have one go up the prerequisite of this exercise. Then the Database explorer is acting as the external tool. The DB Explorer is as SAP tool integrated into our landscape, so that the connection details get pre-populated for you, for other tools they need to manually transferred to create the connection. Enter the previously generated password, if you check the *"Save Password"* box the DB Explorer will store the password for future use. It can be helpful to change the display name to something more human readable, from the GUID that is hat by default. Click *"OK"* to create the connection. 
 
     ![ex_05_08](images/ex_05_08.png)
 
-9. By right clicking the database connection we can open the SQL console and create a new table, with the statement
+8. By right clicking the database connection we can open the SQL console and create a new table, with the statement
     ![ex_05_09](images/ex_05_09.png)
 
-10. We can create a new table, with the statement, replace the schema name with your database user name that you created earlier. The statement will also enter a row for later usage.  After pasting the statement click *"Run"*
+9. We are simulating an external tool with the Database explorer, that is creating a table and pushing data into it (like an ETL tool would). We can create a new table, with the statement below, replace the schema name with your database user name that you created earlier. The statement will also enter a row for later usage (make sure to replace both schema placeholder ).  After pasting the statement click *"Run"*
     ```
     CREATE COLUMN TABLE "<schema>"."BusinessPartnersOpenSQL"(
         "PARTNERID" NVARCHAR(10) NOT NULL,
@@ -100,5 +104,14 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
 
 **We have created an endpoint, created a table and filled with a record, that table is available in SAP Datasphere. This simulates an external tool, that creates a table and writes data into Datasphere. This concludes the Exercise 5 where the objective is to create Remote Tables in in SAP Datasphere.**
 
+### Additional Information
+
+The database is protected by a firewall. Any external tool trying to access the database needs to come from a whitelisted IP. In our trial system the user do not have sufficient privileges to modify the IP Whitelist. To modify the IP WHitelist, we need to navigate to System -> Configuration -> IP Allowlist -> Trusted IP. This will show you the list of all trusted IP's
+   
+![ex_05_06](images/ex_05_06.png)    
+
+By clicking the "Add" button you can add entries to the whitelist. Here you can add single IP's or networks of IP's
+
+![ex_05_06_2](images/ex_05_06_2.png)    
 
 Please click here to continue with [Exercise 6](../ex6/)
