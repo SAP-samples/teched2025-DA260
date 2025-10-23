@@ -1,9 +1,11 @@
-# Exercise 1 - Exercise 1 Description
+# Exercise 1 - Analytics Cloud Model with Acquired Data
 
 In contrast to Datasphere, where replication flows put data into tables that you can manipulate at will later on, data in SAC - whether acquired or federated - is always in the context of a semantic model.  Data can be added at the time of model creation, or added via load jobs later.  SAC models have automated table management, so the user simply worries about the semantic model and the required table schema is automatically created behind the scenes.
 
 
 Note!  Data acquisition and replication are synonyms.
+
+In this exercise, you will create a new data model in SAC, with data acquired from a Google Big Query (GBQ) project.
 
 
 ## Step 0
@@ -139,7 +141,7 @@ Take a moment to orient yourself in the query builder.  There are three areas, *
 
 Note!  All columns are in text format, even columns whose names indicate that they would have numeric values.  A well maintained table would have all of this information properly maintained at the source, and you'd see different data types.  We don't always have the luxury of - as is the case here.  Not to worry, we'll be able to fix that later!
 
-Since we havent't seen the actual data yet and don't know which columns are useful or not, simply ass all to the selected data and click **Create**.
+Since we haven't seen the actual data yet and don't know which columns are useful or not, simply ass all to the selected data and click **Create**.
 
 ![Step 12](images/Teched2025-DA260_Ex1_13.png)
 
@@ -202,7 +204,7 @@ Click any of the ellipses in the right column of the Dimension table and select 
 
 Select **Integer**
 
-You can leave the conversion format alone.
+Choose to convert to Integer.  You can leave the conversion format alone.
 
 Click **OK**.
 
@@ -297,9 +299,231 @@ Feel free to modify your view and explore the data a bit.
 ![Step 28](images/Teched2025-DA260_Ex1_30.png)
 
 
+## Step 29
+
+Return to the modeling module and re-open **Teched2025-DA260_Ex1_Games2022**.
+
+Note that the **score** column uses a dash between the home and away scores.  We'd like this to be a semicolon, so we'll reload this data and fix this with a wrangling transform.
+
+Click the eraser icon, in the Data group, to delete records from the fact table.
+
+
+![Step 29](images/Teched2025-DA260_Ex1_31.png)
+
+
+## Step 30
+
+Next will come the fact filter dialog.  Here, you can set the filter for fact deletion; all records where the specified dimension value(s) are checked.  This gives you are option to delete specific records matching the specified filter pattern.  By default, all dimension members of the first dimension in the list are checked and this will delete all fact from the table.
+
+Click **OK**.
+
+
+![Step 30](images/Teched2025-DA260_Ex1_32.png)
+
+
+
+## Step 31
+
+Click **OK** to confirm that you want to clear the fact table.
+
+
+![Step 31](images/Teched2025-DA260_Ex1_48.png)
+
+
+## Step 32
+
+You will now see an empty fact table in your model.
+
+
+![Step 32](images/Teched2025-DA260_Ex1_49.png)
+
+
+## Step 33
+
+Navigate to the **Data Management** workspace.
+
+
+![Step 33](images/Teched2025-DA260_Ex1_35.png)
+
+
+## Step 34
+
+Recall that when we originally connected to the data to start creating the model, we created an initial import job.  When you create a model from data, you skip past data wrangling and column mapping, which is why the import job "has not been set up".  We will now set this import job up.  
+
+Click on **Set Up Import**.
+
+
+![Step 34](images/Teched2025-DA260_Ex1_34.png)
+
+
+## Step 35
+
+Here you see a significant difference in behavior, from what you'll encounter with Datasphere Replication Flows in [Exercise 3](../ex3/README.md).  
+- With Replication Flows, remote data is replicated into Datasphere tables, and you can then do what you want with those tables later.
+- SAC import jobs always exist in the context of a data model.  The remote data is replicated into local tables, but this is regarded as draft data, yet to be prepared for the model.  This draft data is used when preparing wrangling (data preparation) and mapping, but is not visible outside this context and is not retained for very long.
+
+If you very recently created your model, you draft data may still be present, and you won't see this popup.  If you were to come back a few days later, the draft data would have been cleaned up.  If the draft data is still present, you'll simply go to the next step.  Otherwise, this popup will prompt you to re-run the query before proceeding. 
+
+If you are prompted, click **Rerun Query***.
+
+![Step 35](images/Teched2025-DA260_Ex1_37.png)
+
+
+## Step 36
+
+Take a moment to orient yourself in the **Data Wrangler**.  Here is where you can transform data.
+- It uses a spreadsheet visual paradigm, allowing the user to work interactively on the data that they are transforming and see the effects of their transforms in real-time.
+- Sometimes data needs to be transposed from columnar to row format.  E.g. a set of revenue figures might be split across columns, for side by side comparison of year-on-year, but you'll want these figures in a single measure later.  You can transpose data right from the menu bar, using **Unpivot**.
+- You have access to two separate "formula bars"; the interactive **Create Transform** builder, and a powerful **Custom Expression Editor**.  "Formula bars" is in quotes, because the interactive **Create Transform** builder is not actually a formula editor, but uses a visual expression as an assistance mechanism.
+- You can toggle the display of your transform log on, to see what transforms you have previously done in this session, revert and edit transforms. 
+- Lastly, note that the Wrangler did detect that the text cells that actually held numeric data were in fact numbers and assigned the data type appropriately.  
+
+
+
+![Step 36](images/Teched2025-DA260_Ex1_38.png)
+
+
+## Step 37
+
+Click the **Custom Expression Editor** icon, to open the editor.
+
+
+![Step 37](images/Teched2025-DA260_Ex1_50.png)
+
+
+## Step 38
+
+We're going to want to use the replaceContect() expression.  You can use the **Custom Expression Editor**'s code completion assistant, by starting to type in the command.  Type in "re".
+
+```re```
+
+Select **replaceContect** from the dropdown.
+
+
+![Step 38](images/Teched2025-DA260_Ex1_51.png)
+
+
+## Step 39
+
+The custom expression formula will initially look like this:
+
+```[column] = replaceContent(string1, substring1, string2)```
+
+- **Column** - is the name of the new columns that will be created.
+- **string1** - is the columns where the change will be.
+- **substring1** - is the string pattern that will be swapped out.
+- **string2** - is the string pattern that will be swapped in.
+
+
+![Step 39](images/Teched2025-DA260_Ex1_52.png)
+
+## Step 40
+
+Create a new column, called **score2**, which duplicates **score** and replaces "–" with ":".
+
+```[score2] = replaceContent([score] , "–", ":")```
+
+**Note!**  The **"–"** coming from the database is a long dash and not the ascii **"-"**.  It is bext to copy and paste it from the table, or from this document.
+
+Click the checkmark, to execute the formula.
+
+
+![Step 40](images/Teched2025-DA260_Ex1_53.png)
+
+## Step 41
+
+You can now compare **score** and **score2*** and see the difference in the text.
+
+Click **Next** to proceed to mapping.
+
+
+![Step 41](images/Teched2025-DA260_Ex1_54.png)
+
+
+## Step 42
+
+XXX 
+
+
+![Step 39](images/Teched2025-DA260_Ex1_55.png)
+
+## Step 43
+
+XXX 
+
+
+![Step 43](images/Teched2025-DA260_Ex1_56.png)
+
+
+## Step 44
+
+XXX 
+
+
+![Step 44](images/Teched2025-DA260_Ex1_57.png)
+
+## Step 45
+
+XXX 
+
+
+![Step 45](images/Teched2025-DA260_Ex1_58.png)
+
+## Step 46
+
+XXX 
+
+
+![Step 46](images/Teched2025-DA260_Ex1_41.png)
+
+
+## Step 47
+
+XXX 
+
+
+![Step 47](images/Teched2025-DA260_Ex1_42.png)
+
+
+## Step 48
+
+XXX 
+
+
+![Step 48](images/Teched2025-DA260_Ex1_43.png)
+
+
+## Step 49
+
+XXX 
+
+
+![Step 49](images/Teched2025-DA260_Ex1_44.png)
+
+
+## Step 50
+
+XXX 
+
+
+![Step 50](images/Teched2025-DA260_Ex1_46.png)
+
+
+## Step 51
+
+XXX 
+
+
+![Step 51](images/Teched2025-DA260_Ex1_47.png)
+
+
 
 
 ## Summary
 
 You've now created a new model in SAC by importing data.  
+
+Analytics Cloud Model with Live Data
+
+Continue to - [Exercise 2 - Analytics Cloud Model with Live Data](../ex2/README.md)
 
