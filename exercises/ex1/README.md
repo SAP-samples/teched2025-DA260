@@ -3,16 +3,16 @@
 In contrast to Datasphere, where replication flows put data into tables that you can manipulate at will later on, data in SAC - whether acquired or federated - is always in the context of a semantic model.  Data can be added at the time of model creation, or added via load jobs later.  SAC models have automated table management, so the user simply worries about the semantic model and the required table schema is automatically created behind the scenes.
 
 
-Note!  Data acquisition and replication are synonyms.
+**Note!** Data acquisition and replication are synonyms.
 
 In this exercise, you will create a new data model in SAC, with data acquired from a Google Big Query (GBQ) project.
 
 
 ## Step 0
 
-With SAC open, take a moment to orient yourself.  The navigation bar on the left side and the information bar along the top are shared across BDC tools, so if you know the basics of how to navigate in one, you know it for all.  
+With SAC open, take a moment to orient yourself.  The navigation bar on the left side, and the information bar along the top are shared across BDC tools, so if you know the basics of how to navigate in one, you know it for all.  
 
-In the center canvas, you have some options.  There are four tabs, 
+In the center canvas, you have some options.  There are four tabs:
 - **Today**: Where you can access tutorials, see files that you have recently opened and use AI to answer questions about your data.
 - **Catalog**: Where you can access the data catalog.
 - **Favorites**: Where you can see items that you have tagged as favorites.
@@ -28,13 +28,13 @@ To begin the exercise, select the Modeling Workbench, from the navigation panel.
 
 ## Step 1
 
-Take a moment to familiarize yourself with the layout of the Modeling Workbench's entry page.  You'll see:
+Take a moment to familiarize yourself with the layout of the Modeling Workbench's entry page. You'll see:
 - A list of models, created by you and created by others and shared with you.  This is where you can edit existing models.
 - A button to create a new data model.  This is for the SAC data model (as opposed to the Datasphere or various remote model options).  Wherever the data is stored (acquired or live), the semantic model is in SAC.
 - A button to create a new Live Data Model.  
 
 The term **Live Data Model** can be confusing, because both model types allow for live data.
-- **Live Data Model** really means "remote model with live data.  It is an alias for a BW Query, S/4 CDS View or HANA Calc View.  In this case, both the data and the semantic model are stored and managed in the remote system and SAC is simply acting as a consumer client.  This allows you e.g. to re-use the same queries in BW that your organization have re-used with many front end clients over the years and add them to stories, or analyze them in the Data Analyzer. You can't edit the remote model in any meaningful way from SAC and will have to use the tooling of the source system.
+- **Live Data Model** really means "remote model with live data.  It is an alias for a BW Query, S/4 CDS View, or HANA Calc View.  In this case, both the data and the semantic model are stored and managed in the remote system and SAC is simply acting as a consumer client.  This allows you e.g. to re-use the same queries in BW that your organization have re-used with many front end clients over the years and add them to stories, or analyze them in the Data Analyzer. You can't edit the remote model in any meaningful way from SAC and will have to use the tooling of the source system.
 
 - **Data Model** can use both live and acquired data, depending on the source.  The semantic model always resides in SAC, it is edited from this module, but can only be used in SAC.  
 
@@ -81,7 +81,7 @@ Select **SAP Analytics Cloud** and click **Next**.
 
 ## Step 6
 
-The data source selector has a search bar and two columns.  The left column is a list of available data sources.  The right side is a list of checkboxes, which can be used to filter the list on the left.  These checkboxes can be based on supported capabilities (e.g. sources that support live data or acquisition, cloud based or on-premise, etc.), vendor, etc.
+The data source selector has a search bar and two columns. The left column is a list of available data sources. The right side is a list of checkboxes, which can be used to filter the list on the left.  These checkboxes can be based on supported capabilities (e.g. sources that support live data or acquisition, cloud based or on-premise, etc.), vendor, etc.
 
 Click the checkbox for **Google**, to filter the list down to Google sources.
 
@@ -141,7 +141,7 @@ Take a moment to orient yourself in the query builder.  There are three areas, *
 
 Note!  All columns are in text format, even columns whose names indicate that they would have numeric values.  A well maintained table would have all of this information properly maintained at the source, and you'd see different data types.  We don't always have the luxury of - as is the case here.  Not to worry, we'll be able to fix that later!
 
-Since we haven't seen the actual data yet and don't know which columns are useful or not, simply ass all to the selected data and click **Create**.
+Since we haven't seen the actual data yet and don't know which columns are useful or not, simply select all columns to the selected data and click **Create**.
 
 ![Step 12](images/Teched2025-DA260_Ex1_13.png)
 
@@ -174,7 +174,7 @@ Click on **Validation**.
 
 Click on the text where validation is telling you that **The following objects are missing in your model**.
 
-Remember when we mentioned that the source data had only text data, even for columns that seemed like they should have numerical data?  All columns were initially imported as dimensions, so we'll have to fix this ins later steps.
+Remember when we mentioned that the source data had only text data, even for columns that seemed like they should have numerical data?  All columns were initially imported as dimensions, so we'll have to fix this in later steps.
 
 ![Step 15](images/Teched2025-DA260_Ex1_16.png)
 
@@ -220,7 +220,7 @@ You will now see these columns in the **Measures** area and the validation error
 
 ## Step 21
 
-Scroll down and have a look at which columns are measures and which are dimensions.  Feel free to toggle the **Data Foundation*** view back on and double check that the columns are all properly allocated to Dimensions and Measures.
+Scroll down and have a look at which columns are measures and which are dimensions.  Feel free to toggle the **Data Foundation** view back on and double check that the columns are all properly allocated to Dimensions and Measures.
 
 ![Step 21](images/Teched2025-DA260_Ex1_24.png)
 
@@ -313,7 +313,7 @@ Click the eraser icon, in the Data group, to delete records from the fact table.
 
 ## Step 30
 
-Next will come the fact filter dialog.  Here, you can set the filter for fact deletion; all records where the specified dimension value(s) are checked.  This gives you are option to delete specific records matching the specified filter pattern.  By default, all dimension members of the first dimension in the list are checked and this will delete all fact from the table.
+Next will come the fact filter dialog.  Here, you can set the filter for fact deletion; all records where the specified dimension value(s) are checked. This gives you the option to delete specific records matching the specified filter pattern. By default, all dimension members of the first dimension in the list are checked and this will delete all fact from the table.
 
 Click **OK**.
 
@@ -360,9 +360,9 @@ Click on **Set Up Import**.
 
 Here you see a significant difference in behavior, from what you'll encounter with Datasphere Replication Flows in [Exercise 3](../ex3/README.md).  
 - With Replication Flows, remote data is replicated into Datasphere tables, and you can then do what you want with those tables later.
-- SAC import jobs always exist in the context of a data model.  The remote data is replicated into local tables, but this is regarded as draft data, yet to be prepared for the model.  This draft data is used when preparing wrangling (data preparation) and mapping, but is not visible outside this context and is not retained for very long.
+- SAC import jobs always exist in the context of a data model. The remote data is replicated into local tables, but this is regarded as draft data, yet to be prepared for the model.  This draft data is used when preparing wrangling (data preparation) and mapping, but is not visible outside this context and is not retained for very long.
 
-If you very recently created your model, you draft data may still be present, and you won't see this popup.  If you were to come back a few days later, the draft data would have been cleaned up. If the draft data is still present, you'll simply go to the next step.  Otherwise, this popup will prompt you to re-run the query before proceeding.  You will nearly always be prompted to rerun your query.
+If you very recently created your model, you draft data may still be present, and you won't see this popup.  If you were to come back a few days later, the draft data would have been cleaned up. If the draft data is still present, you'll simply go to the next step. Otherwise, this popup will prompt you to re-run the query before proceeding.  You will nearly always be prompted to rerun your query.
 
 If you are prompted, click **Rerun Query***.
 
@@ -442,6 +442,8 @@ Click **Next** to proceed to mapping.
 
 ## Step 42
 
+Now please on your top left, choose **Step 2: Map to FActs**.
+
 In **Mapping**, look in the mapping section, or the right side.  See where the **score** column in the draft data is mapped to the **score** dimension.   
 
 Click the **X**, next to the **score** column in the draft data, to delete this mapping.
@@ -479,9 +481,9 @@ The draft data will not be validated against the model.  Any problems will be re
 
 ## Step 46
 
-No problems should be reported. The most common cause of issues would be unbooked dimension members, where a column being mapped to a dimension has a value not in the dimension table.
+No problems should be reported. The most common cause of issues would be unbooked dimension members, where a column being mapped to a dimension deos not a value not in the dimension table.
 
-Since our model only uses so-called "single column" dimensions, where we did not attach a column to a dimension (e.g. a public dimension), there are no foreign key constraints.  If your fact data does not align with your master data, this is the place where you'd normally discover that.
+Since our model only uses so-called "single column" dimensions, where we did not attach a column to a dimension (e.g. a public dimension), there are no foreign key constraints. If your fact data does not align with your master data, this is the place where you'd normally discover that.
 
 **Note!**  We deliberated used only single column dimensions as this is a data connectivity exercise and not a modeling one; and this exercise is long enough as it is.  
 
@@ -539,7 +541,7 @@ You can set up automatic, scheduled data refreshes.  To do so:
 
 ## Step 52
 
-Maintain your desired schedule settings, e.g. once a week at 6AM, etc.  You can's schedule oad jobs more frequently than on a one-hour basis.
+Maintain your desired schedule settings, e.g. once a week at 6AM, etc.  You can schedule load jobs more frequently than on a one-hour basis.
 
 
 ![Step 52](images/Teched2025-DA260_Ex1_61.png)
@@ -558,8 +560,6 @@ Return to the ***Module Structure** workspace.
 Look in your data foundation.  You'll see that the members of the **score** dimension now display the transformed version. 
 
 ![Step 54](images/Teched2025-DA260_Ex1_47.png)
-
-
 
 
 ## Summary
