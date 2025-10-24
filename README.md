@@ -20,37 +20,6 @@ Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud, which includ
 * Your screenshots may look different than those in the exercises, as new releases might include additional features or enhancements.  
 * Some user interface elements might differ from the screenshots used in the exercises. 
 
-## ToDo:
-- [ ] Write Start page 1 -> all
-- [x] Proof read Start page -> Leona
-- [x] Write Exercise 1 -> David
-- [ ] Proof read Exercise 1 -> Leona
-- [ ] Test Exercise 1 -> Leona
-- [ ] Write Exercise 2 -> David
-- [ ] Proof read Exercise 2 -> Leona
-- [ ] Test Exercise 2 -> Leona
-- [x] Write Exercise 3 -> Leona
-- [ ] Proof read Exercise 3 -> Daniel
-- [ ] Test Exercise 3 -> Daniel
-- [x] Write Exercise 4 -> Hannes
-- [x] Proof read Exercise 4 -> Leona 
-- [x] Test Exercise 4 -> Leona
-- [x] Write Exercise 5 -> Hannes
-- [x] Proof read Exercise 5 -> Leona
-- [x] Test Exercise 5 -> Leona
-- [ ] Write Exercise 6 -> David
-- [ ] Proof read Exercise 6 -> Leona
-- [ ] Test Exercise 6 -> Leona
-- [ ] Write Exercise 7 -> David
-- [ ] Proof read Exercise 7 -> Leona
-- [ ] Test Exercise 7 -> Leona
-- [x] Write Exercise 8 -> Hannes
-- [x] Proof read Exercise 8 -> Leona
-- [x] Test Exercise 8 -> Leona
-- [x] Write Exercise 9 -> Leona
-- [ ] Proof read Exercise 9 -> Daniel
-- [ ] Test Exercise 9 -> Daniel
-
 
 ## Requirements
 
@@ -72,8 +41,8 @@ Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud, which includ
 
 | Product             | Replication | Federation | Push |
 |---------------------|-------------|------------|------------ |
-| SAP Analytics Cloud | [Exercise 1](exercises/ex1/) ToDo: David| [Exercise 2](exercises/ex2/) ToDo: David| |  |
-| SAP Datasphere      | [Exercise 3](exercises/ex3/) ToDo: Daniel | [Exercise 4](exercises/ex4/) To Validate: Leona | [Exercise 5](exercises/ex5/) | |
+| SAP Analytics Cloud | [Exercise 1](exercises/ex1/) | [Exercise 2](exercises/ex2/) | |  |
+| SAP Datasphere      | [Exercise 3](exercises/ex3/) | [Exercise 4](exercises/ex4/) | [Exercise 5](exercises/ex5/) | |
 
 
 - [Exercise 1 - Replicate data into SAC ](exercises/ex1/)
@@ -86,8 +55,8 @@ Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud, which includ
 
 | Product             | Pull | Push |
 |---------------------|-------------|------------|
-| SAP Analytics Cloud | [Exercise 6](exercises/ex6/) ToDo: David| [Exercise 7](exercises/ex7/) ToDo: David|
-| SAP Datasphere      | [Exercise 8](exercises/ex8/) To Validate: Leona| [Exercise 9](exercises/ex9/) ToDo: Daniel|
+| SAP Analytics Cloud | [Exercise 6](exercises/ex6/) | [Exercise 7](exercises/ex7/) |
+| SAP Datasphere      | [Exercise 8](exercises/ex8/) | [Exercise 9](exercises/ex9/) |
 
 - [Exercise 6 - Outbound pull in SAC with oData](exercises/ex6/) 
 - [Exercise 7 - Outbound push in SAC with oData](exercises/ex6/) 
