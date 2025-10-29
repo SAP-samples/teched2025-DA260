@@ -1,108 +1,94 @@
-# Exercise 4 - Replicate data from SAP S/4HANA to SAP HANA Data Lake Files using Replication Flows.
+# Exercise 9 - Replicate Local Tables from SAP Datasphere to Google Big Query (GBQ) with Replication Flows
 
-**Important Note**: Before beginning with this exercise please follow the steps in the following link to create a HDFL connection in your SAP Datasphere user space described in this link: [Connection Creation for SAP HANA Cloud, Data Lake Files](../connections/HDLFS/)
+This exercise involves creating a Replication Flow that reads data from SAP Datasphere local tables and replicates this data into Google BigQuery (GBQ). This process involves modelling of a replication flow and configuring it to consume a pre-existing GBQ connection and pick the required source objects to replicate them into new target tables in Google BigQuery.
 
-Additionally, you need to stop the Replication Flow created in [exercise 1](../ex1/) in case it is still running! To stop the replication flow created in exercise 1, please open the Data Integration Monitor and click in the *Stop* button located in the upper left menu bar within the detailed monitoring screen of your replication flow:
+The Task is to load the SAP Datasphere local table for:
+- BusinessPartnersOpenSQL
 
-![Stop_Replication_Flow](images/Stop_Replication_Flow.jpg)
+Step by Step guide:
+Refer to the provided solution below for a detailed, step-by-step guide to complete Exercise 9.
 
-**Please wait until your replication flow is stopped successfully, before you continue with the steps below!**
-
-
-1. Go to data builder, Select *New Replication flow* tile:
+1.	Open your SAP Datasphere using the provided credentials. Your user is associated with a default space that has the same name as your user where you can work and create your various data artifacts like the replication flow.
    
-   ![Ex04_01](images/Ex04_01.png)
-   
-2. Click on *Select source Connection*:
-   
-   ![Ex04_02](images/Ex04_02.png)
-   
-3. In the connection dropdown, please select the *S4HANA* connection.
-   
-   ![Ex04_03](images/Ex04_03.png)
-   
-4. After selecting the connection, click on *Select Source container*
+    ![ex_09_01](images/ex_09_01.png)
 
-   ![Ex04_04](images/Ex04_04.png)
+2.	Click on the *Data Builder* to see the Data Builder homepage as shown below and you can see *New Replication Flow* tile.
    
-5. Inside source container, Select *CDS - CDS View*:
-   
-   ![Ex04_05](images/Ex04_05.png)
-   
-6. After selecting the container, *Add source objects*:
-   
-   ![Ex04_06](images/Ex04_06.png)
-   
-7. Select objects from left side folder browser, in *TMP Local Objects* folder.
-    
-8. Search Objects inside *TMP Local Objects* folder, with "Z_CDS" prefix. And select "Z_CDS_EPM_SALESORDER" CDS View:
+    ![ex_09_02](images/ex_09_02.png)
 
-   ![Ex04_07](images/Ex04_07.png)
+3.	Click on *New Replication Flow* tile to launch the creation of new a replication flow.
    
-9. Click *Next* and then click *Add selection*. Wait until the CDS views are imported successfully.
-    
-   ![ex_04_08](images/ex_04_08.png)
-   
-10. After the import is successful, add a target connection:
-    
-   ![Ex04_09](images/Ex04_09.png)
+    ![ex_09_03](images/ex_09_03.png)
 
-11. Select the target connection *HDLFS*, which you have created previously:
-    
-   ![Ex04_10](images/Ex04_10.png)
-   
-12. After selecting the target connection, select the *target container*:
-    
-   **Important Note:** Please select the target container using the following instructions: 
-   
-   - In case your user starts with prefix **AC60851U**XX (where XX stands for an integer value that is part of your Datasphere login user), please select the target container (=folder) in HDLFS that is matching the pattern teched-**XX**, where XX are the last two digits (numbers) that are part of your SAP Datasphere user ID, e.g. for AC60851U**01**, please select the folder teched-**01** as target container. If you select another folder of another user, the replication will fail.
-     
-   - In case your user starts with prefix **AC61257U**XX (where XX stands for an integer value that is part of your Datasphere login user), please select the target container (=folder) in HDLFS that is matching the pattern teched-1**XX**, where XX are the last two digits that are part of your SAP Datasphere user ID, e.g. for AC61257U**01**, please select the folder teched-**101** as target container. If you select another folder of another user, the replication will fail.
+4.	Click on *Select Source Connection* button that launches a popup window to select the source connection.
 
-   ![Ex04_11](images/Ex04_11.png)
-    
-13. All the target tables should be listed like this:
-   
-14. Select each target table and change *load type* to “Initial and Delta”:
-    
-   ![Ex04_13](images/Ex04_13.png) 
-   
-15. Deploy the replication flow.
-    
-16. After successful deployment, Run the replication flow to create these tables in HDLFS target connection.
-    
-17. Once Replication flow execution completes. Go to *New Data Flow* editor available in the *Data Builder* application:
-    
-   ![Ex04_14](images/Ex04_14.png)
-   
-18. In Data flow editor, go to source, open the connection tree and browse the HDLFS connection:
-    
-   ![Ex04_15](images/Ex04_15.png)
-   
-19. In HDLFS connection, search for the folder, which was set as target container in the replication flow including your user ID. And there we can see all the tables are successfully replicated in SAP HANA Cloud, Data Lake Files:
-    
-   ![ex_04_19_1](images/ex_04_19_1.png)
+    ![ex_09_04](images/ex_09_04.png)
+
+    Select SAP Datasphere as source connection, which is technically using connection type HANA from the list of the available connections. It will update the connection and after it you need to select Add Source Objects button which is auto selected for the next step on the bottom of the screen highlighted in blue. Please select ‘Add Source Object’.
+
+    ![ex_09_05](images/ex_09_05.png)
+
+5. After selecting ‘Add Source Object’ button, a new popup window will open, which shows all the repository objects that are available. For this exercise, please select *BusinessPartnersOpenSQL*, and click *OK* button.
+
+    ![ex_09_06](images/ex_09_06.png)
+
+Note: You can add additional objects into the Replication Flow, but in this exercise we will only replicate one local table from SAP Datasphere to illustrate the general approach.
+Additionally, in this particular case only "Initial Load" is supported when replicating data from the OpenSQL schema. Using delta capaiblities would require to use local tables with delta capture enabled. Also, a lot of other data sources do support native delta capabilities that can be used in a replication such as ABAP-based sources (SAP S74HANA, SPA BW, SAP ECC etc.), databases (e.g. Microsoft SQL, SAP HANA etc.) any additional data sources.
 
 
-20. Once you have successfully loaded your CDS view data to HDLFS, please go to the Data Integration Monitor to *Stop* your replication flow similar like it was explained in the beginning of this exercise. To stop your replication flow, please open the detailed flow monitor of your running replication flow and click the *Stop* button in the top menu bar:
+6. You have the possibility to create projections for each of the listed objects, but in this exercise no projections are required and hence you can skip the creation of projections. As a next step, click on the icon adjacent to *Select Target Connection*.
 
-   ![Stop_Outbound_RepFlow](images/Stop_Outbound_RepFlow.jpg)
-     
+    ![ex_09_07](images/ex_09_07.png)
 
-**Done!** You have now successfully completed the last exercise of this Hands-On session DA260. 
+    The following popup window will appear where you need to select the target connection. In this case, please select Google Big Query as target connection.
 
+    ![ex_09_08](images/ex_09_08.png)
 
+7. The target connection details are now updated in your Replication Flows using GBQ as target, and after this you need to select the icon ‘*Select Container’*, where it leads to a new popup window, and from there you need to select container *‘DA260_TARGET’*. After selecting, please click button *Select*. You need to choose *BussinessPartnersOpenSQL* as the file that you want to replicate from SAP Datasphere to GBQ.
 
+    ![ex_09_09](images/ex_09_09.png)
 
+    ![ex_09_10](images/ex_09_10.png)
 
+    ![ex_09_11](images/ex_09_11.png)
 
+8.	After this you can click om the three-dot icon to rename the target object. It will open a new popup window, you rename to UserX_businessPartnersOpenSQL, where 'X' represents your user id and click the ‘Rename’ button. 
+Example. if you are using user id '10', please use the following name for your target in GBQ: User*10*_businessPartnersOpenSQL
  
 
+    ![ex_09_12](images/ex_09_12.png)
+
+    ![ex_09_13](images/ex_09_13.png)
+
+    Below, you can see the renamed target object.
+
+    ![ex_09_14](images/ex_09_14.png)
+    
+9. Click on the Deploy Icon in the general tab on top that launches *Save* popup window. 
+
+    ![ex_09_15](images/ex_09_15.png)
+
+    Change the default name being displayed by defining the business name as Outbound Replication Flow 1, which will automatically set technical name as Outbound_Replication_Flow1.
+
+    ![ex_09_16](images/ex_09_16.png)
+
+    ![ex_09_17](images/ex_09_17.png)
+
+10.	Once the status is Deployed, click on the run icon ![ex_09_18](images/ex_09_18.png)  in the General Tab above. You will see the Run Status in property panel getting updated to ‘Running’.
+
+    ![ex_09_19](images/ex_09_19.png)
 
 
+11.	Click on Monitor Icon ![ex_09_20](images/ex_09_20.png)  in Run Status in property panel, which will directly navigate you to the detailed monitoring screen of your replication flow: 
+
+    ![ex_09_21](images/ex_09_21.png)
+
+    ![ex_09_22](images/ex_09_22.png)
+
+    Here you can see statistics, and the status of the data replication for all our target source object.
 
 
-
-
+**This concludes the Exercise 9 where the objective is to replicate data from SAP Datasphere into Google Big Query (GBQ)**
+**Congratulations, you have now completed all exercises of DA260 Hands-On Session. Thank you for your participation and we hope you enjoyed our exercises** 
 
 
