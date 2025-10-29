@@ -8,12 +8,21 @@ This hands-on workshop will give you the opportunity to try out the different in
 
 SAP Businees Data Cloud includes SAP Datasphere, a comprehensive data service acting as a business data fabric that enables every data professional to deliver seamless, and scalable access to mission-critical business data. SAP Datasphere enables access to authoritative data by accelerating time-to-value by automatically reusing the semantical definitions and associations from SAP applications. SAP Datasphere enriches all data projects by harmonizing heterogeneous data into a business semantic model of your diverse data landscape. On top, it helps to simplify the data landscape and accesses all your data across hybrid and cloud environments no matter where it resides.
 
-Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud, which includes different options to perform data integration & acquistion with a focus on self-service for business users to easily acquire data from various different sources.
+Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud (= SAC), which includes different options to perform data integration & acquistion with a focus on self-service for business users to easily acquire data from various different sources.
 
 ## Overview
 
-* Learning Goal: Learn how to use various capabilities in SAP Business Data Cloud for integrating data from 3rd party data sources* 
+* Learning Goal: Learn how to use various integration capabilities in SAP Business Data Cloud for integrating data from 3rd party data sources leveraging SAP Datasphere and SAP Analytics Cloud.
+
+
+
 * Estimated Time: 2-4 h
+
+  **Important Note:**
+  Performing all exercises will require more time than the actual workshop onsite. Therefore, please feel free to pick the exercises that sound most interesting for you! You can also continue later on after the session to complete the exercises.
+
+  There is only dependency for performing exercise 6 and 7, for which you must have completed Exercise 5 as a required step. The remaining exercises can be done independently from each other.
+  For example exercise 1 will require most of the time for you with also some optional content.
 
 ## Disclaimer
 
@@ -32,7 +41,7 @@ Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud, which includ
   * User-Id: xxx + last 2 digits that have been provided to you onsite at TechEd
   * Tenant access password: xxx
 
-* Basic know-how about the usage and integration of data in SAP Business Data Cloud. 
+* Basic know-how about the usage and integration of data in SAP Business Data Cloud leveraging SAP Datasphere & SAP Analytics Cloud (SAC)
 * General understanding of Enterprise Data Management and ETL (Extraction, Transformation, Load).
 
 ## Exercises
@@ -57,14 +66,13 @@ Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud, which includ
 |---------------------|-------------|------------|
 | SAP Datasphere      | [Exercise 6](exercises/ex6/) | [Exercise 7](exercises/ex7/) |
 
-- [Exercise 6 - Outbound pull of data in Datasphere with JDBC or oData](exercises/ex8/) 
-- [Exercise 7 - Outbound push in Datasphere with Replication FLows](exercises/ex7/)
+- [Exercise 6 - Outbound pull of data in SAP Datasphere with JDBC or oData](exercises/ex6/) 
+- [Exercise 7 - Outbound push in SAP Datasphere with Replication FLows](exercises/ex7/)
 
-Have fun :smiley:
 
-**IMPORTANT**
+![Overview_Exercises](images/Overview_Exercises.jpg)
 
-Your repo must contain the .reuse and LICENSES folder and the License section below. DO NOT REMOVE the section or folders/files. Also, remove all unused template assets(images, folders, etc) from the exercises folder. 
+Have fun!
 
 ## Contributing
 Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) to understand the contribution guidelines.
