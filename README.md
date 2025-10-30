@@ -50,7 +50,7 @@ Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud (= SAC), whic
 
 | Product             | Replication | Federation | Push |
 |---------------------|-------------|------------|------------ |
-| SAP Analytics Cloud | [Exercise 1](exercises/ex1/) | [Exercise 2](exercises/ex2/) | |  |
+| SAP Analytics Cloud | [Exercise 1](exercises/ex1/), [Exercise 8](exercises/ex8/) | [Exercise 2](exercises/ex2/) | |  |
 | SAP Datasphere      | [Exercise 3](exercises/ex3/) | [Exercise 4](exercises/ex4/) | [Exercise 5](exercises/ex5/) | |
 
 
@@ -59,6 +59,7 @@ Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud (= SAC), whic
 - [Exercise 3 - Replicate data into SAP Datasphere with Replication Flows](exercises/ex3/)
 - [Exercise 4 - Federation in Datasphere with Remote Tables](exercises/ex4/) 
 - [Exercise 5 - Push data into Datasphere with OpenSQL](exercises/ex5/) 
+- [Exercise 8 - Loading Data into an existing SAC model](exercises/ex8/) 
 
 ### Outbound integration
 

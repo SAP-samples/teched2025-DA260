@@ -1,6 +1,8 @@
-# Exercise 1 - Analytics Cloud Model with Acquired Data
+# Exercise 1 - Create an Analytics Cloud Model with Acquired Data
 
-In contrast to Datasphere, where replication flows put data into tables that you can manipulate at will later on, data in SAC - whether acquired or federated - is always in the context of a semantic model.  Data can be added at the time of model creation, or added via load jobs later.  SAC models have automated table management, so the user simply worries about the semantic model and the required table schema is automatically created behind the scenes.
+SAP Analytics Cloud (SAC) has two types of data ingestion workflows; an ```Extract, Transform, Load (ETL)``` one and an ```Extract, Load, Transform (ELT)``` one.  ETL is generally used when the data needs to conform to an existing SQL schema, or semantic model, while ELT is a more free form approach, allowing the user to shape the transformations and semantic enrichment around the data.  ETL workflows are used in SAC when data is being loaded into a preexisting model, and ELT workflows are used when the user is creating a new model and starting with data.
+
+In contrast to SAP Datasphere (DSP), where replication flows put data into tables that you can manipulate at will later on, data in SAC - whether acquired or federated - is always in the context of a semantic model.  Data can be added at the time of model creation, or added via load jobs later.  SAC models have automated table management, so the user simply worries about the semantic model and the required table schema is automatically created behind the scenes.
 
 
 **Note!** Data acquisition and replication are synonyms.
@@ -18,7 +20,7 @@ In the center canvas, you have some options.  There are four tabs:
 - **Favorites**: Where you can see items that you have tagged as favorites.
 - **Shared With Me**: Where you can see content that other users have created and shared with you.
 
-Of course, you can also access everything through the various modules - Data Analyzer, Story Workbench, Modeling Workbench, etc. - in the navigation panel.  
+Of course, you can also access everything through the various apps - Data Analyzer, Story Workbench, Modeling Workbench, etc. - in the navigation panel.  
 
 To begin the exercise, select the Modeling Workbench, from the navigation panel.
 
@@ -36,7 +38,7 @@ Take a moment to familiarize yourself with the layout of the Modeling Workbench'
 The term **Live Data Model** can be confusing, because both model types allow for live data.
 - **Live Data Model** really means "remote model with live data.  It is an alias for a BW Query, S/4 CDS View, or HANA Calc View.  In this case, both the data and the semantic model are stored and managed in the remote system and SAC is simply acting as a consumer client.  This allows you e.g. to re-use the same queries in BW that your organization have re-used with many front end clients over the years and add them to stories, or analyze them in the Data Analyzer. You can't edit the remote model in any meaningful way from SAC and will have to use the tooling of the source system.
 
-- **Data Model** can use both live and acquired data, depending on the source.  The semantic model always resides in SAC, it is edited from this module, but can only be used in SAC.  
+- **Data Model** can use both live and acquired data, depending on the source.  The semantic model always resides in SAC, it is edited from this app, but can only be used in SAC.  
 
 ![Step 1](images/Teched2025-DA260_Ex1_01.png)
 
@@ -63,7 +65,7 @@ Select **Start with data** and then click **Next**.
 
 ## Step 4
 
-If you have configured your SAC tenant to use Datasphere as it's storage location, you have the option here to use that.  Making that configuration is not part of this exercise, so we will be using SAP Analytics Cloud as our storage location.  
+If you have configured your SAC tenant to use Datasphere as it's storage location, you have the option here to use that.  Making that configuration is not part of this exercise, and it has not been enabled on this tenant by an administrator, so we will be using SAP Analytics Cloud as our storage location.  
 
 Select **SAP Analytics Cloud** and click **Next**.
 
@@ -72,59 +74,49 @@ Select **SAP Analytics Cloud** and click **Next**.
 
 ## Step 5
 
-(This is just informative). If you had selected Datasphere, you'd select the appropriate space from a dropdown list.
-
-**Do not do this**, as it is not properly configured.
-
-![Step 5](images/Teched2025-DA260_Ex1_05.png)
-
-
-## Step 6
-
 The data source selector has a search bar and two columns. The left column is a list of available data sources. The right side is a list of checkboxes, which can be used to filter the list on the left.  These checkboxes can be based on supported capabilities (e.g. sources that support live data or acquisition, cloud based or on-premise, etc.), vendor, etc.
 
 Click the checkbox for **Google**, to filter the list down to Google sources.
 
-![Step 6](images/Teched2025-DA260_Ex1_06.png)
+![Step 5](images/Teched2025-DA260_Ex1_06.png)
 
 
 
-## Step 7
+## Step 6
 
 Notice that the list of data sources has been filtered to Google Drive and Google Big Query.
 
 Click on **Google Big Query**, to proceed to the next step.
 
-![Step 7](images/Teched2025-DA260_Ex1_08.png)
+![Step 6](images/Teched2025-DA260_Ex1_08.png)
+
+
+## Step 7
+
+You will now see a dialog, asking you which connection you want to use.  Creating and maintaining connections to Google Big Query (GBQ) - configuring the URL, uploading the key file, etc. - is performed as a central administrative role.  This had been already been performed for you on this tenant, but if you wish to see how it is done, it is described in the help documentation, [here](https://help.sap.com/docs/SAP_ANALYTICS_CLOUD/00f68c2e08b941f081002fd3691d86a7/c67857c09b714f03b74464d00ef0c55b.html).
+
+Select the connection ```sap-dwc-e2e-demo``` and click **Next**.
+
+
+![Step 7](images/Teched2025-DA260_Ex1_09.png)
 
 
 ## Step 8
 
-You will now see a dialog, asking you which connection you want to use.  Creating and maintaining connections to Google Big Query (GBQ) - configuring the URL, uploading the key file, etc. - is performed as a central administrative role.  This had been already been performed for you on this tenant, but if you wish to see how it is done, it is described in the help documentation, [here](https://help.sap.com/docs/SAP_ANALYTICS_CLOUD/00f68c2e08b941f081002fd3691d86a7/c67857c09b714f03b74464d00ef0c55b.html).
+Confirm that ```sap-dwc-e2e-demo``` is your selected connection and click **Next**.
 
-Select the connection GBQ and click **Next**.
-
-
-![Step 8](images/Teched2025-DA260_Ex1_09.png)
+![Step 8](images/Teched2025-DA260_Ex1_10.png)
 
 
 ## Step 9
 
-You have the option to create a new query, or select an existing one.  Select the option to create a new query and click **Next**.
-
-![Step 9](images/Teched2025-DA260_Ex1_10.png)
-
-
-## Step 10
-
 Since this exercise is about creating a model with acquired/replicated data select **Import Data** and click **Next**.
 
-![Step 10](images/Teched2025-DA260_Ex1_11.png)
+![Step 9](images/Teched2025-DA260_Ex1_11.png)
+ 
+## Step 10
 
-
-## Step 11
-
-Give your query a name, for later reference.
+Name your query **Teched2025-DA260_Ex1_Games2022**, for later reference.
 
 Select **Build a Query** to access the visual query builder.
 
@@ -132,18 +124,25 @@ From the available tables in the GBQ project, select **World Cup > Games 2022**.
 
 Click **Next**.
 
-![Step 11](images/Teched2025-DA260_Ex1_12.png)
+![Step 10](images/Teched2025-DA260_Ex1_12.png)
 
 
-## Step 12
+## Step 11
 
 Take a moment to orient yourself in the query builder.  There are three areas, **Available Data**, **Selected Data**, and **Filters**.  **Selected Data** corresponds to the SQL "SELECT" and **Filters** corresponds to the SQL "WHERE", and **Available Data** lists all columns, as if you had executed an SQL "DESCRIBE" statement.   
 
 Note!  All columns are in text format, even columns whose names indicate that they would have numeric values.  A well maintained table would have all of this information properly maintained at the source, and you'd see different data types.  We don't always have the luxury of - as is the case here.  Not to worry, we'll be able to fix that later!
 
-Since we haven't seen the actual data yet and don't know which columns are useful or not, simply select all columns to the selected data and click **Create**.
+![Step 11](images/Teched2025-DA260_Ex1_13.png)
 
-![Step 12](images/Teched2025-DA260_Ex1_13.png)
+
+
+## Step 12
+
+
+Since we haven't seen the actual data yet and don't know which columns are useful or not, simply select all columns to the selected data and click **Create**.  To bulk select, you can select one and hit ```CTRL A``` on Windows, or ```Command-A``` on a Mac to select all columns.
+
+![Step 12](images/Teched2025-DA260_Ex1_13_2.png)
 
 
 ## Step 13
@@ -183,12 +182,16 @@ Remember when we mentioned that the source data had only text data, even for col
 
 Toggle the **Data Foundation** window on and have a look at the data in your fact table.  This will be useful in the following steps.
 
-![Step 16](images/Teched2025-DA260_Ex1_32.png)
+![Step 16](images/Teched2025-DA260_Ex1_19.png)
 
 
 ## Step 17
 
 In the **Dimensions** area, click the checkboxes of columns that appear to maintain measure data.  Note!  All measures are numeric, but not all numeric values are measures.  A measure is specifically cardinal data; data suited for calculations.  Some numbers, such as the **Match** column are ordinal data and contain numbers used as identifiers.
+
+Again, to bulk select, you can select one checkbox and hit ```CTRL A``` on Windows, or ```Command-A``` on a Mac to select all columns.
+
+We recommend selecting ```attendance``` and all columns after ```away_manager``, for conversion to measure.
 
 ![Step 17](images/Teched2025-DA260_Ex1_20.png)
 
@@ -236,7 +239,7 @@ Name it **Teched2025-DA260_Ex1_Games2022** and click **OK**.
 
 ## Step 23
 
-Before leaving the Modeling module, navigate to the **Data Management** Workspace.
+Before leaving the Modeling app, navigate to the **Data Management** Workspace.
 
 ![Step 23](images/Teched2025-DA260_Ex1_33.png)
 
@@ -299,268 +302,6 @@ Feel free to modify your view and explore the data a bit.
 ![Step 28](images/Teched2025-DA260_Ex1_30.png)
 
 
-## Step 29
-
-Return to the modeling module and re-open **Teched2025-DA260_Ex1_Games2022**.
-
-Note that the **score** column uses a dash between the home and away scores.  We'd like this to be a semicolon, so we'll reload this data and fix this with a wrangling transform.
-
-Click the eraser icon, in the Data group, to delete records from the fact table.
-
-
-![Step 29](images/Teched2025-DA260_Ex1_31.png)
-
-
-## Step 30
-
-Next will come the fact filter dialog.  Here, you can set the filter for fact deletion; all records where the specified dimension value(s) are checked. This gives you the option to delete specific records matching the specified filter pattern. By default, all dimension members of the first dimension in the list are checked and this will delete all fact from the table.
-
-Click **OK**.
-
-
-![Step 30](images/Teched2025-DA260_Ex1_32.png)
-
-
-
-## Step 31
-
-Click **OK** to confirm that you want to clear the fact table.
-
-
-![Step 31](images/Teched2025-DA260_Ex1_48.png)
-
-
-## Step 32
-
-You will now see an empty fact table in your model.
-
-
-![Step 32](images/Teched2025-DA260_Ex1_49.png)
-
-
-## Step 33
-
-Navigate to the **Data Management** workspace.
-
-
-![Step 33](images/Teched2025-DA260_Ex1_35.png)
-
-
-## Step 34
-
-Recall that when we originally connected to the data to start creating the model, we created an initial import job.  When you create a model from data, you skip past data wrangling and column mapping, which is why the import job "has not been set up".  We will now set this import job up.  
-
-Click on **Set Up Import**.
-
-
-![Step 34](images/Teched2025-DA260_Ex1_34.png)
-
-
-## Step 35
-
-Here you see a significant difference in behavior, from what you'll encounter with Datasphere Replication Flows in [Exercise 3](../ex3/README.md).  
-- With Replication Flows, remote data is replicated into Datasphere tables, and you can then do what you want with those tables later.
-- SAC import jobs always exist in the context of a data model. The remote data is replicated into local tables, but this is regarded as draft data, yet to be prepared for the model.  This draft data is used when preparing wrangling (data preparation) and mapping, but is not visible outside this context and is not retained for very long.
-
-If you very recently created your model, you draft data may still be present, and you won't see this popup.  If you were to come back a few days later, the draft data would have been cleaned up. If the draft data is still present, you'll simply go to the next step. Otherwise, this popup will prompt you to re-run the query before proceeding.  You will nearly always be prompted to rerun your query.
-
-If you are prompted, click **Rerun Query***.
-
-![Step 35](images/Teched2025-DA260_Ex1_37.png)
-
-
-## Step 36
-
-Take a moment to orient yourself in the **Data Wrangler**.  Here is where you can transform data.
-- It uses a spreadsheet visual paradigm, allowing the user to work interactively on the data that they are transforming and see the effects of their transforms in real-time.
-- Sometimes data needs to be transposed from columnar to row format.  E.g. a set of revenue figures might be split across columns, for side by side comparison of year-on-year, but you'll want these figures in a single measure later.  You can transpose data right from the menu bar, using **Unpivot**.
-- You have access to two separate "formula bars"; the interactive **Create Transform** builder, and a powerful **Custom Expression Editor**.  "Formula bars" is in quotes, because the interactive **Create Transform** builder is not actually a formula editor, but uses a visual expression as an assistance mechanism.
-- You can toggle the display of your transform log on, to see what transforms you have previously done in this session, revert and edit transforms. 
-- Lastly, note that the Wrangler did detect that the text cells that actually held numeric data were in fact numbers and assigned the data type appropriately.  
-
-
-
-![Step 36](images/Teched2025-DA260_Ex1_38.png)
-
-
-## Step 37
-
-Click the **Custom Expression Editor** icon, to open the editor.
-
-
-![Step 37](images/Teched2025-DA260_Ex1_50.png)
-
-
-## Step 38
-
-We're going to want to use the replaceContect() expression.  You can use the **Custom Expression Editor**'s code completion assistant, by starting to type in the command.  Type in "re".
-
-```re```
-
-Select **replaceContect** from the dropdown.
-
-
-![Step 38](images/Teched2025-DA260_Ex1_51.png)
-
-
-## Step 39
-
-The custom expression formula will initially look like this:
-
-```[column] = replaceContent(string1, substring1, string2)```
-
-- **Column** - is the name of the new columns that will be created.
-- **string1** - is the columns where the change will be.
-- **substring1** - is the string pattern that will be swapped out.
-- **string2** - is the string pattern that will be swapped in.
-
-
-![Step 39](images/Teched2025-DA260_Ex1_52.png)
-
-## Step 40
-
-Create a new column, called **score2**, which duplicates **score** and replaces "–" with ":".
-
-```[score2] = replaceContent([score] , "–", ":")```
-
-**Note!**  The **"–"** coming from the database is a long dash and not the ascii **"-"**.  It is bext to copy and paste it from the table, or from this document.
-
-Click the checkmark, to execute the formula.
-
-
-![Step 40](images/Teched2025-DA260_Ex1_53.png)
-
-## Step 41
-
-You can now compare **score** and **score2*** and see the difference in the text.
-
-Click **Next** to proceed to mapping.
-
-
-![Step 41](images/Teched2025-DA260_Ex1_54.png)
-
-
-## Step 42
-
-Now please on your top left, choose **Step 2: Map to FActs**.
-
-In **Mapping**, look in the mapping section, or the right side.  See where the **score** column in the draft data is mapped to the **score** dimension.   
-
-Click the **X**, next to the **score** column in the draft data, to delete this mapping.
-
-
-![Step 39](images/Teched2025-DA260_Ex1_55.png)
-
-## Step 43
-
-The **score** dimension now has no mapping.
-
-Drag **score2** from the **Source Columns** to the box labeled "Drag a column".
-
-
-![Step 43](images/Teched2025-DA260_Ex1_56.png)
-
-
-## Step 44
-
-See where the **score2** column in the draft data is mapped to the **score** dimension. 
-
-Click **Next** to proceed to Validation.
-
-
-![Step 44](images/Teched2025-DA260_Ex1_57.png)
-
-## Step 45
-
-Click **Next**.
-
-The draft data will not be validated against the model.  Any problems will be reported here, allowing you to fix them before commiting them to the fact table.
-
-
-![Step 45](images/Teched2025-DA260_Ex1_58.png)
-
-## Step 46
-
-No problems should be reported. The most common cause of issues would be unbooked dimension members, where a column being mapped to a dimension deos not a value not in the dimension table.
-
-Since our model only uses so-called "single column" dimensions, where we did not attach a column to a dimension (e.g. a public dimension), there are no foreign key constraints. If your fact data does not align with your master data, this is the place where you'd normally discover that.
-
-**Note!**  We deliberated used only single column dimensions as this is a data connectivity exercise and not a modeling one; and this exercise is long enough as it is.  
-
-
-![Step 46](images/Teched2025-DA260_Ex1_41.png)
-
-
-## Step 47
-
-If no problems are reported, you can click **Run Import**. 
-
-
-![Step 47](images/Teched2025-DA260_Ex1_42.png)
-
-
-## Step 48
-
-Click **Finish** to start the data load. 
-
-
-![Step 48](images/Teched2025-DA260_Ex1_43.png)
-
-
-## Step 49
-
-While the data load is running, you will see a running animation, under **Last Known Status**.
-
-
-![Step 49](images/Teched2025-DA260_Ex1_44.png)
-
-
-## Step 50
-
-Once the data load is finished, you should see a chain of green checkmarks, under **Last Known Status**.  This indicates the status of the various steps of the process, connection, query, wrangling, validation.  If there is a problem, or if a process is incomplete (such as if you had clicked on **Save and Exit**), you will see it here.
-
-You can set up automatic, scheduled data refreshes.  To do so:
-
-- Click the checkbox next to all of th eload jobs of a model that you want to maintain a particular schedule for.
-- Then click the Calendar icon.
-
-![Step 50](images/Teched2025-DA260_Ex1_60.png)
-
-
-
-## Step 51
-
-You can set up automatic, scheduled data refreshes.  To do so:
-
-- Click the checkbox next to all of th eload jobs of a model that you want to maintain a particular schedule for.
-- Then click the Calendar icon.
-
-
-![Step 50](images/Teched2025-DA260_Ex1_60.png)
-
-
-## Step 52
-
-Maintain your desired schedule settings, e.g. once a week at 6AM, etc.  You can schedule load jobs more frequently than on a one-hour basis.
-
-
-![Step 52](images/Teched2025-DA260_Ex1_61.png)
-
-
-## Step 53
-
-Return to the ***Module Structure** workspace. 
-
-
-![Step 53](images/Teched2025-DA260_Ex1_46.png)
-
-
-## Step 54
-
-Look in your data foundation.  You'll see that the members of the **score** dimension now display the transformed version. 
-
-![Step 54](images/Teched2025-DA260_Ex1_47.png)
-
 
 ## Summary
 
@@ -568,5 +309,8 @@ You've now created a new model in SAC by importing data.
 
 Analytics Cloud Model with Live Data
 
-Continue to - [Exercise 2 - Analytics Cloud Model with Live Data](../ex2/README.md)
+Continue to - [Exercise 2 - Analytics Cloud Model with Live Data](../ex2/README.md), to create a model from the World Cup data, but with a live (federated) fact table.
 
+-or-
+
+Continue to - [Exercise 8 - Loading Data into an existing SAC model](../ex8/README.md), to create a load job for this model.
