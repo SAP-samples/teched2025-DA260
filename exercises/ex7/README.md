@@ -96,7 +96,7 @@ Example. if you are using user id '10', please use the following name for your t
     Here you can see statistics, and the status of the data replication for all our target source object.
 
 
-**This concludes the Exercise 9 where the objective is to replicate data from SAP Datasphere into Google Big Query (GBQ)**
+**This concludes the Exercise 7 where the objective is to replicate data from SAP Datasphere into Google Big Query (GBQ)**
 **Congratulations, you have now completed all exercises of DA260 Hands-On Session. Thank you for your participation and we hope you enjoyed our exercises** 
 
 
