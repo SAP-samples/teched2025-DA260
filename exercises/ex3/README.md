@@ -120,23 +120,30 @@ Please note that each of the source objects should have an *ID* column, which yo
     
    ![ex_03_22](images/ex_03_22.png)
 
-18. Click on Monitor icon ![ex_03_24](images/ex_03_24.png)  in Run Status tab in property panel, which will directly navigate you to the detailed monitoring screen of your replication flow:
+18. Click on Monitor icon ![ex_03_24](images/ex_03_24.png)  in Run Status tab in property panel, or in the right side of Replication Flow Properties, which will directly navigate you to the detailed monitoring screen of your replication flow:
 
       ![ex_03_25](images/ex_03_25.png)
+      ![ex_03_31](images/ex_03_31.png)
 
       Here you can see different information such as the source and target connection, load statistics and the status of the data replication for all CSV Files
 
      ![ex_03_26](images/ex_03_26.png)
 
+     In case you want to start/pause/resume/stop the Run, you can click on the three dot icon as it is highlighted in the image below.
+
+     ![ex_03_32](images/ex_03_32.png)
+
 19. Finally, you can check the replicated data from Google Cloud Storage (GCS) CSV views in the Datasphere local tables. Therefore, go to the main page of the Data Builder and check for the tables you have defined in the Replication Flow before:
 
       ![ex_03_27](images/ex_03_27.png)
       
-      Then select one of the local tables in SAP Datasphere, e.g. BusinessPartners_LT, by double-clicking on the table.
+      Then select one of the local tables in SAP Datasphere, e.g. BusinessPartners_LT2, by one-time-clicking on the table.
       
       Click on the *Preview* button as highlighted below:
 
       ![ex_03_28](images/ex_03_28.png)
+
+      ![ex_03_33](images/ex_03_33.png)
 
       You can now see the data that was replicated from Google Cloud Storage containing Business Partners information on the bottom of your screen
       
