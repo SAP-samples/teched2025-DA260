@@ -79,11 +79,19 @@ Example. if you are using user id '10', please use the following name for your t
     ![ex_09_19](images/ex_09_19.png)
 
 
-11.	Click on **Monitor Icon** ![ex_09_20](images/ex_09_20.png)  in Run Status in property panel, which will directly navigate you to the detailed monitoring screen of your replication flow: 
+11.	Click on **Monitor Icon** ![ex_09_20](images/ex_09_20.png) in Run Status in property panel, or in the right side of Replication Flow Properties, which will directly navigate you to the detailed monitoring screen of your replication flow: 
 
     ![ex_09_21](images/ex_09_21.png)
 
+    ![ex_07_23](images/ex_07_23.png)
+
+    After clicking on the Monitor icon, a new window will be open and you can see all the monitoring details, as below:
+
     ![ex_09_22](images/ex_09_22.png)
+
+    You can decide to start/pause/rename/stop the Run. Or, in case the replication flow has still not been completed, please click in the **Refresh** button as shown with the arrow in the image below
+
+    ![ex_07_24](images/ex_07_24.png)
 
     Here you can see statistics, and the status of the data replication for all our target source object.
 

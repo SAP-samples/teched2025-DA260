@@ -129,15 +129,15 @@ Please note that each of the source objects should have an *ID* column, which yo
 
      ![ex_03_26](images/ex_03_26.png)
 
-     In case you want to start/pause/resume/stop the Run, you can click on the three dot icon as it is highlighted in the image below.
+     In case you want to start/pause/resume/stop the Run, you can click on the three dot icon as it is highlighted in the image below. Or, in case the replication flow has still not been completed, please click in the **Refresh** button as shown with the arrow in the image below:
 
      ![ex_03_32](images/ex_03_32.png)
 
-19. Finally, you can check the replicated data from Google Cloud Storage (GCS) CSV views in the Datasphere local tables. Therefore, go to the main page of the Data Builder and check for the tables you have defined in the Replication Flow before:
+19. Finally, you can check the replicated data from Google Cloud Storage (GCS) CSV views in the Datasphere local tables. Therefore, go to the main page of the **Data Builder** and check for the tables you have defined in the Replication Flow before:
 
       ![ex_03_27](images/ex_03_27.png)
       
-      Then select one of the local tables in SAP Datasphere, e.g. BusinessPartners_LT2, by one-time-clicking on the table.
+      Then select one of the local tables in SAP Datasphere, e.g. **BusinessPartners_LT2**, by one-time-clicking on the table.
       
       Click on the *Preview* button as highlighted below:
 
