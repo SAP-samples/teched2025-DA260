@@ -86,7 +86,11 @@ Just as is **Exercise step 1.17**, click the checkboxes of columns that appear t
 
 - Remember!  All measures are numeric, but not all numeric values are measures.  A measure is specifically cardinal data; data suited for calculations.  Some numbers, such as the **Match** column are ordinal data and contain numbers used as identifiers.
 
-![Step 9](images/Teched2025-DA260_Ex2_07.png)
+Again, to bulk select, you can select one checkbox and hit ```CTRL A``` on Windows, or ```Command-A``` on a Mac to select all columns.
+
+We recommend selecting ```attendance``` and all columns after ```away_manager``, for conversion to measure.
+
+![Step 9](images/Teched2025-DA260_Ex1_20.png)
 
 
 
@@ -94,7 +98,7 @@ Just as is **Exercise step 1.17**, click the checkboxes of columns that appear t
 
 Just as in **Exercise Step 1.18**, click any of the ellipses in the right column of the Dimension table and select **Convert to Measure**.
 
-![Step 10](images/Teched2025-DA260_Ex2_08.png)
+![Step 10](images/Teched2025-DA260_Ex1_21.png)
 
 
 
@@ -166,7 +170,7 @@ Use the builder to analyze the available data.  Note that whenever you change th
 
 ## Summary
 
-You've now ...
+You've now able to create a data model in SAC, using live (federated) fact data.
 
 Continue to - [Exercise 3 - Replicate Files from Google Cloud Storage (GCS) via Replication Flows to SAP Datasphere](../ex3/README.md)
 
