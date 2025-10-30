@@ -153,7 +153,7 @@ With QRC release 2025.Q4, you will be able to [use live data in specific version
 
 Go ahead and save your model.
 
-In Exercise 1, you went to the **Data Analyzer** module, to open the model.  You can also open the model in the **Data Analyzer**, directly from the Modeling module.  Look across the very top of the screen, just to the left of the model name.  Notice the pull down menu.  If you open this, you'll see the option to start creating a new story, using this model, or to open it in the **Data Analyzer**
+In Exercise 1, you went to the **Data Analyzer** app, to open the model.  You can also open the model in the **Data Analyzer**, directly from the Modeling app.  Look across the very top of the screen, just to the left of the model name.  Notice the pull down menu.  If you open this, you'll see the option to start creating a new story, using this model, or to open it in the **Data Analyzer**
 
 Use the pull down to open the model in the **Data Analyzer**.
 
@@ -181,5 +181,5 @@ Continue to - [Exercise 3 - Replicate Files from Google Cloud Storage (GCS) via 
 
 -or-
 
-Continue to - [Exercise 6 - Loading Data into an existing SAC model](../ex6/README.md), to create a load job for this model.
+Continue to - [Exercise 8 - Loading Data into an existing SAC model](../ex8/README.md), to create a load job for this model.
 
