@@ -1,6 +1,6 @@
 # Exercise 8 - Loading Data into an existing SAC model
 
-In exercises 1 and 2, you created a model from data.  In this exercise, you will load new data into **Teched2025-DA260_Ex1_Games2022**n which you created in exercise 1.  This is SAC's ```Extract, Transform, Load (ETL)``` workflow, where you connect, bring the data into SAC and then transform it to fit to the semantic model that it will be used with.  You will spend more time in the modeling tools than in the previous exercises, because SAC's data connectivity and semantic modeling are intimately intertwined.
+In exercises 1 and 2, you created a model from data.  In this exercise, you will load new data into **Teched2025-DA260_Ex1_Games2022**, which you created in exercise 1.  This is SAC's ```Extract, Transform, Load (ETL)``` workflow, where you connect, bring the data into SAC and then transform it to fit to the semantic model that it will be used with.  You will spend more time in the modeling tools than in the previous exercises, because SAC's data connectivity and semantic modeling are intimately intertwined.
 
 **Step 0** to **Step 28** were carried out in Continue to - [Exercise 1 - Create an Analytics Cloud Model with Acquired Data](../ex1/README.md), and this exercise carries on from **Step 29** onwards.
 
