@@ -9,10 +9,21 @@ In contrast to SAP Datasphere (DSP), where replication flows put data into table
 
 In this exercise, you will create a new data model in SAC, with data acquired from a Google Big Query (GBQ) project.
 
+## Logon
+
+Open SAC and log in with your user, which if you are doing this in the hands-on workshop, will be in the range between ```AC239489U01``` and ```AC239489U70```.
+
+If this is the first time that this user has logged on, you might see the popup below.  (If you don't see it, then it simply means that someone has already logged on with this user and made the theme choice).  The popup will ask you if you want to use the ```SAP Horizon``` theme in SAC.  This UI5 theme has been available for some time, but is only being enabled for SAC in quarterly release QRC 2025.Q4.  ```Horizon``` was not available on this tenant when we made the screenshots and wrote the exercises for SAC, but is now available on this tenant.  Therefore, we recommend clicking **Close** and remaining in the older ```Belize``` CSS style, to ensure that the screen looks **exactly** as in the screenshots.  If you prefer to try ```Horizon```, that is also fine.  There is no functional difference in the exercise workflows or layout, only in CSS theming.  
+
+![Horizon Popup](images/Teched2025-DA260_Ex1_Hor1.png)
+
+
 
 ## Step 0
 
-With SAC open, take a moment to orient yourself.  The navigation bar on the left side, and the information bar along the top are shared across BDC tools, so if you know the basics of how to navigate in one, you know it for all.  
+  
+
+With SAC open, take a moment to orient yourself.  Regardless of which theming you chose, the layout is nearly the same and functionality is unchanged. The navigation bar on the left side, and the information bar along the top are shared across BDC tools, so if you know the basics of how to navigate in one, you know it for all.  
 
 In the center canvas, you have some options.  There are four tabs:
 - **Today**: Where you can access tutorials, see files that you have recently opened and use AI to answer questions about your data.
@@ -24,7 +35,9 @@ Of course, you can also access everything through the various apps - Data Analyz
 
 To begin the exercise, select the Modeling Workbench, from the navigation panel.
 
-![Step 00](images/Teched2025-DA260_Ex1_00.png)
+![Step 00 Belize](images/Teched2025-DA260_Ex1_00.png)
+
+![Step 00 Horizon](images/Teched2025-DA260_Ex1_Hor2.png)
 
 
 
