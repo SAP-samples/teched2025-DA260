@@ -1,4 +1,4 @@
-# Exercise 9 - Replicate Local Tables from SAP Datasphere to Google Big Query (GBQ) with Replication Flows
+# Exercise 7 - Replicate Local Tables from SAP Datasphere to Google Big Query (GBQ) with Replication Flows
 
 This exercise involves creating a Replication Flow that reads data from SAP Datasphere local tables and replicates this data into Google BigQuery (GBQ). This process involves modelling of a replication flow and configuring it to consume a pre-existing GBQ connection and pick the required source objects to replicate them into new target tables in Google BigQuery.
 
