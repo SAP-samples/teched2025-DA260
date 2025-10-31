@@ -49,6 +49,14 @@ Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud (= SAC), whic
 
 ### Inbound integration
 
+Please find below an overview of the different exercises.
+
+**Important Note:** Please feel free to choose the exercises that are most interesting for you! You will likely not be able to cover all exercises in the time during the workshop.
+
+![Overview_Exercises](images/Overview_Exercises.jpg)
+
+A more detailed overview including the links to different exercises is provided below:
+
 | Product             | Replication | Federation | Push |
 |---------------------|-------------|------------|------------ |
 | SAP Analytics Cloud | [Exercise 1](exercises/ex1/), [Exercise 8](exercises/ex8/) | [Exercise 2](exercises/ex2/) | |  |
@@ -70,9 +78,6 @@ Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud (= SAC), whic
 
 - [Exercise 6 - Outbound pull of data in SAP Datasphere with JDBC or oData](exercises/ex6/) 
 - [Exercise 7 - Outbound push in SAP Datasphere with Replication FLows](exercises/ex7/)
-
-
-![Overview_Exercises](images/Overview_Exercises.jpg)
 
 Have fun!
 
