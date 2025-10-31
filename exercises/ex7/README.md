@@ -24,11 +24,11 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
 
     ![ex_09_04](images/ex_09_04.png)
 
-    Select **SAP Datasphere** as source connection, which is technically using connection type HANA from the list of the available connections. It will update the connection and after it you need to select Add Source Objects button which is automatically selected for the next step on the bottom of the screen highlighted in blue. Please select **‘Add Source Object’**.
+    Select **SAP Datasphere** as source connection, which is technically using connection type HANA from the list of the available connections. It will update the connection and after it you need to select Add Source Objects button which is automatically selected for the next step on the bottom of the screen highlighted in blue. Please select **Add Source Object**.
 
     ![ex_09_05](images/ex_09_05.png)
 
-5. After selecting **‘Add Source Object’** button, a new popup window will open, which shows all the repository objects that are available. For this exercise, please select **BusinessPartnersOpenSQL**, and click **OK** button.
+5. After selecting **Add Source Object** button, a new popup window will open, which shows all the repository objects that are available. For this exercise, please select **BusinessPartnersOpenSQL**, and click **OK** button.
 
     ![ex_09_06](images/ex_09_06.png)
 
@@ -74,7 +74,7 @@ Example. if you are using user id '10', please use the following name for your t
 
     ![ex_09_17](images/ex_09_17.png)
 
-10.	Once the status is Deployed, click on the **Run Icon** ![ex_09_18](images/ex_09_18.png) in the General Tab above. You will see the Run Status in property panel getting updated to ‘Running’.
+10.	Once the status is Deployed, click on the **Run Icon** ![ex_09_18](images/ex_09_18.png) in the General Tab above. You will see the Run Status in property panel getting updated to "Running".
 
     ![ex_09_19](images/ex_09_19.png)
 
