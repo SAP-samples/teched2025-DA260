@@ -33,12 +33,13 @@ Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud (= SAC), whic
 ## Requirements
 
 * Google Chrome
-* Access to this GitHub repository
+* [Access to GitHub Repository](https://github.com/SAP-samples/teched2025-DA260)
 
-  **Important Note**: The Datasphere landscape being used during SAP TechEd will be available until **November 19th**. Until November 19th, you can re-use your existing content in your user space and finalize the exercises in case you did not have sufficient time during the hands-on workshop at SAP TechEd. 
+  **Important Note**: The landscape being used during SAP TechEd will be available until **November 19th**. Until November 19th, you can re-use your existing content in your user space and finalize the exercises in case you did not have sufficient time during the hands-on workshop. 
   
 * [Access to SAP Datasphere tenant](https://trial-bdc-datasphere-3.eu10.hcs.cloud.sap/)
-  * User-Id: xxx + last 2 digits that have been provided to you onsite at TechEd
+* [Access to SAP Analytics Cloud tenant](https://trial-bdc-sac-3.eu10.sapanalytics.cloud/)
+  * User-Id: AC239489XX + last 2 digits with XX are the number being handed over to you by the trainers onsite at TechEd.
   * Tenant access password: xxx
 
 * Basic know-how about the usage and integration of data in SAP Business Data Cloud leveraging SAP Datasphere & SAP Analytics Cloud (SAC)
@@ -55,7 +56,7 @@ Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud (= SAC), whic
 
 
 - [Exercise 1 - Replicate data into SAC ](exercises/ex1/)
-- [Exercise 2 - Live connection in SAC Replicate data into SAP Datasphere with Replication Flows](exercises/ex2/)
+- [Exercise 2 - Live connection in SAC](exercises/ex2/)
 - [Exercise 3 - Replicate data into SAP Datasphere with Replication Flows](exercises/ex3/)
 - [Exercise 4 - Federation in Datasphere with Remote Tables](exercises/ex4/) 
 - [Exercise 5 - Push data into Datasphere with OpenSQL](exercises/ex5/) 
