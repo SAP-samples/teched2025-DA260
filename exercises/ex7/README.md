@@ -1,6 +1,6 @@
-# Exercise 7 - Replicate Local Tables from SAP Datasphere to Google Big Query (GBQ) with Replication Flows
+# Exercise 7 - Replicate Local Tables from SAP Datasphere to Google BigQuery (GBQ) with Replication Flows
 
-This exercise involves creating a Replication Flow that reads data from SAP Datasphere local tables and replicates this data into Google BigQuery (GBQ). This process involves modelling of a replication flow and configuring it to consume a pre-existing GBQ connection and pick the required source objects to replicate them into new target tables in Google BigQuery.
+This exercise involves creating a Replication Flow that reads data from SAP Datasphere local tables and replicates this data into Google BigQuery (GBQ). This process involves modeling of a replication flow and configuring it to consume a pre-existing GBQ connection and selecting the required source objects to replicate them into new target tables in Google BigQuery.
 
 The Task is to load the SAP Datasphere local table for:
 - BusinessPartnersOpenSQL
@@ -16,7 +16,7 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
    
     ![ex_09_02](images/ex_09_02.png)
 
-3.	Click on **New Replication Flow** tile to launch the creation of new a replication flow.
+3.	Click on **New Replication Flow** tile to start creating a new replication flow.
    
     ![ex_09_03](images/ex_09_03.png)
 
@@ -24,7 +24,7 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
 
     ![ex_09_04](images/ex_09_04.png)
 
-    Select **SAP Datasphere** as source connection, which is technically using connection type HANA from the list of the available connections. It will update the connection and after it you need to select Add Source Objects button which is auto selected for the next step on the bottom of the screen highlighted in blue. Please select **‘Add Source Object’**.
+    Select **SAP Datasphere** as source connection, which is technically using connection type HANA from the list of the available connections. It will update the connection and after it you need to select Add Source Objects button which is automatically selected for the next step on the bottom of the screen highlighted in blue. Please select **‘Add Source Object’**.
 
     ![ex_09_05](images/ex_09_05.png)
 
@@ -44,7 +44,7 @@ Additionally, in this particular case only "Initial Load" is supported when repl
 
     ![ex_09_08](images/ex_09_08.png)
 
-7. The target connection details are now updated in your Replication Flows using **GBQ** as target, and after this you need to select the icon **Select Container**, where it leads to a new popup window, and from there you need to select container **‘DA260_TARGET’**. After selecting, please click button *Select*. You need to choose **BussinessPartnersOpenSQL** as the file that you want to replicate from SAP Datasphere to GBQ.
+7. The target connection details are now updated in your Replication Flows using **GBQ** as target, and after this you need to select the icon **Select Container**, where it leads to a new popup window, and from there you need to select container **DA260_TARGET**. After selecting, please click on the button **Select**. You need to choose **BussinessPartnersOpenSQL** as the file that you want to replicate from SAP Datasphere to GBQ.
 
     ![ex_09_09](images/ex_09_09.png)
 
@@ -52,7 +52,7 @@ Additionally, in this particular case only "Initial Load" is supported when repl
 
     ![ex_09_11](images/ex_09_11.png)
 
-8.	After this you can click om the three-dot icon to rename the target object. It will open a new popup window, you rename to **UserX_businessPartnersOpenSQL**, where **'X'** represents your user id and click the **‘Rename’** button. 
+8.	After this you can click om the three-dot icon to rename the target object. It will open a new popup window, you rename to **UserX_businessPartnersOpenSQL**, where **X** represents your user id and click the **Rename** button. 
 Example. if you are using user id '10', please use the following name for your target in GBQ: User*10*_businessPartnersOpenSQL
  
 
@@ -68,7 +68,7 @@ Example. if you are using user id '10', please use the following name for your t
 
     ![ex_09_14](images/ex_09_14.png)
 
-    Change the default name being displayed by defining the business name as Outbound Replication Flow 1, which will automatically set technical name as Outbound_Replication_Flow1, and then click the **Save** button.
+    Change the default name being displayed by defining the business name as "Outbound Replication Flow 1", which will automatically set technical name as Outbound_Replication_Flow1, and then click the **Save** button.
 
     ![ex_09_16](images/ex_09_16.png)
 
@@ -85,7 +85,7 @@ Example. if you are using user id '10', please use the following name for your t
 
     ![ex_07_23](images/ex_07_23.png)
 
-    After clicking on the Monitor icon, a new window will be open and you can see all the monitoring details, as below:
+    After clicking on the Monitor icon, a new window will open and you can see all the monitoring details, as shown below:
 
     ![ex_09_22](images/ex_09_22.png)
 
@@ -96,7 +96,7 @@ Example. if you are using user id '10', please use the following name for your t
     Here you can see statistics, and the status of the data replication for all our target source object.
 
 
-**This concludes the Exercise 7 where the objective is to replicate data from SAP Datasphere into Google Big Query (GBQ)**
-**Congratulations, you have now completed all exercises of DA260 Hands-On Session. Thank you for your participation and we hope you enjoyed our exercises** 
+**This concludes the Exercise 7, where the objective is to replicate data from SAP Datasphere into Google BigQuery (GBQ)**
+
 
 

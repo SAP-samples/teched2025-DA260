@@ -1,6 +1,6 @@
 # Exercise 8 - Loading Data into an existing SAC model
 
-In exercises 1 and 2, you created a model from data.  In this exercise, you will load new data into **Teched2025-DA260_Ex1_Games2022**, which you created in exercise 1.  This is SAC's ```Extract, Transform, Load (ETL)``` workflow, where you connect, bring the data into SAC and then transform it to fit to the semantic model that it will be used with.  You will spend more time in the modeling tools than in the previous exercises, because SAC's data connectivity and semantic modeling are intimately intertwined.
+In exercises 1 and 2, you created a model from data.  In this exercise, you will load new data into **Teched2025-DA260_Ex1_Games2022**, which you created in exercise 1.  This is SAC's ```Extract, Transform, Load (ETL)``` workflow, where you connect, bring the data into SAC and then transform it to fit the semantic model that it will be used with.  You will spend more time in the modeling tools than in the previous exercises, because SAC's data connectivity and semantic modeling are intimately intertwined.
 
 **Step 0** to **Step 28** were carried out in Continue to - [Exercise 1 - Create an Analytics Cloud Model with Acquired Data](../ex1/README.md), and this exercise carries on from **Step 29** onwards.
 
@@ -68,7 +68,7 @@ Here you see a significant difference in behavior, from what you'll encounter wi
 - With Replication Flows, remote data is replicated into Datasphere tables, and you can then do what you want with those tables later.
 - SAC import jobs always exist in the context of a data model. The remote data is replicated into local tables, but this is regarded as draft data, yet to be prepared for the model.  This draft data is used when preparing wrangling (data preparation) and mapping, but is not visible outside this context and is not retained for very long.
 
-If you very recently created your model, you draft data may still be present, and you won't see this popup.  If you were to come back a few days later, the draft data would have been cleaned up. If the draft data is still present, you'll simply go to the next step. Otherwise, this popup will prompt you to re-run the query before proceeding.  You will nearly always be prompted to rerun your query.
+If you very recently created your model, the draft data may still be present, and you won't see this popup.  If you were to come back a few days later, the draft data would have been cleaned up. If the draft data is still present, you'll simply go to the next step. Otherwise, this popup will prompt you to re-run the query before proceeding.  You will nearly always be prompted to rerun your query.
 
 If you are prompted, click **Rerun Query***.
 
@@ -129,7 +129,7 @@ Create a new column, called **score2**, which duplicates **score** and replaces 
 
 ```[score2] = replaceContent([score] , "–", ":")```
 
-**Note!**  The **"–"** coming from the database is a long dash and not the ascii **"-"**.  It is bext to copy and paste it from the table, or from this document.
+**Note!**  The **"–"** coming from the database is a long dash and not the ascii **"-"**.  It is best to copy and paste it from the table, or from this document.
 
 Click the checkmark, to execute the formula.
 
@@ -187,7 +187,7 @@ The draft data will not be validated against the model.  Any problems will be re
 
 ## Step 46
 
-No problems should be reported. The most common cause of issues would be unbooked dimension members, where a column being mapped to a dimension deos not a value not in the dimension table.
+No problems should be reported. The most common cause of issues would be unbooked dimension members, where a column being mapped to a dimension does not have a value in the dimension table.
 
 Since our model only uses so-called "single column" dimensions, where we did not attach a column to a dimension (e.g. a public dimension), there are no foreign key constraints. If your fact data does not align with your master data, this is the place where you'd normally discover that.
 
@@ -227,7 +227,7 @@ Once the data load is finished, you should see a chain of green checkmarks, unde
 
 You can set up automatic, scheduled data refreshes.  To do so:
 
-- Click the checkbox next to all of th eload jobs of a model that you want to maintain a particular schedule for.
+- Click the checkbox next to all of the load jobs of a model that you want to maintain a particular schedule for.
 - Then click the Calendar icon.
 
 ![Step 50](images/Teched2025-DA260_Ex1_60.png)
@@ -238,7 +238,7 @@ You can set up automatic, scheduled data refreshes.  To do so:
 
 You can set up automatic, scheduled data refreshes.  To do so:
 
-- Click the checkbox next to all of th eload jobs of a model that you want to maintain a particular schedule for.
+- Click the checkbox next to all of the load jobs of a model that you want to maintain a particular schedule for.
 - Then click the Calendar icon.
 
 
