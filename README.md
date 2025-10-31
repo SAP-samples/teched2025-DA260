@@ -8,7 +8,7 @@ This hands-on workshop will give you the opportunity to try out the different in
 
 SAP Businees Data Cloud includes SAP Datasphere, a comprehensive data service acting as a business data fabric that enables every data professional to deliver seamless, and scalable access to mission-critical business data. SAP Datasphere enables access to authoritative data by accelerating time-to-value by automatically reusing the semantical definitions and associations from SAP applications. SAP Datasphere enriches all data projects by harmonizing heterogeneous data into a business semantic model of your diverse data landscape. On top, it helps to simplify the data landscape and accesses all your data across hybrid and cloud environments no matter where it resides.
 
-Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud (= SAC), which includes different options to perform data integration & acquistion with a focus on self-service for business users to easily acquire data from various different sources.
+Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud (= SAC), which enables users to visualize data, create interactive dashboards, and perform real-time reporting while supporting collaborative planning and forecasting. Furthermore, it includes different capabilities to perform data integration & acquistion with a focus on self-service for business users to easily acquire data from various different sources including SAP as well as 3rd party data sources.
 
 ## Overview
 
