@@ -15,14 +15,18 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
    
     ![ex_05_02](images/ex_05_02.png)
 
-3.	The Database User list in the section Database Access is used to open the endpoint and create the credentials to access the JDBC endpoint. Click on **Create** to create a new set of credentials. Enter a Database user suffix and enable read and write access and click **"*Create**
+3.	The Database User list in the section Database Access is used to open the endpoint and create the credentials to access the JDBC endpoint. Click on **Create** to create a new set of credentials. 
+
+    ![ex_05_02b](images/ex_05_02b.png)
+
+Enter a Database user suffix and enable read and write access and click **"*Create**
    
-    ![ex_05_03](images/ex_05_03.png)
+   ![ex_05_03](images/ex_05_03.png)
 
 4. Please click on **Deploy** in the upper right corner of the screen to deploy the changes and activate the user creation.
 Please wait until the status of your is changed to **Active** before you proceed.
 
-    ![ex_05_04](images/ex_05_04a.png)  
+   ![ex_05_04](images/ex_05_04a.png)  
 
 5.	The user is now created in the database, to get to the connection details and the credentials click on the information **symbol (i)** of the newly created user. 
    
@@ -42,8 +46,9 @@ Please wait until the status of your is changed to **Active** before you proceed
     ![ex_05_08a](images/ex_05_08a.png)
 
  In the following screen, please click on **Authorize** and then you will be re-directed to the Database Explorer application.
- 
-    ![ex_05_08b](images/ex_05_08b.png)
+
+   ![ex_05_08b](images/ex_05_08b.png)
+
 
 Note: The Database Explorer is an SAP tool integrated into our landscape, so that the connection details get pre-populated for you, for other tools they need to manually transferred to create the connection. 
 
