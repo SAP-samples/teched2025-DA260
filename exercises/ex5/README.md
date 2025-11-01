@@ -4,8 +4,6 @@ In this exercise we are going to open an SQL end point that can used by external
 We will create credentials for the external tools to authenticate on SAP Datasphere. We will also learn how to add the pushed entities to the repository. 
 
 
-
-
 ### Step-by Step-guide:
 Refer to the provided solution below for a detailed, step-by-step guide to complete Exercise 5.
 
@@ -33,16 +31,11 @@ Please wait until the status of your is changed to **Active** before you proceed
     ![ex_05_05](images/ex_05_05.png)    
 
 
-
 7.  Please select the user you have just created by clicking the checkbox next to the user and then click on **Open Database Explorer** to use the JDBC connection. 
     ![ex_05_07](images/ex_05_07.png)    
 
-<<<<<<< HEAD
-8.  A new browser tab will now be opened and here please enter "academy-platform" into the next box and click on **Sign in with alternative identity provider**.
-=======
-8.  Use your SAP Account to login, if you don't have one go up the prerequisite of this exercise. Then the Database explorer is acting as the external tool. The DB Explorer is as SAP tool integrated into our landscape, so that the connection details get pre-populated for you, for other tools they need to manually transferred to create the connection. Enter the previously generated password, if you check the **Save Password** box the DB Explorer will store the password for future use. It can be helpful to change the display name to something more human readable, from the GUID that is hat by default. Click **OK** to create the connection. 
-Please etner the text "academy-platform" and lick on **Sign in with alternative identitiy provider**
->>>>>>> 640df28a136cd77cb54d6a22003f8cbbc8d5cd1a
+
+8.  A new browser tab will now be opened and here please enter "academy-platform" into the next box and click on **Sign in with alternative identity provider**:
 
  ![ex_05_08a](images/ex_05_08a.png)
 
@@ -54,19 +47,16 @@ Note: The Database Explorer is an SAP tool integrated into our landscape, so tha
 
 Now enter the previously generated password. If you check the **Save Password** box, the Database Explorer will store the password for future use. It can be helpful to change the display name to something more human readable, from the GUID that is hat by default. Click **OK** to create the connection. 
 
-    ![ex_05_08](images/ex_05_08.png)
+![ex_05_08](images/ex_05_08.png)
 
 
 9. By right clicking the database connection, you can open the SQL console and create a new table, with the statement
     ![ex_05_09](images/ex_05_09.png)
 
-<<<<<<< HEAD
-10. We are simulating an external tool with the Database explorer, that is creating a table and pushing data into it (like an ETL tool would). You can create a new table, with the statement below, replace the schema name with your database user name that you created earlier. The statement will also enter a row for later usage (make sure to replace both schema placeholder).  After pasting the statement click *"Run"*
-=======
-10. We are simulating an external tool with the Database explorer, that is creating a table and pushing data into it (like an ETL tool would). We can create a new table, with the statement below, replace the schema name with your database user name that you created earlier. The statement will also enter a row for later usage (make sure to replace both schema placeholder).  After pasting the statement click **Run**
->>>>>>> 640df28a136cd77cb54d6a22003f8cbbc8d5cd1a
+10. We are simulating an external tool with the Database explorer, that is creating a table and pushing data into it (like an ETL tool would). We can create a new table, with the statement below, replace the schema name with your database user name that you created earlier. The statement will also enter a row for later usage. After pasting the statement click **Run**
+
     ```
-    CREATE COLUMN TABLE "<schema>"."BusinessPartnersOpenSQL"(
+    CREATE COLUMN TABLE "BusinessPartnersOpenSQL"(
         "PARTNERID" NVARCHAR(10) NOT NULL,
         "PARTNERROLE" NVARCHAR(3),
         "EMAILADDRESS" NVARCHAR(255),
@@ -89,7 +79,7 @@ Now enter the previously generated password. If you check the **Save Password** 
     )   PAGE LOADABLE
     UNLOAD PRIORITY 5 AUTO MERGE;
 
-    INSERT INTO "<schema>"."BusinessPartnersOpenSQL" VALUES(
+    INSERT INTO "BusinessPartnersOpenSQL" VALUES(
         '100001'/*PARTNERID <NVARCHAR(10)>*/,
         '1'/*PARTNERROLE <NVARCHAR(3)>*/,
         'bdc@sap.com'/*EMAILADDRESS <NVARCHAR(255)>*/,
@@ -111,11 +101,8 @@ Now enter the previously generated password. If you check the **Save Password** 
     ![ex_05_10](images/ex_05_10.png)
     Upon successful execution you will see the success messages on the bottom. 
 
-<<<<<<< HEAD
-11. Navigating back to the Data Builder in SAP Datasphere, the just created table is not automatically visible, but can be used. Create a new graphical view. Switch the *"Repository Browser to Source"*, on the left side of the canvas. There you will see the OpenSQL schema, it carries the name of the User you created in step 3. When expanding the listed schema, the created table should be visible and can be dragged into the canvas. This will trigger the creation of the Repository Object for the OpenSQL table. 
-=======
 11. Navigating back to the Data Builder in SAP Datasphere, the just created table is not automatically visible, but can be used. Create a new graphical view. Switch the **Repository Browser to Source**, on the left side of the canvas. There you will see the OpenSQL schema, it carries the name of the User we created in step 3. Under stat schema the created table should be visible and can be dragged into the canvas. This will trigger the creation of the Repository Object for the OpenSQL table. 
->>>>>>> 640df28a136cd77cb54d6a22003f8cbbc8d5cd1a
+
     ![ex_05_11](images/ex_05_11.png)
 
 

@@ -19,10 +19,9 @@ Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud (= SAC), whic
 * Estimated Time: 2-4 h
 
   **Important Note:**
-  Performing all exercises will require more time than the actual workshop onsite. Therefore, please feel free to pick the exercises that sound most interesting for you! You can also continue later on after the session to complete the exercises.
+  Performing all exercises will require more time than the actual workshop onsite. Therefore, please feel free to pick the exercises that sound most interesting for you! 
 
-  There is only dependency for performing exercise 6 and 7, for which you must have completed Exercise 5 as a required step. The remaining exercises can be done independently from each other.
-  For example exercise 1 will require most of the time for you with also some optional content.
+  For example exercise 1 offers some great content for SAP Analytics Cloud with a detailed step by step guide and is one of the larger exercises in this hands-on session.
 
 ## Disclaimer
 
@@ -47,15 +46,15 @@ Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud (= SAC), whic
 
 ## Exercises
 
-### Inbound integration
-
-Please find below an overview of the different exercises.
-
-**Important Note:** Please feel free to choose the exercises that are most interesting for you! You will likely not be able to cover all exercises in the time during the workshop.
+**Important Note:** Please feel free to choose the exercises that are most interesting for you! You will likely not be able to cover all exercises in the time during the workshop. The arrows in the illustration below describe dependencies between the exercises, e.g. you need to complete exercise 5, before performing exercises 6 and 7.
 
 ![Overview_Exercises](images/Overview_Exercises.jpg)
 
 A more detailed overview including the links to different exercises is provided below:
+
+### Inbound integration
+
+Please find below an overview of the different exercises.
 
 | Product             | Replication | Federation | Push |
 |---------------------|-------------|------------|------------ |
