@@ -24,7 +24,7 @@ Enter a Database user suffix and enable read and write access and click **"*Crea
    ![ex_05_03](images/ex_05_03.png)
 
 4. Please click on **Deploy** in the upper right corner of the screen to deploy the changes and activate the user creation.
-Please wait until the status of your is changed to **Active** before you proceed.
+Please wait until the status of your space is changed to **Active** before you proceed.
 
    ![ex_05_04](images/ex_05_04a.png)  
 
