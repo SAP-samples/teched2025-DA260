@@ -12,23 +12,20 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
    
     ![ex_09_01](images/ex_09_01.png)
 
-2.	Click on the **Data Builder** to see the Data Builder homepage as shown below and you can see *New Replication Flow* tile.
+2.	Click on the **Data Builder** to see the Data Builder homepage as shown below and you can see *New Replication Flow* tile. 
+Afterwards please click on **New Replication Flow** tile to start creating a new replication flow.
    
     ![ex_09_02](images/ex_09_02.png)
 
-3.	Click on **New Replication Flow** tile to start creating a new replication flow.
+3. Click on **Select Source Connection** button that launches a popup window to select the source connection.
    
     ![ex_09_03](images/ex_09_03.png)
 
-4.	Click on **Select Source Connection** button that launches a popup window to select the source connection.
-
-    ![ex_09_04](images/ex_09_04.png)
-
-    Select **SAP Datasphere** as source connection, which is technically using connection type HANA from the list of the available connections. It will update the connection and after it you need to select Add Source Objects button which is automatically selected for the next step on the bottom of the screen highlighted in blue. Please select **Add Source Object**.
+4. Select **SAP Datasphere** as source connection, which is technically using connection type HANA from the list of the available connections. It will update the connection and after it you need to select Add Source Objects button which is automatically selected for the next step on the bottom of the screen highlighted in blue. Please select **Add Source Object**.
 
     ![ex_09_05](images/ex_09_05.png)
 
-5. After selecting **Add Source Object** button, a new popup window will open, which shows all the repository objects that are available. For this exercise, please select **BusinessPartnersOpenSQL**, and click **OK** button.
+5. After clicking the **Add Source Object** button, a new popup window will open, which shows all the repository objects that are available. For this exercise, please select **BusinessPartnersOpenSQL**, and click **OK** button.
 
     ![ex_09_06](images/ex_09_06.png)
 
