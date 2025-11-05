@@ -38,7 +38,7 @@ Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud (= SAC), whic
   
 * [Access to SAP Datasphere tenant](https://trial-bdc-datasphere-3.eu10.hcs.cloud.sap/)
 * [Access to SAP Analytics Cloud tenant](https://trial-bdc-sac-3.eu10.sapanalytics.cloud/)
-  * User-Id: AC239489XX + last 2 digits with XX are the number being handed over to you by the trainers onsite at TechEd.
+  * User-Id: AC239489UXX + last 2 digits with XX are the number being handed over to you by the trainers onsite at TechEd.
   * Tenant access password: xxx
 
 * Basic know-how about the usage and integration of data in SAP Business Data Cloud leveraging SAP Datasphere & SAP Analytics Cloud (SAC)
