@@ -41,17 +41,17 @@ Please wait until the status of your user is changed to **Active** before you pr
     ![ex_05_07](images/ex_05_07.png)    
 
 
-8.  A new browser tab will now be opened and there are two different options to continue where only one step is required. In case the following window appears, please select the user with your assigned id:
-
-	![ex_05_08c](images/ex_05_08c.png)
-
-In case the following window appears, please enter "academy-platform" into the next box and click on **Sign in with alternative identity provider**:
+8.  A new browser tab will now be opened and there are two different options to continue where only one step is required. In case the following window appears, please enter "academy-platform" into the next box and click on **Sign in with alternative identity provider**:
 
    ![ex_05_08a](images/ex_05_08a.png)
 
- In the following screen, please click on **Authorize** and then you will be re-directed to the Database Explorer application.
+ In the upcoming screen, please click on **Authorize** and then you will be re-directed to the Database Explorer application.
 
    ![ex_05_08b](images/ex_05_08b.png)
+
+In case the following window appears on your laptop, please select the user with your assigned id to be able to launch the Database Explorer:
+
+![ex_05_08c](images/ex_05_08c.png)
 
 
 Note: The Database Explorer is an SAP tool integrated into our landscape, so that the connection details get pre-populated for you, for other tools they need to manually transferred to create the connection. 
