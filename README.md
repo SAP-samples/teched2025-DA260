@@ -10,6 +10,10 @@ SAP Businees Data Cloud includes SAP Datasphere, a comprehensive data service ac
 
 Additionally, SAP Businees Data Cloud includes SAP Analytics Cloud (= SAC), which enables users to visualize data, create interactive dashboards, and perform real-time reporting while supporting collaborative planning and forecasting. Furthermore, it includes different capabilities to perform data integration & acquistion with a focus on self-service for business users to easily acquire data from various different sources including SAP as well as 3rd party data sources.
 
+**Important Note:**
+SAP Business Data Cloud also offers a zero-copy based sharing of data products with partners (e.g. Databricks) using the BDC Connect functionality. This is one of the fundamental & strategic way for SAP to be able to allow a seemles bi-directional access to data products, but this is out of scope for this hands-on exercise. You can find more information in the following session from [TechEd 2025](https://www.sap.com/events/teched/virtual/flow/sap/tev25/catalog-virtual/page/catalog/session/1751961499331001rRV1) as well as in the [BDC documentation](https://help.sap.com/docs/business-data-cloud/administering-sap-business-data-cloud/provision-sap-business-data-cloud-connector-for-supported-external-systems?locale=en-US).
+You will also find more information for the different announcements being done during TechEd for extending the usage of zero-copy based sharing of data products for addtional partners that will be onboarded to BDC Connect.
+
 ## Overview
 
 * Learning Goal: Learn how to use various integration capabilities in SAP Business Data Cloud for integrating data from 3rd party data sources leveraging SAP Datasphere and SAP Analytics Cloud.
