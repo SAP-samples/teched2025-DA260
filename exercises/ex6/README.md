@@ -23,8 +23,9 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
 
 4.  To test the JDBC/SQL endpoint, let's go back to the database explorer from [Exercise 5](../ex5/) Step 8. Open the **View** section in the Catalog of the database.(1) Make sure you have selected not only the OpenSQL schema but also the Space Schema, which carries the same name as the technical name of the space.(2) Select the **View** you created in Step 1 (3) and right click to select **Open Data** (4). This will open you a data preview of the view (5)
 
-    ![ex_08_04](images/ex_08_04.png)
+**Important Note**: Please make sure you select the space schema in the left menu bar. Per default, only the created OpenSQL Schema is selected
 
+   ![ex_08_04](images/ex_08_04.png)
 
 **We have created an JDBC/SQL, and an OData endpoint to read data from SAP Datasphere**
 
