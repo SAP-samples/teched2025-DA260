@@ -42,8 +42,9 @@ You will also find more information for the different announcements being done d
   
 * [Access to SAP Datasphere tenant](https://trial-bdc-datasphere-3.eu10.hcs.cloud.sap/)
 * [Access to SAP Analytics Cloud tenant](https://trial-bdc-sac-3.eu10.sapanalytics.cloud/)
-  * User-Id: AC239489UXX + last 2 digits with XX are the number being handed over to you by the trainers onsite at TechEd.
-  * Tenant access password: xxx
+
+  * User-Id: AC248175Uxx + last 2 digits with XX are the number being handed over to you by the trainers onsite at SAP TechEd.
+  * Tenant access password: shared with you by the instructor.
 
 * Basic know-how about the usage and integration of data in SAP Business Data Cloud leveraging SAP Datasphere & SAP Analytics Cloud (SAC)
 * General understanding of Enterprise Data Management and ETL (Extraction, Transformation, Load).
