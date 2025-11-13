@@ -1,4 +1,4 @@
-# Exercise 6 - Outbound pull of data in Datasphere with JDBC or oData
+# Exercise 6 - Outbound pull of data in Datasphere with JDBC or OData
 
 In this exercise you will build on the OpenSQL created in [Exercise 5](../ex5/).  
 The idea is to allow pulling data through the same OpenSQL endpoint and additionally provide an OData endpoint. 
