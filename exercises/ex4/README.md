@@ -18,11 +18,11 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
    
    ![ex_04_01](images/ex_04_01.png)
 
-2. Click on the **Data Builder** to see the Data Builder homepage as shown below, and find the import button. Select **Import Remote Table**.
+2. Click on the **Data Builder** application in the panel on the left-hand side to open the Data Builder homepage as shown below, and please use the import button as shown in the screenshot. Select **Import Remote Table**.
    
    ![ex_04_02](images/ex_04_02.png)
 
-3. A step-by-step import wizard opens. Select the GBQ connection and click **Next Step**.
+3. A step-by-step import wizard opens. Select the GBQ connection and click on **Next Step**.
    
    ![ex_04_03](images/ex_04_03.png)
 
@@ -42,11 +42,11 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
 
    ![ex_04_7](images/ex_04_07.png)
 
-8. After the import, the Remote Tables have been successfully created in SAP Datasphere. To check if they are functioning, click on one of the tables to open the Remote Table editor.
+8. After the import, the Remote Tables have been successfully created in SAP Datasphere. To check if they are functioning, click on one of the tables highlighted in blue to open the Remote Table editor.
 
    ![ex_04_8](images/ex_04_08.png)
 
-9. In the Remote Table editor, open the preview window to test that the data can be read. In the **View** section, click the **Preview** button. This opens a preview in the lower section of the screen.
+9. In the Remote Table editor, open the preview window to test that the data can be read. In the **View** section on the top menu bar highlighted in blue, click the **Preview** button. This opens a preview in the lower section of the screen.
 
    ![ex_04_9](images/ex_04_09.png)
 
