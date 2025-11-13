@@ -1,161 +1,158 @@
-# Exercise 3 - Replicate Files from Google Cloud Storage (GCS) via Replication Flows to SAP Datasphere 
+# Exercise 3 - Replicate Files from Google Cloud Storage (GCS) via Replication Flows to SAP Datasphere
 
-This exercise involves creating a Replication Flow that reads data from Google Cloud Storage (GCS) CSV Files and replicates this data into SAP Datasphere local tables. This process involves modelling of a replication flow and configuring it to consume a pre-existing GCS connection and pick the required source objects to copy them into new target tables in SAP Datasphere.
+This exercise involves creating a Replication Flow that reads data from Google Cloud Storage (GCS) CSV files and replicates this data into SAP Datasphere local tables. This process involves modeling a replication flow and configuring it to consume a pre-existing GCS connection and pick the required source objects to copy them into new target tables in SAP Datasphere.
 
-In this exercise we will make use of connections that are pre-delivered in your SAP Datasphere instance, e.g. the Google Cloud Storage (GCS). You can check the the GCS connection in the “Connections” application inside your SAP Datasphere space.
+In this exercise we will make use of connections that are pre-delivered in your SAP Datasphere instance, e.g., the Google Cloud Storage (GCS) connection. You can check the GCS connection in the **Connections** application inside your SAP Datasphere space.
 
-The Task is to load the CSV Views from Google Cloud Storage for:
--   Products
--   Sales Orders
--   Business Partners
+The task is to load the CSV views from Google Cloud Storage for:
+- Products  
+- Sales Orders  
+- Business Partners  
 
-into SAP Datasphere. 
+into SAP Datasphere.
 
 Refer to the provided solution below for a detailed, step-by-step guide to complete Exercise 3.
 
-1.  Open your SAP Datasphere using the provided credentials. Your user is associated with a default space that has the same name as your user where you can work and create your various data artifacts like the replication flow.
-   
-    ![ex_03_01](images/ex_03_01.png)
+1. Open your SAP Datasphere using the provided credentials. Your user is associated with a default space that has the same name as your user, where you can work and create your various data artifacts like the replication flow.
 
-2.  Click on the **Data Builder** and select your space to see the Data Builder homepage as shown below and you can see **New Replication Flow** tile.
-   
-    ![ex_03_02](images/ex_03_02.png)
+   ![ex_03_01](images/ex_03_01.png)
 
-3.  Click on **New Replication Flow** tile to launch the creation of new a replication flow.
-   
-    ![ex_03_03](images/ex_03_03.png)
+2. Click on the **Data Builder** and select your space to see the Data Builder homepage as shown below, where you can see the **New Replication Flow** tile.
 
-4.  Click on **Select Source Connection** button that launches a popup window to select the source connection.
+   ![ex_03_02](images/ex_03_02.png)
 
-    ![ex_03_04](images/ex_03_04a.png)
+3. Click on the **New Replication Flow** tile to launch the creation of a new replication flow.
 
-5.  Select **GCS** which is using connection type GCS (Google Cloud Storage) from the list of the available connections. It will update the connection and **Select Source Container** button is auto selected for the next step on the bottom of the screen highlighted in blue.
+   ![ex_03_03](images/ex_03_03.png)
 
-    ![ex_03_05](images/ex_03_05.png)
+4. Click on the **Select Source Connection** button to launch a popup window where you can select the source connection.
 
-6.  Click on **Select Source Container** button and it launches the Select Container popup. Then click on the **DA260**. Click the **Select** button.
+   ![ex_03_04](images/ex_03_04a.png)
 
-    ![ex_03_06](images/ex_03_06.png)
+5. Select **GCS**, which is using the connection type GCS (Google Cloud Storage), from the list of available connections. The connection will update, and the **Select Source Container** button will be automatically selected for the next step.
 
-7.  On selecting **DA260**, you will see that the container is updated  in the Replication Flow upper left part of the Data Builder screen.
+   ![ex_03_05](images/ex_03_05.png)
 
-    ![ex_03_07](images/ex_03_07.png)
+6. Click on the **Select Source Container** button to launch the container selection popup. Then click on **DA260** and select **Select**.
 
-8.  Now click on **Add Source Objects** button that launches Select Source Objects as shown below. 
+   ![ex_03_06](images/ex_03_06.png)
 
-    This will open a popup window which lists all the files that are in that object. Now, select all the following csv files as shown below:
-    - Products
-    - SalesOrders
-    - BusinessPartners
+7. After selecting **DA260**, you will see that the container is updated in the upper-left part of the Replication Flow screen.
 
-Please, keep in mind that you need to repeat this step for each of the csv files that you want to add, and then click the select button.
+   ![ex_03_07](images/ex_03_07.png)
 
-![ex_03_08](images/ex_03_08.png)
+8. Click on the **Add Source Objects** button to launch the Select Source Objects popup.
 
-    
-9.  After selecting **Products**, a new window will be open, you need to select the file named `Products.csv`. Click on **Next** button to see the updated popup window.
+   This window lists all files inside the selected container. Select the following CSV files:
+   - *Products*  
+   - *SalesOrders*  
+   - *BusinessPartners*
 
-    ![ex_03_09](images/ex_03_09.png)
+   Please remember that you must repeat this step for each CSV file you want to add.
 
-10. Click on **Add Selection**...
+   ![ex_03_08](images/ex_03_08.png)
 
-    ![ex_03_10](images/ex_03_10.png)
+9. After selecting **Products**, a new window will open. Select the file named `Products.csv` and click **Next**.
 
-    ...that starts the fetching of source objects details from the source.
+   ![ex_03_09](images/ex_03_09.png)
 
-    ![ex_03_11](images/ex_03_11.png)
+10. Click **Add Selection**...
 
-    After you have added the `Product.csv` file, you need to select the **+** button to add the other two source objects (`BusinessPartners.csv` and `SalesOrders.csv`), as depicted in the image below:
+   ![ex_03_10](images/ex_03_10.png)
 
-    ![ex_03_30](images/ex_03_30.png)
+   ...which starts the fetching of source object details.
 
-    You need to repeat steps 9-10 for the other two files that are required for this exercise.
+   ![ex_03_11](images/ex_03_11.png)
 
-11. The three selected CSV Files are now added to the Replication Flow:
+   After adding the `Products.csv` file, click the **+** button to add the other two source objects (`BusinessPartners.csv` and `SalesOrders.csv`), as shown below:
 
-    ![ex_03_12](images/ex_03_12.png)
+   ![ex_03_30](images/ex_03_30.png)
 
-12. You see some red notifications that are being shown on the left of each of the Source Objects.
+   Repeat steps 9–10 for the remaining files.
 
-    You need to select each of the datasets, than on the right side, the **Object Properties** window is opened. Scroll down and select **Configure Schema**. 
-    
-    A new pop-up window will open. On the left side you will have different properties for the csv files. For the sake of this exercise do not change the properties, keep them as they are for each of the source objects. 
-    
-    First, make sure **UTF-8** is chosen for Encoding, select **Apply Changes** button and after applying the changes, select the check box for the **Primary Key** of the source object and click the **Save** button.
+11. The three selected CSV files are now added to the Replication Flow:
 
-    Please note that each of the source objects should have an **ID** column, which you can define as primary key column.
+   ![ex_03_12](images/ex_03_12.png)
 
-    ![ex_03_13](images/ex_03_13.png)
+12. You will see red notifications next to each Source Object.
 
-    ![ex_03_14](images/ex_03_14.png)
+   Select each dataset to open the **Object Properties** window on the right. Scroll down and select **Configure Schema**.
 
-    **Note:** You need to follow the same steps as described in this step for the other two csv files, to get rid of the red notifications for the source objects.
+   A new popup window opens, displaying various properties for the CSV file. For this exercise, do not change these properties; leave them as they are.
 
-13. You have the possibility to create projections for each of the csv files, but in this exercise no projections are required and hence you can skip the creation of projections. 
+   Make sure **UTF-8** is selected for Encoding. Click **Apply Changes**, then select the checkbox for the **Primary Key** column (each file should have an `ID` column). Click **Save**.
 
-    As a next step, click on the icon adjacent to **Select Target Connection**.
+   ![ex_03_13](images/ex_03_13.png)
 
-    ![ex_03_15](images/ex_03_15.png)
+   ![ex_03_14](images/ex_03_14.png)
 
-      The following popup window will appear where you need to select the target connection. In this case, select **SAP Datasphere** as a target connection.
+   **Note:** Repeat these steps for the other two CSV files to remove all red notifications.
 
-    ![ex_03_16](images/ex_03_16.png)
+13. You have the option to create projections for each CSV file, but no projections are required in this exercise.  
+   As the next step, click the icon next to **Select Target Connection**.
 
-14. The target connection details are now updated in your Replication Flows using SAP Datasphere as target and the target container is automatically updated with the space in which your user is logged in. In the highlighted section it shows the new target local tables that will be created in SAP Datasphere, which will be used as data sink for the data replication.
+   ![ex_03_15](images/ex_03_15.png)
 
-    ![ex_03_17](images/ex_03_17.png)
+   In the popup window, select **SAP Datasphere** as the target connection.
 
-15. For each of the target object, select the **...** three-dot menu icon and select **Rename Target Object**:
+   ![ex_03_16](images/ex_03_16.png)
 
-    ![ex_03_18](images/ex_03_18.png)
+14. The target connection details are now updated in your Replication Flow. The target container is automatically set to the space your user is logged into. The highlighted section shows the new target local tables that will be created in SAP Datasphere and used as the data sink for replication.
 
-    Rename `Products` to `Products_LT`, `BusinessPartners` to `BusinessPartners_LT` etc. In this scenario you will let the replication flow create the target local tables instead of using pre-created tables.
+   ![ex_03_17](images/ex_03_17.png)
 
-    ![ex_03_19](images/ex_03_19.png)
+15. For each of the target objects, click the **...** menu and select **Rename Target Object**:
 
-    **Note**: The replication flows can also write into already existing target tables in SAP Datasphere that have been created before. For this you can click on the three buttons next to the target table name and select Map to Existing Target Object. You can identify such tables that do not yet exist in your target system by looking at the name of the target data set, which are displayed slightly transparent and written in italic like it is currently displayed in your replication flow.
+   ![ex_03_18](images/ex_03_18.png)
 
-16. Click on the Deploy Icon ![ex_01_16_1](images/ex_01_16_1.png) in the general tab on top that launches Save popup window.:
+   Rename `Products` to `Products_LT`, `BusinessPartners` to `BusinessPartners_LT`, etc.  
+   In this scenario, you allow the replication flow to create the target local tables instead of using existing ones.
 
-      ![ex_03_20](images/ex_03_20.png)    
+   ![ex_03_19](images/ex_03_19.png)
 
-      Change the default name being displayed by defining the business name as **Inbound Replication Flow**, which will automatically set technical name as Inbound_Replication_Flow.
-    
-17. After deployment, click on the Run ![ex_03_29](images/ex_03_29.png) button, which will start the deploy process. Check for the status in Properties Panel. The status is shown as Not Deployed initially and will get updated to Deployed after few seconds.
+   **Note:** Replication flows can also write into pre-existing target tables. You can map to existing tables using the three-dot menu. Tables that don't yet exist appear slightly transparent and italicized.
+
+16. Click the **Deploy** icon ![ex_01_16_1](images/ex_01_16_1.png) in the top toolbar to launch the Save popup:
+
+   ![ex_03_20](images/ex_03_20.png)
+
+   Change the default name to **Inbound Replication Flow**, which automatically sets the technical name to `Inbound_Replication_Flow`.
+
+17. After deployment, click the **Run** button ![ex_03_29](images/ex_03_29.png). Check the status in the Properties Panel. It will start as *Not Deployed* and change to *Deployed* after a few seconds.
 
    ![ex_03_21](images/ex_03_21.png)
 
-  **Note:** A message popup on the bottom of the screen will appear once the deployment process is finished and you can also check it using the notifications in the upper right corner of your browser
-    
+   **Note:** A popup notification will appear once the deployment finishes, and you can also check notifications in the top-right corner.
+
    ![ex_03_22](images/ex_03_22.png)
 
-18. Click on **Monitor** icon ![ex_03_24](images/ex_03_24.png) in Run Status tab in property panel, or in the right side of Replication Flow Properties, which will directly navigate you to the detailed monitoring screen of your replication flow:
+18. Click the **Monitor** icon ![ex_03_24](images/ex_03_24.png) in the Run Status tab or in the Replication Flow Properties panel to navigate to the monitoring screen:
 
-      ![ex_03_25](images/ex_03_25.png)
-      ![ex_03_31](images/ex_03_31.png)
+   ![ex_03_25](images/ex_03_25.png)  
+   ![ex_03_31](images/ex_03_31.png)
 
-      Here you can see different information such as the source and target connection, load statistics and the status of the data replication for all CSV Files
+   Here you can see information such as source and target connections, load statistics, and replication status.
 
-     ![ex_03_26](images/ex_03_26.png)
+   ![ex_03_26](images/ex_03_26.png)
 
-     In case you want to start/pause/resume/stop the Run, you can click on the three dot icon as it is highlighted in the image below. Or, in case the replication flow has still not been completed, please click in the **Refresh** button as shown with the arrow in the image below:
+   You can start/pause/resume/stop the run using the three-dot menu. If the replication flow has not yet completed, click **Refresh** as shown below:
 
-     ![ex_03_32](images/ex_03_32.png)
+   ![ex_03_32](images/ex_03_32.png)
 
-19. Once completed, you can check the replicated data from Google Cloud Storage (GCS) CSV views in the Datasphere local tables. Therefore, go to the main page of the **Data Builder** and check for the tables you have defined in the Replication Flow before:
+19. Once completed, you can check the replicated data in the Datasphere local tables. Go to the main page of the **Data Builder** and locate the tables created by the Replication Flow:
 
-      ![ex_03_27](images/ex_03_27.png)
-      
-      Then select one of the local tables in SAP Datasphere, e.g. **`BusinessPartners_LT`**, by one-time-clicking on the table.
-      
-      Click on the **Preview** button as highlighted below:
+   ![ex_03_27](images/ex_03_27.png)
 
-      ![ex_03_28](images/ex_03_28.png)
+   Then select one of the local tables, e.g., **`BusinessPartners_LT`**, by clicking it once.
 
-      ![ex_03_33](images/ex_03_33.png)
+   Click the **Preview** button:
 
-      After a few seconds, you can see the data that was replicated from Google Cloud Storage containing Business Partners information on the bottom of your screen.      
+   ![ex_03_28](images/ex_03_28.png)
 
-**This concludes the Exercise 3 where the objective is to replicate data from Google Cloud Storage into SAP Datasphere.**
-      
+   ![ex_03_33](images/ex_03_33.png)
+
+   After a few seconds, you will see the replicated data from Google Cloud Storage containing Business Partner information.
+
+**This concludes Exercise 3, where the objective is to replicate data from Google Cloud Storage into SAP Datasphere.**
+
 Continue with [Exercise 4 - Federation in Datasphere with Remote Tables](../ex4/).
