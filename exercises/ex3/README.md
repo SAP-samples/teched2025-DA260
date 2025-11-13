@@ -88,6 +88,8 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
 
    **Note:** Repeat these steps for the other two CSV files to remove all red notifications.
 
+   **Important Hint**: In case you encounter a validation error for Products.csv, please open the **Configure Schema** dialog again, click on **Apply Changes** and re-assign the primary key using the Product ID column. This should solve the validation error before you deploy your Replication Flow.
+
 13. You have the option to create projections for each CSV file, but no projections are required in this exercise.  
    As the next step, click the icon next to **Select Target Connection**.
 
