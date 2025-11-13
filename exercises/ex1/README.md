@@ -11,7 +11,7 @@ In this exercise, you will create a new data model in SAC, with data acquired fr
 
 ## Logon
 
-Open SAC and log in with your user, which if you are doing this in the hands-on workshop, will be in the range between ```AC239489U01``` and ```AC239489U70```.
+Open SAC and log in with your user `AC248175Uxx`.
 
 If this is the first time that this user has logged on, you might see the popup below.  (If you don't see it, then it simply means that someone has already logged on with this user and made the theme choice).  The popup will ask you if you want to use the ```SAP Horizon``` theme in SAC.  This UI5 theme has been available for some time, but is only being enabled for SAC in quarterly release QRC 2025.Q4.  ```Horizon``` was not available on this tenant when we made the screenshots and wrote the exercises for SAC, but is now available on this tenant.  Therefore, we recommend clicking **Close** and remaining in the older ```Belize``` CSS style, to ensure that the screen looks **exactly** as in the screenshots.  If you prefer to try ```Horizon```, that is also fine.  There is no functional difference in the exercise workflows or layout, only in CSS theming.  
 
