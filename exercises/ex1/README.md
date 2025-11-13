@@ -1,129 +1,115 @@
 # Exercise 1 - Create an Analytics Cloud Model with Acquired Data
 
-SAP Analytics Cloud (SAC) has two types of data ingestion workflows; an ```Extract, Transform, Load (ETL)``` one and an ```Extract, Load, Transform (ELT)``` one.  ETL is generally used when the data needs to conform to an existing SQL schema, or semantic model, while ELT is a more free form approach, allowing the user to shape the transformations and semantic enrichment around the data.  ETL workflows are used in SAC when data is being loaded into a preexisting model, and ELT workflows are used when the user is creating a new model and starting with data.
+SAP Analytics Cloud (SAC) has two types of data ingestion workflows: an `Extract, Transform, Load (ETL)` one and an `Extract, Load, Transform (ELT)` one. ETL is generally used when data needs to conform to an existing SQL schema or semantic model, while ELT is a more free-form approach, allowing the user to shape the transformations and semantic enrichment around the data. ETL workflows are used in SAC when data is being loaded into a preexisting model, and ELT workflows are used when the user is creating a new model and starting with data.
 
-In contrast to SAP Datasphere (DSP), where replication flows put data into tables that you can manipulate at will later on, data in SAC - whether acquired or federated - is always in the context of a semantic model.  Data can be added at the time of model creation, or added via load jobs later.  SAC models have automated table management, so the user simply worries about the semantic model and the required table schema is automatically created behind the scenes.
-
+In contrast to SAP Datasphere (DSP), where replication flows put data into tables that you can manipulate at will later on, data in SAC—whether acquired or federated—is always in the context of a semantic model. Data can be added at the time of model creation, or added via load jobs later. SAC models have automated table management, so the user simply focuses on the semantic model, while the required table schema is automatically created behind the scenes.
 
 **Note!** Data acquisition and replication are synonyms.
 
-In this exercise, you will create a new data model in SAC, with data acquired from a Google Big Query (GBQ) project.
+In this exercise, you will create a new data model in SAC, with data acquired from a Google BigQuery (GBQ) project.
 
 ## Logon
 
 Open SAC and log in with your user `AC248175Uxx`.
 
-If this is the first time that this user has logged on, you might see the popup below.  (If you don't see it, then it simply means that someone has already logged on with this user and made the theme choice).  The popup will ask you if you want to use the ```SAP Horizon``` theme in SAC.  This UI5 theme has been available for some time, but is only being enabled for SAC in quarterly release QRC 2025.Q4.  ```Horizon``` was not available on this tenant when we made the screenshots and wrote the exercises for SAC, but is now available on this tenant.  Therefore, we recommend clicking **Close** and remaining in the older ```Belize``` CSS style, to ensure that the screen looks **exactly** as in the screenshots.  If you prefer to try ```Horizon```, that is also fine.  There is no functional difference in the exercise workflows or layout, only in CSS theming.  
+If this is the first time that this user has logged on, you might see the popup below. (If you don't see it, then it simply means that someone has already logged on with this user and made the theme choice). The popup will ask you if you want to use the `SAP Horizon` theme in SAC. This UI5 theme has been available for some time, but is only being enabled for SAC in quarterly release QRC 2025.Q4. `Horizon` was not available on this tenant when we made the screenshots and wrote the exercises for SAC, but is now available on this tenant. Therefore, we recommend clicking **Close** and remaining in the older `Belize` CSS style, to ensure that the screen looks **exactly** as in the screenshots. If you prefer to try `Horizon`, that is also fine. There is no functional difference in the exercise workflows or layout, only in CSS theming.
 
 ![Horizon Popup](images/Teched2025-DA260_Ex1_Hor1.png)
 
-
-
 ## Step 0
 
-  
+With SAC open, take a moment to orient yourself. Regardless of which theme you chose, the layout is nearly the same and functionality is unchanged. The navigation bar on the left side and the information bar along the top are shared across BDC tools, so if you know the basics of how to navigate in one, you know it for all.
 
-With SAC open, take a moment to orient yourself.  Regardless of which theming you chose, the layout is nearly the same and functionality is unchanged. The navigation bar on the left side, and the information bar along the top are shared across BDC tools, so if you know the basics of how to navigate in one, you know it for all.  
-
-In the center canvas, you have some options.  There are four tabs:
-- **Today**: Where you can access tutorials, see files that you have recently opened and use AI to answer questions about your data.
+In the center canvas, you have some options. There are four tabs:
+- **Today**: Where you can access tutorials, see files that you have recently opened, and use AI to answer questions about your data.
 - **Catalog**: Where you can access the data catalog.
 - **Favorites**: Where you can see items that you have tagged as favorites.
 - **Shared With Me**: Where you can see content that other users have created and shared with you.
 
-Of course, you can also access everything through the various apps - Data Analyzer, Story Workbench, Modeling Workbench, etc. - in the navigation panel.  
+Of course, you can also access everything through the various apps—Data Analyzer, Story Workbench, Modeling Workbench, etc.—in the navigation panel.
 
-To begin the exercise, select the Modeling Workbench, from the navigation panel.
+To begin the exercise, select the **Modeling Workbench** from the navigation panel.
 
 ![Step 00 Belize](images/Teched2025-DA260_Ex1_00.png)
 
 ![Step 00 Horizon](images/Teched2025-DA260_Ex1_Hor2.png)
 
-
-
 ## Step 1
 
 Take a moment to familiarize yourself with the layout of the Modeling Workbench's entry page. You'll see:
-- A list of models, created by you and created by others and shared with you.  This is where you can edit existing models.
-- A button to create a new data model.  This is for the SAC data model (as opposed to the Datasphere or various remote model options).  Wherever the data is stored (acquired or live), the semantic model is in SAC.
-- A button to create a new Live Data Model.  
+- A list of models, created by you and by others who have shared them with you. This is where you can edit existing models.
+- A button to create a new data model. This is for the SAC data model (as opposed to the Datasphere or various remote model options). Wherever the data is stored (acquired or live), the semantic model is in SAC.
+- A button to create a new Live Data Model.
 
 The term **Live Data Model** can be confusing, because both model types allow for live data.
-- **Live Data Model** really means "remote model with live data.  It is an alias for a BW Query, S/4 CDS View, or HANA Calc View.  In this case, both the data and the semantic model are stored and managed in the remote system and SAC is simply acting as a consumer client.  This allows you e.g. to re-use the same queries in BW that your organization have re-used with many front end clients over the years and add them to stories, or analyze them in the Data Analyzer. You can't edit the remote model in any meaningful way from SAC and will have to use the tooling of the source system.
+- **Live Data Model** really means “remote model with live data.” It is an alias for a BW Query, S/4 CDS View, or HANA Calc View. In this case, both the data and the semantic model are stored and managed in the remote system, and SAC is simply acting as a consumer client. This allows you, for example, to reuse the same queries in BW that your organization has used with many front-end clients over the years and add them to stories or analyze them in the Data Analyzer. You can't edit the remote model in any meaningful way from SAC and must use the tooling of the source system.
 
-- **Data Model** can use both live and acquired data, depending on the source.  The semantic model always resides in SAC, it is edited from this app, but can only be used in SAC.  
+- **Data Model** can use both live and acquired data, depending on the source. The semantic model always resides in SAC, is edited from this app, and can only be used in SAC.
 
 ![Step 1](images/Teched2025-DA260_Ex1_01.png)
 
-
 ## Step 2
 
-Click on **Data Model**, to begin creating a new data model.
+Click on **Data Model** to begin creating a new data model.
 
 ![Step 2](images/Teched2025-DA260_Ex1_02.png)
-
 
 ## Step 3
 
 You can create models from data, or you can start with an empty model.
 
-- **Start with Data:** In this mode, you will upload a file, or connect to data and the data table will be the starting point for your data modeling.  In short, you will design your model around the data that you have on hand.  This is also referred to as **data first modeling**. This is sometimes used for planning models, but it is most often associated with analytic scenarios.
+- **Start with Data:** In this mode, you will upload a file or connect to data, and the data table will be the starting point for your data modeling. In short, you will design your model around the data that you have on hand. This is also referred to as **data-first modeling**. This is sometimes used for planning models, but it is most often associated with analytic scenarios.
 
-- **Start an empty Model:** In this mode, you'll define the semantic structure of the model, while the fact table is still empty, and load data later.  It is conceptually akin to creating an SQL schema, as you'll define your columns, data types, which ones are measures and dimensions, which dimensions are single columns versus having a fully defined dimension table, etc. This is also referred to as **data first modeling**.
+- **Start an Empty Model:** In this mode, you'll define the semantic structure of the model while the fact table is still empty, and load data later. It is conceptually akin to creating an SQL schema, as you’ll define your columns, data types, which ones are measures and dimensions, which dimensions are single columns versus having a fully defined dimension table, etc. This is also referred to as **model-first modeling**.
 
 Select **Start with data** and then click **Next**.
 
 ![Step 3](images/Teched2025-DA260_Ex1_03.png)
 
-
 ## Step 4
 
-If you have configured your SAC tenant to use Datasphere as it's storage location, you have the option here to use that.  Making that configuration is not part of this exercise, and it has not been enabled on this tenant by an administrator, so we will be using SAP Analytics Cloud as our storage location.  
+If you have configured your SAC tenant to use Datasphere as its storage location, you have the option to use that here. Making that configuration is not part of this exercise, and it has not been enabled on this tenant by an administrator, so we will be using SAP Analytics Cloud as our storage location.
 
 Select **SAP Analytics Cloud** and click **Next**.
 
 ![Step 4](images/Teched2025-DA260_Ex1_04.png)
 
-
 ## Step 5
 
-The data source selector has a search bar and two columns. The left column is a list of available data sources. The right side is a list of checkboxes, which can be used to filter the list on the left.  These checkboxes can be based on supported capabilities (e.g. sources that support live data or acquisition, cloud based or on-premise, etc.), vendor, etc.
+The data source selector has a search bar and two columns. The left column is a list of available data sources. The right column is a set of checkboxes that can be used to filter the list on the left. These checkboxes can be based on supported capabilities (e.g., sources that support live data or acquisition, cloud-based or on-premise, etc.), vendor, and so on.
 
-Click the checkbox for **Google**, to filter the list down to Google sources.
+Click the checkbox for **Google** to filter the list down to Google sources.
 
 ![Step 5](images/Teched2025-DA260_Ex1_06.png)
 
-
-
 ## Step 6
 
-Notice that the list of data sources has been filtered to Google Drive and Google Big Query.
+Notice that the list of data sources has been filtered to Google Drive and Google BigQuery.
 
-Click on **Google Big Query**, to proceed to the next step.
+Click on **Google BigQuery** to proceed to the next step.
 
 ![Step 6](images/Teched2025-DA260_Ex1_08.png)
 
-
 ## Step 7
 
-You will now see a dialog, asking you which connection you want to use.  Creating and maintaining connections to Google Big Query (GBQ) - configuring the URL, uploading the key file, etc. - is performed as a central administrative role.  This had been already been performed for you on this tenant, but if you wish to see how it is done, it is described in the help documentation, [here](https://help.sap.com/docs/SAP_ANALYTICS_CLOUD/00f68c2e08b941f081002fd3691d86a7/c67857c09b714f03b74464d00ef0c55b.html).
+You will now see a dialog asking which connection you want to use. Creating and maintaining connections to Google BigQuery (GBQ)—configuring the URL, uploading the key file, etc.—is performed as a central administrative role. This has already been performed for you on this tenant, but if you wish to see how it is done, it is described in the help documentation [here](https://help.sap.com/docs/SAP_ANALYTICS_CLOUD/00f68c2e08b941f081002fd3691d86a7/c67857c09b714f03b74464d00ef0c55b.html).
 
-Select the connection ```sap-dwc-e2e-demo``` and click **Next**.
+Select the connection `sap-dwc-e2e-demo` and click **Next**.
 
 ![Step 7](images/Teched2025-DA260_Ex1_09.png)
 
 ## Step 8
 
-Confirm that ```sap-dwc-e2e-demo``` is your selected connection and click **Next**.
+Confirm that `sap-dwc-e2e-demo` is your selected connection and click **Next**.
 
 ![Step 8](images/Teched2025-DA260_Ex1_10.png)
 
 ## Step 9
 
-Since this exercise is about creating a model with acquired/replicated data select **Import Data** and click **Next**.
+Since this exercise is about creating a model with acquired/replicated data, select **Import Data** and click **Next**.
 
 ![Step 9](images/Teched2025-DA260_Ex1_11.png)
- 
+
 ## Step 10
 
 Name your query **Teched2025-DA260_Ex1_Games2022**, for later reference.
@@ -136,82 +122,72 @@ Click **Next**.
 
 ![Step 10](images/Teched2025-DA260_Ex1_12.png)
 
-
 ## Step 11
 
-Take a moment to orient yourself in the query builder.  There are three areas, **Available Data**, **Selected Data**, and **Filters**.  **Selected Data** corresponds to the SQL "SELECT" and **Filters** corresponds to the SQL "WHERE", and **Available Data** lists all columns, as if you had executed an SQL "DESCRIBE" statement.   
+Take a moment to orient yourself in the query builder. There are three areas: **Available Data**, **Selected Data**, and **Filters**. **Selected Data** corresponds to the SQL `SELECT`, **Filters** corresponds to the SQL `WHERE`, and **Available Data** lists all columns, as if you had executed an SQL `DESCRIBE` statement.
 
-Note!  All columns are in text format, even columns whose names indicate that they would have numeric values.  A well maintained table would have all of this information properly maintained at the source, and you'd see different data types.  We don't always have the luxury of - as is the case here.  Not to worry, we'll be able to fix that later!
+Note! All columns are in text format, even columns whose names indicate that they should have numeric values. A well-maintained table would have all this information properly maintained at the source, with correct data types. We don’t always have that luxury—as is the case here. Not to worry; we’ll be able to fix that later!
 
 ![Step 11](images/Teched2025-DA260_Ex1_13.png)
 
-
-
 ## Step 12
 
-Since we haven't seen the actual data yet and don't know which columns are useful or not, simply select all columns to the selected data and click **Create**.  To bulk select, you can select one and hit ```CTRL A``` on Windows, or ```Command-A``` on a Mac to select all columns.
+Since we haven't seen the actual data yet and don't know which columns are useful or not, simply select all columns and click **Create**. To bulk select, you can select one and hit `CTRL+A` on Windows or `Command-A` on a Mac to select all columns.
 
 ![Step 12](images/Teched2025-DA260_Ex1_13_2.png)
 
-
 ## Step 13
 
-You'll be taken to the SAC modeling environment.  Your initial state will look like the screenshot below.  Take a moment to familiarize yourself.
+You'll be taken to the SAC modeling environment. Your initial state will look like the screenshot below. Take a moment to familiarize yourself.
 
-Across the top menu, you'll see some meta function.  E.g. you can check validation, save, share, edit properties and access the other workspaces.  A few notes:
- - **Workspaces** allows you to enter specialized tools for maintaining model structure, managing the incoming load jobs and outgoing export jobs, and editing calculations.  Calculations do not alter any data in the table, but are computed dynamically when used.
-- The table icon under **View** toggles the **Data Foundation** window on and off.  This shows the first 2000 records of your model's fact table, so that you can see what kind of data it has.  
-- **Validation** is a critical tool.  It provides feedback on structural and metadata problems in the model.  E.g. if cells contain data in the wrong format for their declared data type, if a dimension member has no corresponding dimension table entry, etc. In this case, the error is because your model does not have any measures and a data model requires at least one measure.  Remember when we mentioned that the source data had only text data, even for columns that seemed like they should have numerical data?  All columns were initially imported as dimensions, so we'll have to fix these ins later steps.
-- **Model View** allows you to toggle between the (current) list vie and a graphical view more like a SQL schema diagram.  
-- **Properties**, in the General group, let's you manage advanced attributes of your semantic model.
+Across the top menu, you'll see some meta functions. For example:
+- **Workspaces** allows you to enter specialized tools for maintaining model structure, managing the incoming load jobs and outgoing export jobs, and editing calculations. Calculations do not alter any data in the table but are computed dynamically when used.
+- The table icon under **View** toggles the **Data Foundation** window on and off. This shows the first 2,000 records of your model's fact table so that you can see what kind of data it has.
+- **Validation** is a critical tool. It provides feedback on structural and metadata problems in the model—for example, if cells contain data in the wrong format for their declared data type, if a dimension member has no corresponding dimension table entry, etc. In this case, the error appears because your model does not have any measures, and a data model requires at least one measure. Remember that the source data had only text data, even for columns that should have numerical data? All columns were initially imported as dimensions, so we'll fix this in later steps.
+- **Model View** allows you to toggle between the current list view and a graphical view similar to a SQL schema diagram.
+- **Properties**, in the General group, lets you manage advanced attributes of your semantic model.
 
-In the details' pane, you can also access model properties and see the special properties configured for that model.  You can also see the data sources used by that model and the places where this model is used.  Since were setting up a new model based on an initial import, both of these will be empty for now.
+In the details pane, you can also access model properties and see the special properties configured for that model. You can also see the data sources used by that model and the places where this model is used. Since we're setting up a new model based on an initial import, both of these will be empty for now.
 
 ![Step 13](images/Teched2025-DA260_Ex1_14.png)
-
 
 ## Step 14
 
 Click on **Validation**.
 
-
 ![Step 14](images/Teched2025-DA260_Ex1_15.png)
-
 
 ## Step 15
 
-Click on the text where validation is telling you that **The following objects are missing in your model**.
+Click on the message where validation tells you that **The following objects are missing in your model**.
 
-Remember when we mentioned that the source data had only text data, even for columns that seemed like they should have numerical data?  All columns were initially imported as dimensions, so we'll have to fix this in later steps.
+Remember when we mentioned that the source data had only text data, even for columns that seemed like they should have numerical data? All columns were initially imported as dimensions, so we'll fix this in later steps.
 
 ![Step 15](images/Teched2025-DA260_Ex1_16.png)
 
-
 ## Step 16
 
-Toggle the **Data Foundation** window on and have a look at the data in your fact table.  This will be useful in the following steps.
+Toggle the **Data Foundation** window on and have a look at the data in your fact table. This will be useful in the following steps.
 
 ![Step 16](images/Teched2025-DA260_Ex1_19a.png)
 
-
 ## Step 17
 
-In the **Dimensions** area, click the checkboxes of columns that appear to maintain measure data.  Note!  All measures are numeric, but not all numeric values are measures.  A measure is specifically cardinal data; data suited for calculations.  Some numbers, such as the **Match** column are ordinal data and contain numbers used as identifiers.
+In the **Dimensions** area, click the checkboxes of columns that appear to contain measure data. Note! All measures are numeric, but not all numeric values are measures. A measure specifically represents cardinal data—data suited for calculations. Some numbers, such as the **Match** column, are ordinal data and contain numbers used as identifiers.
 
-We recommend selecting `attendance` and all dimension names **after** `away_manager`, for conversion to measure. To do that you can click on `home_possession` and then hold **Shift** while clicking on the last dimension `away_long_balls`.
+We recommend selecting `attendance` and all dimension names **after** `away_manager` for conversion to measures. To do that, click on `home_possession`, then hold **Shift** and click on the last dimension, `away_long_balls`.
 
 ![Step 17](images/Teched2025-DA260_Ex1_20.png)
 
 ## Step 18
 
-Click any of the ellipses in the right column of the Dimension table and select **Convert to Measure**.
+Click any of the ellipses in the right column of the Dimensions table and select **Convert to Measure**.
 
 ![Step 18](images/Teched2025-DA260_Ex1_21.png)
 
-
 ## Step 19
 
-Select **Integer** data type.
+Select **Integer** as the data type.
 
 Click **OK**.
 
@@ -219,20 +195,17 @@ It may take a few minutes to complete the conversion.
 
 ![Step 19](images/Teched2025-DA260_Ex1_22.png)
 
-
 ## Step 20
 
-You will now see these columns in the **Measures** area and the validation error will be gone.
+You will now see these columns in the **Measures** area, and the validation error will be gone.
 
 ![Step 22](images/Teched2025-DA260_Ex1_23.png)
 
-
 ## Step 21
 
-Scroll down and have a look at which columns are measures and which are dimensions.  Feel free to toggle the **Data Foundation** view back on and double check that the columns are all properly allocated to Dimensions and Measures.
+Scroll down and review which columns are measures and which are dimensions. Feel free to toggle the **Data Foundation** view back on and double-check that the columns are all properly allocated to Dimensions and Measures.
 
 ![Step 21](images/Teched2025-DA260_Ex1_24.png)
-
 
 ## Step 22
 
@@ -242,61 +215,51 @@ Name it **`Teched2025-DA260_Ex1_Games2022`** and click **OK**.
 
 ![Step 22](images/Teched2025-DA260_Ex1_25.png)
 
-
 ## Step 23
 
-Before leaving the Modeling app, navigate to the **Data Management** Workspace.
+Before leaving the Modeling app, navigate to the **Data Management** workspace.
 
 ![Step 23](images/Teched2025-DA260_Ex1_33.png)
 
-
 ## Step 24
 
-Here, you can see and manage the data flowing into and out of your data model.  In the **Import Jobs** section, you'll see a single import job, which was created when your model was created.  A model can have any number of load jobs, feeding its fact and dimension tables.  Here, you can see:
-- The name of the Query.
+Here, you can see and manage the data flowing into and out of your data model. In the **Import Jobs** section, you'll see a single import job, which was created when your model was created. A model can have any number of load jobs, feeding its fact and dimension tables. Here, you can see:
+- The name of the query.
 - Where the data is coming from.
-- If it is a scheduled job, you can see that information.
+- Whether it is a scheduled job.
 - When the last load job ran.
-- The status of the import setup.  Right now, it says that "import hasn't been run yet".If you click on Set Up Import, you'll be able to enter wrangling (data prep), map remote data columns to model measures and dimensions and run the job to load the data into the model.  This isn't needed now, though you may want to set up the import and schedule it, if you want to keep the model updated with any changes in the source system.  It is absolutely needed, when you create a load job for a model that already exists.
+- The status of the import setup. Right now, it says “import hasn’t been run yet.” If you click on **Set Up Import**, you’ll be able to enter wrangling (data prep), map remote data columns to model measures and dimensions, and run the job to load the data into the model. This isn’t needed now, though you may want to set up the import and schedule it if you want to keep the model updated with changes in the source system. It is absolutely needed when you create a load job for a model that already exists.
 - Under the ellipsis, you can edit the wrangling and mapping for the model.
 
-For load jobs that have been run, you can see how many rows were imported with successful imports, if any failed and how many rows were rejected as invalid on successful imports.  In case you were wondering why you'd want to edit the wrangling and mapping of existing load jobs, fixing rejected rows is the usual reason.
+For load jobs that have been run, you can see how many rows were imported, whether any failed, and how many rows were rejected as invalid. If you’re wondering why you’d want to edit the wrangling and mapping of existing load jobs, fixing rejected rows is the usual reason.
 
-In the **Export Jobs** section, you can see the same for export jobs.  Scheduled push exports can be configured for certain targets; e.g. File, BW and S/4.
-
-
+In the **Export Jobs** section, you can see the same for export jobs. Scheduled push exports can be configured for certain targets—for example, File, BW, and S/4.
 
 ![Step 24](images/Teched2025-DA260_Ex1_34.png)
-
 
 ## Step 25
 
 Now we'll have a look at your new model.
 
-From the Navigation bar, open the **Data Analyzer**.
+From the navigation bar, open the **Data Analyzer**.
 
 ![Step 25_1](images/Teched2025-DA260_Ex1_26.png)
 
-
-
 ![Step 25_2](images/Teched2025-DA260_Ex1_27.png)
-
 
 ## Step 26
 
-Close the **Release Highlights** popup, if it appears.
+Close the **Release Highlights** popup if it appears.
 
 ![Step 26](images/Teched2025-DA260_Ex1_28.png)
 
-
 ## Step 27
 
-Create New **From the Existing Model**. 
+Create new **From the Existing Model**.
 
 Select your model **`Teched2025-DA260_Ex1_Games2022`**.
 
 ![Step 27](images/Teched2025-DA260_Ex1_29.png)
-
 
 ## Step 28
 
@@ -306,15 +269,14 @@ Add **attendance** to the columns.
 
 Feel free to modify your view and explore the data a bit.
 
-
 ![Step 28](images/Teched2025-DA260_Ex1_30a.png)
 
 ## Summary
 
 You've now created a new model in SAC by importing data.
 
-Continue to - [Exercise 2 - Analytics Cloud Model with Live Data](../ex2/README.md), to create a model from the World Cup data, but with a live (federated) fact table.
+Continue to — [Exercise 2 - Analytics Cloud Model with Live Data](../ex2/README.md), to create a model from the World Cup data but with a live (federated) fact table.
 
-**-or-**
+**–or–**
 
-Continue to - [Exercise 8 - Loading Data into an existing SAC model](../ex8/README.md), to create a load job for this model.
+Continue to — [Exercise 8 - Loading Data into an Existing SAC Model](../ex8/README.md), to create a load job for this model.
