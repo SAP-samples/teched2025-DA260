@@ -40,9 +40,9 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
    **Note:**  
    You can add additional objects into the Replication Flow, but for this exercise you will only replicate one local table to illustrate the general approach.  
 
-   Only *Initial Load* is supported when replicating from the OpenSQL schema. Delta capabilities require local tables with delta capture enabled. 
+   Only *Initial Load* is supported when replicating from the OpenSQL schema. Delta capabilities require local tables in SAP Datasphere that are delta capture enabled. 
    
-   Many other sources support native delta capabilities that can be used in a replication such as ABAP-based sources (SAP S74HANA, SPA BW, SAP ECC etc.), databases (e.g. Microsoft SQL, SAP HANA etc.) any additional data sources.
+   Many other sources support native delta capabilities that can be used in a replication such as ABAP-based sources (SAP S/4HANA, SAP BW, SAP ECC etc.), databases (e.g. Microsoft SQL, SAP HANA etc.) any additional data sources.
 
 6. You may create projections for each listed object, but they are not required for this exercise.  
 
@@ -50,7 +50,7 @@ Refer to the provided solution below for a detailed, step-by-step guide to compl
 
    ![ex_09_07](images/ex_09_07.png)
 
-   A popup appears where you should select **Google Big Query** as the target connection.
+   A popup appears where you should select **Google BigQuery** as the target connection.
 
    ![ex_09_08](images/ex_09_08.png)
 
