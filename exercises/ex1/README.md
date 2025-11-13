@@ -110,16 +110,13 @@ You will now see a dialog, asking you which connection you want to use.  Creatin
 
 Select the connection ```sap-dwc-e2e-demo``` and click **Next**.
 
-
 ![Step 7](images/Teched2025-DA260_Ex1_09.png)
-
 
 ## Step 8
 
 Confirm that ```sap-dwc-e2e-demo``` is your selected connection and click **Next**.
 
 ![Step 8](images/Teched2025-DA260_Ex1_10.png)
-
 
 ## Step 9
 
@@ -152,7 +149,6 @@ Note!  All columns are in text format, even columns whose names indicate that th
 
 ## Step 12
 
-
 Since we haven't seen the actual data yet and don't know which columns are useful or not, simply select all columns to the selected data and click **Create**.  To bulk select, you can select one and hit ```CTRL A``` on Windows, or ```Command-A``` on a Mac to select all columns.
 
 ![Step 12](images/Teched2025-DA260_Ex1_13_2.png)
@@ -166,8 +162,8 @@ Across the top menu, you'll see some meta function.  E.g. you can check validati
  - **Workspaces** allows you to enter specialized tools for maintaining model structure, managing the incoming load jobs and outgoing export jobs, and editing calculations.  Calculations do not alter any data in the table, but are computed dynamically when used.
 - The table icon under **View** toggles the **Data Foundation** window on and off.  This shows the first 2000 records of your model's fact table, so that you can see what kind of data it has.  
 - **Validation** is a critical tool.  It provides feedback on structural and metadata problems in the model.  E.g. if cells contain data in the wrong format for their declared data type, if a dimension member has no corresponding dimension table entry, etc. In this case, the error is because your model does not have any measures and a data model requires at least one measure.  Remember when we mentioned that the source data had only text data, even for columns that seemed like they should have numerical data?  All columns were initially imported as dimensions, so we'll have to fix these ins later steps.
-**Model View** allows you to toggle between the (current) list vie and a graphical view more like a SQL schema diagram.  
-**Properties**, in the General group, let's you manage advanced attributes of your semantic model.
+- **Model View** allows you to toggle between the (current) list vie and a graphical view more like a SQL schema diagram.  
+- **Properties**, in the General group, let's you manage advanced attributes of your semantic model.
 
 In the details' pane, you can also access model properties and see the special properties configured for that model.  You can also see the data sources used by that model and the places where this model is used.  Since were setting up a new model based on an initial import, both of these will be empty for now.
 
@@ -195,19 +191,16 @@ Remember when we mentioned that the source data had only text data, even for col
 
 Toggle the **Data Foundation** window on and have a look at the data in your fact table.  This will be useful in the following steps.
 
-![Step 16](images/Teched2025-DA260_Ex1_19.png)
+![Step 16](images/Teched2025-DA260_Ex1_19a.png)
 
 
 ## Step 17
 
 In the **Dimensions** area, click the checkboxes of columns that appear to maintain measure data.  Note!  All measures are numeric, but not all numeric values are measures.  A measure is specifically cardinal data; data suited for calculations.  Some numbers, such as the **Match** column are ordinal data and contain numbers used as identifiers.
 
-Again, to bulk select, you can select one checkbox and hit ```CTRL A``` on Windows, or ```Command-A``` on a Mac to select all columns.
-
-We recommend selecting ```attendance``` and all columns after ```away_manager``, for conversion to measure.
+We recommend selecting `attendance` and all dimension names **after** `away_manager`, for conversion to measure. To do that you can click on `home_possession` and then hold **Shift** while clicking on the last dimension `away_long_balls`.
 
 ![Step 17](images/Teched2025-DA260_Ex1_20.png)
-
 
 ## Step 18
 
@@ -218,11 +211,11 @@ Click any of the ellipses in the right column of the Dimension table and select 
 
 ## Step 19
 
-Select **Integer**
-
-Choose to convert to Integer.  You can leave the conversion format alone.
+Select **Integer** data type.
 
 Click **OK**.
+
+It may take a few minutes to complete the conversion.
 
 ![Step 19](images/Teched2025-DA260_Ex1_22.png)
 
@@ -245,7 +238,7 @@ Scroll down and have a look at which columns are measures and which are dimensio
 
 Save your model.
 
-Name it **Teched2025-DA260_Ex1_Games2022** and click **OK**.
+Name it **`Teched2025-DA260_Ex1_Games2022`** and click **OK**.
 
 ![Step 22](images/Teched2025-DA260_Ex1_25.png)
 
@@ -280,7 +273,7 @@ In the **Export Jobs** section, you can see the same for export jobs.  Scheduled
 
 Now we'll have a look at your new model.
 
-From the Navigation bar, open the Data Analyzer.
+From the Navigation bar, open the **Data Analyzer**.
 
 ![Step 25_1](images/Teched2025-DA260_Ex1_26.png)
 
@@ -298,7 +291,9 @@ Close the **Release Highlights** popup, if it appears.
 
 ## Step 27
 
-Select your model, **Teched2025-DA260_Ex1_Games2022**.
+Create New **From the Existing Model**. 
+
+Select your model **`Teched2025-DA260_Ex1_Games2022`**.
 
 ![Step 27](images/Teched2025-DA260_Ex1_29.png)
 
@@ -307,23 +302,19 @@ Select your model, **Teched2025-DA260_Ex1_Games2022**.
 
 Add **away_team**, **home_team**, and **match** to the rows.
 
-Add **attendance** to the columns.  You see your first SAC model in action.
+Add **attendance** to the columns.
 
 Feel free to modify your view and explore the data a bit.
 
 
-![Step 28](images/Teched2025-DA260_Ex1_30.png)
-
-
+![Step 28](images/Teched2025-DA260_Ex1_30a.png)
 
 ## Summary
 
-You've now created a new model in SAC by importing data.  
-
-Analytics Cloud Model with Live Data
+You've now created a new model in SAC by importing data.
 
 Continue to - [Exercise 2 - Analytics Cloud Model with Live Data](../ex2/README.md), to create a model from the World Cup data, but with a live (federated) fact table.
 
--or-
+**-or-**
 
 Continue to - [Exercise 8 - Loading Data into an existing SAC model](../ex8/README.md), to create a load job for this model.
