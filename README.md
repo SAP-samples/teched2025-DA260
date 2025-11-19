@@ -35,13 +35,13 @@ You will also find more information about the different announcements made durin
 * Chromium-based web browser  
 * [Access to GitHub Repository](https://github.com/SAP-samples/teched2025-DA260)
 
-  **Important Note:** The landscape used during SAP TechEd will be available until **November 19th**. Until then, you can reuse your existing content in your user space and finalize the exercises in case you did not have sufficient time during the workshop.
+  **Important Note:** The landscape used during SAP TechEd will be available until **November 29th**. Until then, you can reuse your existing content in your user space and finalize the exercises in case you did not have sufficient time during the workshop.
 
 * [Access to SAP Datasphere tenant](https://trial-bdc-datasphere-3.eu10.hcs.cloud.sap/)  
 * [Access to SAP Analytics Cloud tenant](https://trial-bdc-sac-3.eu10.sapanalytics.cloud/)
 
-  * User-ID: AC248175Uxx, where XX are the last 2 digits assigned by the trainers onsite at SAP TechEd.  
-  * Tenant access password: Provided by the instructor.
+  * User-ID: AC248472Uxx, where XX are the last 2 digits assigned by the trainers onsite at SAP TechEd.  
+  * Password: ObvAsy66By1!
 
 * This is the intermediate level workshop. Basic know-how about using and integrating data in SAP Business Data Cloud with SAP Datasphere & SAP Analytics Cloud (SAC) is expected.
 * General understanding of Enterprise Data Management and ETL (Extraction, Transformation, Load)
